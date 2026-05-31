@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 Chapter 6: Inventories - Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(20, 20, 40, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4a90e2;
+        }
+        
+        h1 {
+            color: #4a90e2;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1em;
+        }
+        
+        nav {
+            background: rgba(30, 30, 50, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: #4a90e2;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            background: rgba(74, 144, 226, 0.1);
+        }
+        
+        nav a:hover {
+            background: rgba(74, 144, 226, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            background: rgba(30, 30, 50, 0.6);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #4a90e2;
+        }
+        
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #6ab0f3;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+        
+        h4 {
+            color: #8ac4f5;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: rgba(255, 193, 7, 0.2);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #ffd54f;
+            font-weight: bold;
+        }
+        
+        .formula {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 3px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border-radius: 5px;
+        }
+        
+        .example {
+            background: rgba(156, 39, 176, 0.1);
+            border-left: 3px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .note {
+            background: rgba(255, 152, 0, 0.1);
+            border-left: 3px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .quiz-container {
+            background: rgba(30, 30, 50, 0.8);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .question {
+            background: rgba(40, 40, 60, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+        }
+        
+        .question-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+        
+        .options {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .options li {
+            background: rgba(50, 50, 70, 0.6);
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .options li:hover {
+            background: rgba(74, 144, 226, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .options li.selected {
+            background: rgba(74, 144, 226, 0.3);
+            border-left: 3px solid #4a90e2;
+        }
+        
+        .options li.correct {
+            background: rgba(76, 175, 80, 0.3);
+            border-left: 3px solid #4caf50;
+        }
+        
+        .options li.incorrect {
+            background: rgba(244, 67, 54, 0.3);
+            border-left: 3px solid #f44336;
+        }
+        
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+        
+        .answer-explanation {
+            display: none;
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 3px solid #4caf50;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        
+        .case-study {
+            background: rgba(63, 81, 181, 0.1);
+            border-left: 3px solid #3f51b5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            background: rgba(40, 40, 60, 0.8);
+            color: #e0e0e0;
+            border: 1px solid #4a90e2;
+            border-radius: 5px;
+            padding: 15px;
+            font-family: inherit;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        
+        .score-display {
+            background: rgba(76, 175, 80, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Chapter 6: Inventories</h1>
+            <p class="subtitle">Financial Accounting IFRS 3rd Edition - Comprehensive Study Guide</p>
+        </header>
+
+        <nav>
+            <a href="#lo1">1. Classifying Inventory</a>
+            <a href="#lo2">2. Inventory Costing</a>
+            <a href="#lo3">3. Financial Effects</a>
+            <a href="#lo4">4. LCNRV</a>
+            <a href="#lo5">5. Inventory Errors</a>
+            <a href="#lo6">6. Analysis</a>
+            <a href="#quiz">🧠 Quiz</a>
+            <a href="#essay">📝 Essay</a>
+        </nav>
+
+        <!-- LEARNING OBJECTIVE 1 -->
+        <div id="lo1" class="section">
+            <h2>Learning Objective 1: Classifying and Determining Inventory</h2>
+            
+            <h3>1.1 Classifying Inventory</h3>
+            <p>Inventory classification differs between merchandising and manufacturing companies:</p>
+            
+            <h4>Merchandising Company</h4>
+            <ul>
+                <li><span class="highlight">One Classification: Inventory</span></li>
+                <li>Consists of goods purchased for resale</li>
+                <li>Ready for sale to customers</li>
+            </ul>
+            
+            <h4>Manufacturing Company</h4>
+            <ul>
+                <li><span class="highlight">Three Classifications:</span></li>
+                <li><strong>Raw Materials:</strong> Basic materials that will be used in production</li>
+                <li><strong>Work in Process:</strong> Goods that are partially completed</li>
+                <li><strong>Finished Goods:</strong> Completed products ready for sale</li>
+            </ul>
+            
+            <div class="note">
+                <strong>📌 Important Note:</strong> Regardless of classification, all inventories are reported under <span class="highlight">Current Assets</span> on the statement of financial position.
+            </div>
+            
+            <h3>1.2 Determining Inventory Quantities</h3>
+            
+            <h4>Physical Inventory - Two Reasons for Taking:</h4>
+            
+            <p><strong>Perpetual System:</strong></p>
+            <ol>
+                <li><strong>Check accuracy</strong> of inventory records</li>
+                <li><strong>Determine amount of inventory lost</strong> due to wasted raw materials, shoplifting, or employee theft</li>
+            </ol>
+            
+            <p><strong>Periodic System:</strong></p>
+            <ol>
+                <li><strong>Determine the inventory on hand</strong></li>
+                <li><strong>Determine the cost of goods sold</strong> for the period</li>
+            </ol>
+            
+            <h4>Taking a Physical Inventory</h4>
+            <ul>
+                <li>Involves <span class="highlight">counting, weighing, or measuring</span> each kind of inventory on hand</li>
+                <li>Companies often take inventory when:
+                    <ul>
+                        <li>Business is closed or business is slow</li>
+                        <li>At the end of the accounting period</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="example">
+                <strong>🔍 Ethics Note:</strong> In a famous fraud case, a salad oil company filled its storage tanks mostly with water. The oil rose to the top, so auditors thought the tanks were full of oil. The company also claimed it had more tanks than it really did by repainting numbers on the tanks to confuse auditors.
+            </div>
+            
+            <h3>1.3 Determining Ownership of Goods</h3>
+            
+            <h4>Goods in Transit</h4>
+            <p><span class="highlight">Key Principle:</span> Goods in transit should be included in the inventory of the company that has <strong>legal title</strong> to the goods. Legal title is determined by the <strong>terms of sale</strong>.</p>
+            
+            <h4>FOB Shipping Point</h4>
+            <ul>
+                <li><strong>Buyer pays freight costs</strong></li>
+                <li><strong>Ownership passes to buyer</strong> when the public carrier accepts the goods from the seller</li>
+                <li>Buyer includes goods in inventory while in transit</li>
+            </ul>
+            
+            <h4>FOB Destination</h4>
+            <ul>
+                <li><strong>Seller pays freight costs</strong></li>
+                <li><strong>Ownership remains with seller</strong> until goods reach the buyer</li>
+                <li>Seller includes goods in inventory while in transit</li>
+            </ul>
+            
+            <div class="example">
+                <strong>📦 Example:</strong> If Company A ships goods FOB shipping point on December 30, and the goods arrive at Company B on January 3, Company B should include these goods in its December 31 inventory count because ownership transferred when the carrier picked up the goods.
+            </div>
+            
+            <h4>Consigned Goods</h4>
+            <ul>
+                <li><strong>Consignment:</strong> To hold goods of other parties and try to sell them for a fee, without taking ownership</li>
+                <li>Many car, boat, and antique dealers sell goods on consignment</li>
+                <li><span class="highlight">The consignor (owner) includes consigned goods in inventory</span></li>
+                <li>The consignee (holder) does NOT include consigned goods in inventory</li>
+            </ul>
+            
+            <div class="note">
+                <strong>⚠️ Common Error:</strong> Companies must be careful not to include consigned goods held for others in their inventory count, and must remember to include goods they own that are held on consignment by others.
+            </div>
+        </div>
+        
+        <!-- LEARNING OBJECTIVE 2 -->
+        <div id="lo2" class="section">
+            <h2>Learning Objective 2: Inventory Costing Methods</h2>
+            
+            <h3>2.1 Inventory Cost</h3>
+            <p><span class="highlight">Inventory is accounted for at cost.</span></p>
+            <ul>
+                <li>Cost includes <strong>all expenditures necessary to acquire goods and place them in a condition ready for sale</strong></li>
+                <li>Unit costs are applied to quantities to compute total cost of inventory and cost of goods sold</li>
+            </ul>
+            
+            <h3>2.2 Cost Flow Assumptions</h3>
+            <p>There are <strong>three</strong> inventory costing methods:</p>
+            <ol>
+                <li><strong>Specific Identification</strong></li>
+                <li><strong>First-In, First-Out (FIFO)</strong></li>
+                <li><strong>Average-Cost</strong></li>
+            </ol>
+            
+            <div class="note">
+                <strong>📌 Important:</strong> Cost flow does NOT need to be consistent with the physical movement of goods. These are <span class="highlight">cost flow assumptions</span>, not physical flow requirements.
+            </div>
+            
+            <h3>2.3 Specific Identification</h3>
+            <ul>
+                <li><strong>Actual physical flow costing method</strong></li>
+                <li>Items still in inventory are specifically costed to arrive at total cost of ending inventory</li>
+                <li>Practice is relatively rare</li>
+                <li>Used for high-value, low-volume items (cars, jewelry, art)</li>
+            </ul>
+            
+            <div class="example">
+                <strong>📺 Example:</strong> Crivitz TV purchases three identical 50-inch TVs:
+                <ul>
+                    <li>February 3: 1 TV at £700</li>
+                    <li>March 5: 1 TV at £750</li>
+                    <li>May 22: 1 TV at £800</li>
+                </ul>
+                If Crivitz sold the TVs purchased on February 3 and May 22, then:
+                <ul>
+                    <li>Cost of Goods Sold = £700 + £800 = £1,500</li>
+                    <li>Ending Inventory = £750</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <strong>⚠️ Ethics Note:</strong> A major disadvantage of specific identification is that management may be able to manipulate net income by choosing which units to sell (high-cost units to reduce income, or low-cost units to increase income).
+            </div>
+            
+            <h3>2.4 First-In, First-Out (FIFO)</h3>
+            <ul>
+                <li><strong>Costs of the earliest goods purchased</strong> are the first to be recognized in determining cost of goods sold</li>
+                <li>Often parallels actual physical flow of merchandise</li>
+                <li>Ending inventory is determined by taking the unit cost of the <strong>most recent purchase</strong> and working backward</li>
+            </ul>
+            
+            <div class="formula">
+                <strong>FIFO Method - Step by Step:</strong><br>
+                <strong>Step 1:</strong> Calculate Ending Inventory
+                <ul>
+                    <li>Start with most recent purchases</li>
+                    <li>Work backward until all ending inventory units are costed</li>
+                </ul>
+                <strong>Step 2:</strong> Calculate Cost of Goods Sold
+                <ul>
+                    <li>COGS = Cost of Goods Available for Sale - Ending Inventory</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <strong>📊 Example - Lin Electronics (FIFO):</strong><br>
+                <strong>Data:</strong>
+                <ul>
+                    <li>Jan 1: Beginning Inventory - 10 units @ HK$100 = HK$1,000</li>
+                    <li>Apr 15: Purchase - 20 units @ HK$110 = HK$2,200</li>
+                    <li>Aug 24: Purchase - 30 units @ HK$120 = HK$3,600</li>
+                    <li>Nov 27: Purchase - 40 units @ HK$130 = HK$5,200</li>
+                    <li>Total Available: 100 units = HK$12,000</li>
+                    <li>Units Sold: 55 units</li>
+                    <li>Ending Inventory: 45 units</li>
+                </ul>
+                
+                <strong>Step 1 - Ending Inventory (45 units):</strong>
+                <ul>
+                    <li>40 units @ HK$130 = HK$5,200 (from Nov 27)</li>
+                    <li>5 units @ HK$120 = HK$600 (from Aug 24)</li>
+                    <li><strong>Total Ending Inventory = HK$5,800</strong></li>
+                </ul>
+                
+                <strong>Step 2 - Cost of Goods Sold:</strong>
+                <ul>
+                    <li>HK$12,000 - HK$5,800 = <strong>HK$6,200</strong></li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <strong>💡 Helpful Hint:</strong> Another way of thinking about FIFO ending inventory is the <span class="highlight">LISH assumption</span> - Last In Still Here.
+            </div>
+            
+            <h3>2.5 Average-Cost Method</h3>
+            <ul>
+                <li>Allocates cost of goods available for sale on the basis of <strong>weighted-average unit cost</strong></li>
+                <li>Applies weighted-average unit cost to units on hand to determine ending inventory</li>
+            </ul>
+            
+            <div class="formula">
+                <strong>Weighted-Average Unit Cost Formula:</strong><br><br>
+                Weighted-Average Unit Cost = Cost of Goods Available for Sale ÷ Total Units Available for Sale
+            </div>
+            
+            <div class="example">
+                <strong>📊 Example - Lin Electronics (Average-Cost):</strong><br>
+                <strong>Using same data as FIFO example:</strong>
+                
+                <strong>Step 1 - Calculate Weighted-Average Unit Cost:</strong>
+                <ul>
+                    <li>HK$12,000 ÷ 100 units = <strong>HK$120 per unit</strong></li>
+                </ul>
+                
+                <strong>Step 2 - Ending Inventory (45 units):</strong>
+                <ul>
+                    <li>45 units × HK$120 = <strong>HK$5,400</strong></li>
+                </ul>
+                
+                <strong>Step 3 - Cost of Goods Sold:</strong>
+                <ul>
+                    <li>HK$12,000 - HK$5,400 = <strong>HK$6,600</strong></li>
+                </ul>
+                
+                <strong>Alternative Calculation for COGS:</strong>
+                <ul>
+                    <li>55 units sold × HK$120 = <strong>HK$6,600</strong></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- LEARNING OBJECTIVE 3 -->
+        <div id="lo3" class="section">
+            <h2>Learning Objective 3: Financial Effects of Cost Flow Assumptions</h2>
+            
+            <h3>3.1 Acceptability of Methods</h3>
+            <p>Either of the two cost flow assumptions (FIFO or Average-Cost) is acceptable for use under IFRS.</p>
+            
+            <ul>
+                <li><strong>Examples:</strong>
+                    <ul>
+                        <li>adidas (DEU) and Lenovo (CHN) use average-cost</li>
+                        <li>Syngenta Group (CHE) and Nokia (FIN) use FIFO</li>
+                    </ul>
+                </li>
+                <li><strong>Survey Results:</strong>
+                    <ul>
+                        <li>~60% use average-cost method</li>
+                        <li>~40% use FIFO</li>
+                        <li>~23% use both for different parts of inventory</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>3.2 Income Statement Effects</h3>
+            
+            <div class="example">
+                <strong>📊 Comparative Example - Lin Electronics:</strong><br>
+                Assuming Sales Revenue = HK$11,500 and Operating Expenses = HK$2,000
+                
+                <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+                    <tr style="background: rgba(74, 144, 226, 0.2);">
+                        <th style="padding: 10px; text-align: left; border: 1px solid #4a90e2;"></th>
+                        <th style="padding: 10px; text-align: right; border: 1px solid #4a90e2;">FIFO</th>
+                        <th style="padding: 10px; text-align: right; border: 1px solid #4a90e2;">Average-Cost</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Sales Revenue</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">HK$11,500</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">HK$11,500</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Cost of Goods Sold</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">6,200</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">6,600</td>
+                    </tr>
+                    <tr style="background: rgba(76, 175, 80, 0.1);">
+                        <td style="padding: 8px; border: 1px solid #4a90e2;"><strong>Gross Profit</strong></td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;"><strong>5,300</strong></td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;"><strong>4,900</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Operating Expenses</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">2,000</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">2,000</td>
+                    </tr>
+                    <tr style="background: rgba(255, 193, 7, 0.2);">
+                        <td style="padding: 8px; border: 1px solid #4a90e2;"><strong>Net Income</strong></td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;"><strong>HK$3,300</strong></td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;"><strong>HK$2,900</strong></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>3.3 Statement of Financial Position Effects</h3>
+            
+            <h4>During Periods of Inflation:</h4>
+            <ul>
+                <li><strong>FIFO Advantage:</strong> Costs allocated to ending inventory approximate <span class="highlight">current cost</span></li>
+                <li><strong>Average-Cost Shortcoming:</strong> Costs allocated to ending inventory may be <span class="highlight">understated</span> in terms of current cost</li>
+            </ul>
+            
+            <div class="example">
+                <strong>📊 Comparison:</strong>
+                <ul>
+                    <li><strong>FIFO Ending Inventory:</strong> HK$5,800 (includes most recent, higher costs)</li>
+                    <li><strong>Average-Cost Ending Inventory:</strong> HK$5,400 (averages old and new costs)</li>
+                </ul>
+            </div>
+            
+            <h3>3.4 Tax Effects</h3>
+            
+            <h4>During Periods of Rising Prices:</h4>
+            <ul>
+                <li><strong>FIFO:</strong>
+                    <ul>
+                        <li>Higher ending inventory</li>
+                        <li>Lower cost of goods sold</li>
+                        <li>Higher net income</li>
+                        <li><span class="highlight">Higher income taxes</span></li>
+                    </ul>
+                </li>
+                <li><strong>Average-Cost:</strong>
+                    <ul>
+                        <li>Lower ending inventory</li>
+                        <li>Higher cost of goods sold</li>
+                        <li>Lower net income</li>
+                        <li><span class="highlight">Lower income taxes</span></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="note">
+                <strong>🌍 Global Insight - LIFO:</strong> In the United States, companies can use LIFO (Last-In, First-Out), which is NOT allowed under IFRS. This makes comparing U.S. companies (like ExxonMobil) with international companies (like BP or Royal Dutch Shell) difficult. LIFO typically results in even lower taxes during inflation than average-cost.
+            </div>
+            
+            <h3>3.5 Using Cost Flow Methods Consistently</h3>
+            <ul>
+                <li>Method should be used <strong>consistently</strong> to enhance comparability</li>
+                <li>Companies <strong>may change</strong> their inventory costing method, but must:
+                    <ul>
+                        <li>Disclose the change</li>
+                        <li>Show the effect on financial statements</li>
+                        <li>Justify the change</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- LEARNING OBJECTIVE 4 -->
+        <div id="lo4" class="section">
+            <h2>Learning Objective 4: Lower-of-Cost-or-Net Realizable Value (LCNRV)</h2>
+            
+            <h3>4.1 The LCNRV Rule</h3>
+            <p>When the <strong>value of inventory is lower than its cost</strong>, companies must "write down" the inventory to its net realizable value.</p>
+            
+            <div class="formula">
+                <strong>Net Realizable Value (NRV):</strong><br>
+                The amount that a company expects to realize (receive) from the sale of inventory.
+            </div>
+            
+            <h3>4.2 Applying LCNRV</h3>
+            
+            <div class="example">
+                <strong>📊 Example - Gao TV Company:</strong><br>
+                
+                <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+                    <tr style="background: rgba(74, 144, 226, 0.2);">
+                        <th style="padding: 10px; text-align: left; border: 1px solid #4a90e2;">Product</th>
+                        <th style="padding: 10px; text-align: right; border: 1px solid #4a90e2;">Units</th>
+                        <th style="padding: 10px; text-align: right; border: 1px solid #4a90e2;">Cost/Unit</th>
+                        <th style="padding: 10px; text-align: right; border: 1px solid #4a90e2;">NRV/Unit</th>
+                        <th style="padding: 10px; text-align: right; border: 1px solid #4a90e2;">LCNRV</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Flat-screen TVs</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">100</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">NT$600</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">NT$550</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">NT$55,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Satellite radios</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">500</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">90</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">104</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">45,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">DVD recorders</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">850</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">50</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">48</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">40,800</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">DVDs</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">3,000</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">5</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">6</td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;">15,000</td>
+                    </tr>
+                    <tr style="background: rgba(76, 175, 80, 0.2);">
+                        <td colspan="4" style="padding: 8px; border: 1px solid #4a90e2;"><strong>Total Inventory</strong></td>
+                        <td style="padding: 8px; text-align: right; border: 1px solid #4a90e2;"><strong>NT$155,800</strong></td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top: 15px;"><strong>Explanation:</strong></p>
+                <ul>
+                    <li>Flat-screen TVs: NRV (NT$550) < Cost (NT$600) → Use NT$550 × 100 = NT$55,000</li>
+                    <li>Satellite radios: Cost (NT$90) < NRV (NT$104) → Use NT$90 × 500 = NT$45,000</li>
+                    <li>DVD recorders: NRV (NT$48) < Cost (NT$50) → Use NT$48 × 850 = NT$40,800</li>
+                    <li>DVDs: Cost (NT$5) < NRV (NT$6) → Use NT$5 × 3,000 = NT$15,000</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- LEARNING OBJECTIVE 5 -->
+        <div id="lo5" class="section">
+            <h2>Learning Objective 5: Inventory Errors</h2>
+            
+            <h3>5.1 Common Causes of Inventory Errors</h3>
+            <ul>
+                <li>Failure to count or price inventory correctly</li>
+                <li>Not properly recognizing the transfer of legal title to goods in transit</li>
+                <li>Errors affect <strong>both</strong> the income statement and statement of financial position</li>
+            </ul>
+            
+            <h3>5.2 Income Statement Effects</h3>
+            
+            <div class="formula">
+                <strong>Cost of Goods Sold Formula:</strong><br><br>
+                Beginning Inventory + Cost of Goods Purchased - Ending Inventory = Cost of Goods Sold
+            </div>
+            
+            <p><strong>Effects of Inventory Errors on Current Year:</strong></p>
+            
+            <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+                <tr style="background: rgba(74, 144, 226, 0.2);">
+                    <th style="padding: 10px; text-align: left; border: 1px solid #4a90e2;">When Inventory Error:</th>
+                    <th style="padding: 10px; text-align: center; border: 1px solid #4a90e2;">COGS Is:</th>
+                    <th style="padding: 10px; text-align: center; border: 1px solid #4a90e2;">Net Income Is:</th>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #4a90e2;">Understates beginning inventory</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Understated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Overstated</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #4a90e2;">Overstates beginning inventory</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Overstated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Understated</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #4a90e2;">Understates ending inventory</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Overstated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Understated</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #4a90e2;">Overstates ending inventory</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Understated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Overstated</td>
+                </tr>
+            </table>
+            
+            <h3>5.3 Two-Period Effect</h3>
+            <p><span class="highlight">Key Principle:</span> An error in ending inventory of the current period will have a <strong>reverse effect</strong> on net income of the next accounting period.</p>
+            
+            <div class="example">
+                <strong>📊 Example - Two-Year Impact:</strong><br>
+                Assume ending inventory is <strong>understated by €3,000</strong> in 2016:
+                
+                <p><strong>2016 Effects:</strong></p>
+                <ul>
+                    <li>Ending Inventory: Understated by €3,000</li>
+                    <li>Cost of Goods Sold: Overstated by €3,000</li>
+                    <li>Net Income: <span class="highlight">Understated by €3,000</span></li>
+                </ul>
+                
+                <p><strong>2017 Effects (because 2016 ending = 2017 beginning):</strong></p>
+                <ul>
+                    <li>Beginning Inventory: Understated by €3,000</li>
+                    <li>Cost of Goods Sold: Understated by €3,000</li>
+                    <li>Net Income: <span class="highlight">Overstated by €3,000</span></li>
+                </ul>
+                
+                <p><strong>Combined Effect:</strong></p>
+                <ul>
+                    <li>Over the two years, total net income is <strong>correct</strong> because the errors offset each other</li>
+                </ul>
+            </div>
+            
+            <h3>5.4 Statement of Financial Position Effects</h3>
+            
+            <div class="formula">
+                <strong>Basic Accounting Equation:</strong><br>
+                Assets = Liabilities + Equity
+            </div>
+            
+            <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+                <tr style="background: rgba(74, 144, 226, 0.2);">
+                    <th style="padding: 10px; text-align: left; border: 1px solid #4a90e2;">Ending Inventory Error</th>
+                    <th style="padding: 10px; text-align: center; border: 1px solid #4a90e2;">Assets</th>
+                    <th style="padding: 10px; text-align: center; border: 1px solid #4a90e2;">Liabilities</th>
+                    <th style="padding: 10px; text-align: center; border: 1px solid #4a90e2;">Equity</th>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #4a90e2;">Overstated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Overstated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">No effect</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Overstated</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #4a90e2;">Understated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Understated</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">No effect</td>
+                    <td style="padding: 8px; text-align: center; border: 1px solid #4a90e2;">Understated</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- LEARNING OBJECTIVE 6 -->
+        <div id="lo6" class="section">
+            <h2>Learning Objective 6: Statement Presentation and Analysis</h2>
+            
+            <h3>6.1 Presentation</h3>
+            
+            <h4>Statement of Financial Position</h4>
+            <ul>
+                <li>Inventory is classified as a <strong>current asset</strong></li>
+            </ul>
+            
+            <h4>Income Statement</h4>
+            <ul>
+                <li>Cost of goods sold is subtracted from sales</li>
+            </ul>
+            
+            <h4>Required Disclosures</h4>
+            <ol>
+                <li><strong>Major inventory classifications</strong> (raw materials, work in process, finished goods)</li>
+                <li><strong>Basis of accounting</strong> (cost or LCNRV)</li>
+                <li><strong>Costing method</strong> (specific identification, FIFO, or average-cost)</li>
+            </ol>
+            
+            <h3>6.2 Analysis - Inventory Management</h3>
+            <p>Inventory management is a <span class="highlight">double-edged sword</span>:</p>
+            
+            <h4>High Inventory Levels</h4>
+            <ul>
+                <li><strong>Disadvantage:</strong> High carrying costs
+                    <ul>
+                        <li>Investment costs</li>
+                        <li>Storage costs</li>
+                        <li>Insurance costs</li>
+                        <li>Obsolescence risk</li>
+                        <li>Damage risk</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h4>Low Inventory Levels</h4>
+            <ul>
+                <li><strong>Disadvantage:</strong> May lead to:
+                    <ul>
+                        <li>Stock-outs</li>
+                        <li>Lost sales</li>
+                        <li>Customer dissatisfaction</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>6.3 Inventory Turnover</h3>
+            
+            <div class="formula">
+                <strong>Inventory Turnover Formula:</strong><br><br>
+                Inventory Turnover = Cost of Goods Sold ÷ Average Inventory<br><br>
+                Where: Average Inventory = (Beginning Inventory + Ending Inventory) ÷ 2
+            </div>
+            
+            <p><strong>Interpretation:</strong> Measures the number of times on average the inventory is sold during the period.</p>
+            
+            <h3>6.4 Days in Inventory</h3>
+            
+            <div class="formula">
+                <strong>Days in Inventory Formula:</strong><br><br>
+                Days in Inventory = 365 Days ÷ Inventory Turnover
+            </div>
+            
+            <p><strong>Interpretation:</strong> Measures the average number of days inventory is held.</p>
+            
+            <div class="example">
+                <strong>📊 Example - Esprit Holdings:</strong><br>
+                <ul>
+                    <li>Beginning Inventory: HK$3,209 million</li>
+                    <li>Ending Inventory: HK$3,254 million</li>
+                    <li>Cost of Goods Sold: HK$12,071 million</li>
+                </ul>
+                
+                <p><strong>Step 1 - Calculate Average Inventory:</strong></p>
+                <ul>
+                    <li>Average Inventory = (HK$3,209 + HK$3,254) ÷ 2 = HK$3,231.5 million</li>
+                </ul>
+                
+                <p><strong>Step 2 - Calculate Inventory Turnover:</strong></p>
+                <ul>
+                    <li>Inventory Turnover = HK$12,071 ÷ HK$3,231.5 = <strong>3.7 times</strong></li>
+                </ul>
+                
+                <p><strong>Step 3 - Calculate Days in Inventory:</strong></p>
+                <ul>
+                    <li>Days in Inventory = 365 ÷ 3.7 = <strong>99 days</strong></li>
+                </ul>
+                
+                <p><strong>Interpretation:</strong> Esprit Holdings sells its entire inventory approximately 3.7 times per year, or it takes about 99 days to sell its inventory.</p>
+            </div>
+            
+            <div class="note">
+                <strong>💡 Analysis Tips:</strong>
+                <ul>
+                    <li><strong>Higher turnover</strong> generally indicates efficient inventory management</li>
+                    <li><strong>Lower days in inventory</strong> means faster-moving inventory</li>
+                    <li>Compare ratios to:
+                        <ul>
+                            <li>Industry averages</li>
+                            <li>Competitors</li>
+                            <li>Company's historical trends</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- QUIZ SECTION -->
+        <div id="quiz" class="quiz-container">
+            <h2 style="color: #4a90e2; text-align: center; margin-bottom: 30px;">🧠 Interactive Multiple Choice Quiz</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Test your knowledge with 25 questions covering all learning objectives!</p>
+            
+            <!-- Question 1 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 1:</strong> Which of the following is NOT a classification of inventory for a manufacturing company?</p>
+                <ul class="options">
+                    <li data-answer="a">a) Raw materials</li>
+                    <li data-answer="b">b) Merchandise inventory</li>
+                    <li data-answer="c">c) Work in process</li>
+                    <li data-answer="d">d) Finished goods</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) Merchandise inventory</strong><br>
+                    Explanation: Merchandise inventory is used by merchandising companies. Manufacturing companies use three classifications: raw materials, work in process, and finished goods.
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="question" data-correct="d">
+                <p class="question-text"><strong>Question 2:</strong> Under a perpetual inventory system, a physical inventory count is taken to:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Determine the cost of goods sold for the period</li>
+                    <li data-answer="b">b) Calculate the ending inventory balance</li>
+                    <li data-answer="c">c) Verify that purchases were recorded correctly</li>
+                    <li data-answer="d">d) Check the accuracy of inventory records and determine losses</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: d) Check the accuracy of inventory records and determine losses</strong><br>
+                    Explanation: In a perpetual system, physical counts verify the accuracy of records and identify inventory lost to theft, damage, or waste.
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="question" data-correct="d">
+                <p class="question-text"><strong>Question 3:</strong> Goods in transit should be included in the inventory of the buyer when the terms of sale are:</p>
+                <ul class="options">
+                    <li data-answer="a">a) FOB destination</li>
+                    <li data-answer="b">b) Consignment basis</li>
+                    <li data-answer="c">c) When goods reach the buyer's warehouse</li>
+                    <li data-answer="d">d) FOB shipping point</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: d) FOB shipping point</strong><br>
+                    Explanation: Under FOB shipping point, ownership transfers to the buyer when the carrier accepts the goods, so the buyer includes them in inventory while in transit.
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 4:</strong> Which party includes consigned goods in their inventory?</p>
+                <ul class="options">
+                    <li data-answer="a">a) The consignee who holds the goods</li>
+                    <li data-answer="b">b) The consignor who owns the goods</li>
+                    <li data-answer="c">c) Both the consignor and consignee</li>
+                    <li data-answer="d">d) Neither party until the goods are sold</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) The consignor who owns the goods</strong><br>
+                    Explanation: The consignor retains ownership and includes consigned goods in inventory. The consignee only holds them for sale.
+                </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="question" data-correct="c">
+                <p class="question-text"><strong>Question 5:</strong> Inventory cost includes all of the following EXCEPT:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Purchase price of the goods</li>
+                    <li data-answer="b">b) Freight costs to acquire the goods</li>
+                    <li data-answer="c">c) Selling costs to market the goods</li>
+                    <li data-answer="d">d) Costs to place goods in condition ready for sale</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: c) Selling costs to market the goods</strong><br>
+                    Explanation: Inventory cost includes all expenditures to acquire and prepare goods for sale, but NOT selling costs which are period expenses.
+                </div>
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="question" data-correct="a">
+                <p class="question-text"><strong>Question 6:</strong> Which inventory costing method tracks the actual physical flow of goods?</p>
+                <ul class="options">
+                    <li data-answer="a">a) Specific identification</li>
+                    <li data-answer="b">b) FIFO (First-In, First-Out)</li>
+                    <li data-answer="c">c) Average-cost</li>
+                    <li data-answer="d">d) All methods track physical flow</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: a) Specific identification</strong><br>
+                    Explanation: Specific identification is the only method that tracks actual physical units. FIFO and average-cost are cost flow assumptions.
+                </div>
+            </div>
+            
+            <!-- Question 7 -->
+            <div class="question" data-correct="c">
+                <p class="question-text"><strong>Question 7:</strong> Under FIFO, ending inventory consists of:</p>
+                <ul class="options">
+                    <li data-answer="a">a) The oldest costs</li>
+                    <li data-answer="b">b) An average of all costs</li>
+                    <li data-answer="c">c) The most recent costs</li>
+                    <li data-answer="d">d) The lowest costs available</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: c) The most recent costs</strong><br>
+                    Explanation: FIFO assumes oldest costs go to COGS first, leaving the most recent (newest) costs in ending inventory. This is the LISH (Last In Still Here) concept.
+                </div>
+            </div>
+            
+            <!-- Question 8 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 8:</strong> During periods of rising prices, which method will result in the highest net income?</p>
+                <ul class="options">
+                    <li data-answer="a">a) Average-cost</li>
+                    <li data-answer="b">b) FIFO</li>
+                    <li data-answer="c">c) Specific identification</li>
+                    <li data-answer="d">d) All methods produce the same net income</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) FIFO</strong><br>
+                    Explanation: FIFO assigns oldest (lowest) costs to COGS, resulting in lower COGS and higher net income during inflation.
+                </div>
+            </div>
+            
+            <!-- Question 9 -->
+            <div class="question" data-correct="c">
+                <p class="question-text"><strong>Question 9:</strong> The weighted-average unit cost is calculated by dividing:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Total units available by cost of goods sold</li>
+                    <li data-answer="b">b) Ending inventory by total units sold</li>
+                    <li data-answer="c">c) Cost of goods available for sale by total units available</li>
+                    <li data-answer="d">d) Beginning inventory by purchases during the period</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: c) Cost of goods available for sale by total units available</strong><br>
+                    Explanation: Weighted-average unit cost = Total cost of goods available ÷ Total units available for sale.
+                </div>
+            </div>
+            
+            <!-- Question 10 -->
+            <div class="question" data-correct="a">
+                <p class="question-text"><strong>Question 10:</strong> Which inventory method is NOT allowed under IFRS?</p>
+                <ul class="options">
+                    <li data-answer="a">a) LIFO (Last-In, First-Out)</li>
+                    <li data-answer="b">b) FIFO (First-In, First-Out)</li>
+                    <li data-answer="c">c) Average-cost</li>
+                    <li data-answer="d">d) Specific identification</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: a) LIFO (Last-In, First-Out)</strong><br>
+                    Explanation: IFRS does not permit LIFO. Only FIFO, average-cost, and specific identification are allowed under IFRS.
+                </div>
+            </div>
+            
+            <!-- Question 11 -->
+            <div class="question" data-correct="d">
+                <p class="question-text"><strong>Question 11:</strong> During periods of rising prices, which method results in the lowest income taxes?</p>
+                <ul class="options">
+                    <li data-answer="a">a) FIFO</li>
+                    <li data-answer="b">b) Specific identification</li>
+                    <li data-answer="c">c) All methods result in the same taxes</li>
+                    <li data-answer="d">d) Average-cost</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: d) Average-cost</strong><br>
+                    Explanation: Average-cost results in higher COGS and lower net income during inflation, which means lower income taxes.
+                </div>
+            </div>
+            
+            <!-- Question 12 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 12:</strong> Net realizable value is:</p>
+                <ul class="options">
+                    <li data-answer="a">a) The original cost of inventory</li>
+                    <li data-answer="b">b) The amount expected to be received from selling inventory</li>
+                    <li data-answer="c">c) The replacement cost of inventory</li>
+                    <li data-answer="d">d) The average of cost and selling price</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) The amount expected to be received from selling inventory</strong><br>
+                    Explanation: NRV is the estimated selling price in the ordinary course of business, representing what the company expects to realize from the sale.
+                </div>
+            </div>
+            
+            <!-- Question 13 -->
+            <div class="question" data-correct="c">
+                <p class="question-text"><strong>Question 13:</strong> When applying LCNRV, if the net realizable value is less than cost, the inventory should be written down to:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Zero</li>
+                    <li data-answer="b">b) Original cost</li>
+                    <li data-answer="c">c) Net realizable value</li>
+                    <li data-answer="d">d) The average of cost and NRV</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: c) Net realizable value</strong><br>
+                    Explanation: Under LCNRV, when NRV < Cost, inventory is written down to the lower amount (NRV).
+                </div>
+            </div>
+            
+            <!-- Question 14 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 14:</strong> If ending inventory is understated, then:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Cost of goods sold is understated and net income is overstated</li>
+                    <li data-answer="b">b) Cost of goods sold is overstated and net income is understated</li>
+                    <li data-answer="c">c) Both COGS and net income are understated</li>
+                    <li data-answer="d">d) Both COGS and net income are overstated</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) Cost of goods sold is overstated and net income is understated</strong><br>
+                    Explanation: Lower ending inventory → Higher COGS → Lower net income (inverse relationship).
+                </div>
+            </div>
+            
+            <!-- Question 15 -->
+            <div class="question" data-correct="a">
+                <p class="question-text"><strong>Question 15:</strong> An error in ending inventory in Year 1 will:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Have a reverse effect on Year 2 net income</li>
+                    <li data-answer="b">b) Not affect Year 2 at all</li>
+                    <li data-answer="c">c) Have the same effect on Year 2 net income</li>
+                    <li data-answer="d">d) Only affect the statement of financial position</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: a) Have a reverse effect on Year 2 net income</strong><br>
+                    Explanation: Year 1 ending inventory becomes Year 2 beginning inventory, causing an opposite effect on Year 2 net income.
+                </div>
+            </div>
+            
+            <!-- Question 16 -->
+            <div class="question" data-correct="d">
+                <p class="question-text"><strong>Question 16:</strong> Inventory turnover is calculated by dividing:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Sales by average inventory</li>
+                    <li data-answer="b">b) Average inventory by cost of goods sold</li>
+                    <li data-answer="c">c) Ending inventory by beginning inventory</li>
+                    <li data-answer="d">d) Cost of goods sold by average inventory</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: d) Cost of goods sold by average inventory</strong><br>
+                    Explanation: Inventory Turnover = Cost of Goods Sold ÷ Average Inventory.
+                </div>
+            </div>
+            
+            <!-- Question 17 -->
+            <div class="question" data-correct="c">
+                <p class="question-text"><strong>Question 17:</strong> Days in inventory measures:</p>
+                <ul class="options">
+                    <li data-answer="a">a) How many days it takes to purchase inventory</li>
+                    <li data-answer="b">b) The number of days in the accounting period</li>
+                    <li data-answer="c">c) The average number of days inventory is held</li>
+                    <li data-answer="d">d) How long it takes to pay for inventory</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: c) The average number of days inventory is held</strong><br>
+                    Explanation: Days in Inventory = 365 ÷ Inventory Turnover, showing how long inventory sits before being sold.
+                </div>
+            </div>
+            
+            <!-- Question 18 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 18:</strong> A higher inventory turnover ratio generally indicates:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Poor inventory management</li>
+                    <li data-answer="b">b) Efficient inventory management</li>
+                    <li data-answer="c">c) Excessive inventory levels</li>
+                    <li data-answer="d">d) Inventory obsolescence</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) Efficient inventory management</strong><br>
+                    Explanation: Higher turnover means inventory is selling faster, indicating efficient management and less capital tied up in inventory.
+                </div>
+            </div>
+            
+            <!-- Question 19 -->
+            <div class="question" data-correct="a">
+                <p class="question-text"><strong>Question 19:</strong> Which of the following is a disadvantage of high inventory levels?</p>
+                <ul class="options">
+                    <li data-answer="a">a) High carrying costs including storage and insurance</li>
+                    <li data-answer="b">b) Increased risk of stock-outs</li>
+                    <li data-answer="c">c) Lost sales opportunities</li>
+                    <li data-answer="d">d) Customer dissatisfaction</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: a) High carrying costs including storage and insurance</strong><br>
+                    Explanation: High inventory levels increase costs for storage, insurance, and risk of obsolescence. Options b, c, and d are disadvantages of LOW inventory.
+                </div>
+            </div>
+            
+            <!-- Question 20 -->
+            <div class="question" data-correct="c">
+                <p class="question-text"><strong>Question 20:</strong> Under FIFO during inflation, ending inventory on the statement of financial position:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Is understated compared to current cost</li>
+                    <li data-answer="b">b) Equals the average cost of all purchases</li>
+                    <li data-answer="c">c) Approximates current cost</li>
+                    <li data-answer="d">d) Is always lower than under average-cost</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: c) Approximates current cost</strong><br>
+                    Explanation: FIFO assigns the most recent (and highest during inflation) costs to ending inventory, making it closer to current replacement cost.
+                </div>
+            </div>
+            
+            <!-- Question 21 -->
+            <div class="question" data-correct="d">
+                <p class="question-text"><strong>Question 21:</strong> Companies must disclose all of the following about inventory EXCEPT:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Major inventory classifications</li>
+                    <li data-answer="b">b) Basis of accounting (cost or LCNRV)</li>
+                    <li data-answer="c">c) Costing method used</li>
+                    <li data-answer="d">d) Names of suppliers</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: d) Names of suppliers</strong><br>
+                    Explanation: Required disclosures include classifications, basis of accounting, and costing method. Supplier names are not required.
+                </div>
+            </div>
+            
+            <!-- Question 22 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 22:</strong> If beginning inventory is overstated, then:</p>
+                <ul class="options">
+                    <li data-answer="a">a) Net income is overstated</li>
+                    <li data-answer="b">b) Net income is understated</li>
+                    <li data-answer="c">c) Assets are understated</li>
+                    <li data-answer="d">d) There is no effect on net income</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) Net income is understated</strong><br>
+                    Explanation: Overstated beginning inventory → Overstated COGS → Understated net income.
+                </div>
+            </div>
+            
+            <!-- Question 23 -->
+            <div class="question" data-correct="a">
+                <p class="question-text"><strong>Question 23:</strong> The specific identification method is most appropriate for:</p>
+                <ul class="options">
+                    <li data-answer="a">a) High-value, low-volume items like jewelry or automobiles</li>
+                    <li data-answer="b">b) Large quantities of identical low-cost items</li>
+                    <li data-answer="c">c) Perishable goods with short shelf lives</li>
+                    <li data-answer="d">d) All types of inventory equally</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: a) High-value, low-volume items like jewelry or automobiles</strong><br>
+                    Explanation: Specific identification is practical only for items that can be individually tracked, typically high-value, unique items.
+                </div>
+            </div>
+            
+            <!-- Question 24 -->
+            <div class="question" data-correct="c">
+                <p class="question-text"><strong>Question 24:</strong> Consistency in using inventory costing methods is important because:</p>
+                <ul class="options">
+                    <li data-answer="a">a) It is required by law in all countries</li>
+                    <li data-answer="b">b) It prevents companies from ever changing methods</li>
+                    <li data-answer="c">c) It enhances comparability of financial statements over time</li>
+                    <li data-answer="d">d) All methods produce identical results when used consistently</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: c) It enhances comparability of financial statements over time</strong><br>
+                    Explanation: Consistency allows users to compare financial statements across periods. Companies can change methods but must disclose and justify the change.
+                </div>
+            </div>
+            
+            <!-- Question 25 -->
+            <div class="question" data-correct="b">
+                <p class="question-text"><strong>Question 25:</strong> If ending inventory is overstated in Year 1, what is the effect on total net income over a two-year period (Year 1 and Year 2 combined)?</p>
+                <ul class="options">
+                    <li data-answer="a">a) Total net income is overstated</li>
+                    <li data-answer="b">b) Total net income is correct (no effect)</li>
+                    <li data-answer="c">c) Total net income is understated</li>
+                    <li data-answer="d">d) The effect depends on the inventory method used</li>
+                </ul>
+                <div class="answer-explanation">
+                    <strong>✓ Correct Answer: b) Total net income is correct (no effect)</strong><br>
+                    Explanation: Inventory errors self-correct over two periods. Year 1 overstatement is offset by Year 2 understatement, making total net income correct.
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="submitQuiz()" style="font-size: 1.2em; padding: 15px 40px;">Submit Quiz</button>
+                <button onclick="resetQuiz()" style="background: #666;">Reset Quiz</button>
+            </div>
+            
+            <div class="score-display" id="scoreDisplay"></div>
+        </div>
+        
+        <!-- CASE STUDY QUESTIONS -->
+        <div class="quiz-container" style="margin-top: 30px;">
+            <h2 style="color: #4a90e2; text-align: center; margin-bottom: 30px;">📊 Case Study Questions</h2>
+            
+            <!-- Case Study 1 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Case Study 1: Inventory Costing Methods</h3>
+                <p><strong>Scenario:</strong> TechMart Electronics had the following inventory transactions for Model X laptops during March:</p>
+                <ul>
+                    <li>March 1: Beginning inventory - 50 units @ $800 each</li>
+                    <li>March 10: Purchased 100 units @ $850 each</li>
+                    <li>March 20: Purchased 150 units @ $900 each</li>
+                    <li>March 25: Sold 220 units @ $1,200 each</li>
+                </ul>
+                <p><strong>Question:</strong> Calculate the ending inventory and cost of goods sold under both FIFO and Average-Cost methods. Which method would result in higher net income and why?</p>
+                <button onclick="toggleAnswer('case1')" style="margin-top: 15px;">Show Answer</button>
+                <div id="case1" class="answer-explanation" style="display: none;">
+                    <strong>Solution:</strong><br><br>
+                    
+                    <strong>FIFO Method:</strong><br>
+                    Total units available: 50 + 100 + 150 = 300 units<br>
+                    Units sold: 220 units<br>
+                    Ending inventory: 80 units<br><br>
+                    
+                    <strong>Ending Inventory (80 units from most recent):</strong><br>
+                    80 units @ $900 = $72,000<br><br>
+                    
+                    <strong>Cost of Goods Sold:</strong><br>
+                    50 units @ $800 = $40,000<br>
+                    100 units @ $850 = $85,000<br>
+                    70 units @ $900 = $63,000<br>
+                    Total COGS = $188,000<br><br>
+                    
+                    <strong>Average-Cost Method:</strong><br>
+                    Total cost: (50 × $800) + (100 × $850) + (150 × $900) = $260,000<br>
+                    Weighted-average cost: $260,000 ÷ 300 = $866.67 per unit<br><br>
+                    
+                    <strong>Ending Inventory:</strong> 80 × $866.67 = $69,334<br>
+                    <strong>Cost of Goods Sold:</strong> 220 × $866.67 = $190,667<br><br>
+                    
+                    <strong>Conclusion:</strong> FIFO results in higher net income ($264,000 - $188,000 = $76,000 gross profit) compared to Average-Cost ($264,000 - $190,667 = $73,333 gross profit) because FIFO assigns older, lower costs to COGS during this period of rising prices.
+                </div>
+            </div>
+            
+            <!-- Case Study 2 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Case Study 2: Goods in Transit</h3>
+                <p><strong>Scenario:</strong> Global Imports is preparing its year-end financial statements for December 31, 2023. The company's physical inventory count shows $450,000 in the warehouse. The following additional information is available:</p>
+                <ul>
+                    <li>Goods costing $25,000 were shipped FOB shipping point on December 29 and are in transit. They will arrive January 3.</li>
+                    <li>Goods costing $18,000 were shipped to a customer FOB destination on December 30 and are in transit.</li>
+                    <li>Goods costing $12,000 are held on consignment from Supplier A.</li>
+                    <li>Goods costing $8,000 owned by Global Imports are on consignment with Retailer B.</li>
+                </ul>
+                <p><strong>Question:</strong> What amount should Global Imports report as inventory on December 31, 2023?</p>
+                <button onclick="toggleAnswer('case2')" style="margin-top: 15px;">Show Answer</button>
+                <div id="case2" class="answer-explanation" style="display: none;">
+                    <strong>Solution:</strong><br><br>
+                    
+                    Physical count: $450,000<br><br>
+                    
+                    <strong>Adjustments:</strong><br>
+                    1. FOB shipping point purchase (+$25,000): Ownership transferred when shipped, so Global Imports owns these goods<br>
+                    2. FOB destination sale (+$18,000): Ownership remains with Global Imports until goods reach customer<br>
+                    3. Consigned goods from Supplier A (-$12,000): Global Imports doesn't own these, should not be in inventory<br>
+                    4. Goods on consignment with Retailer B (+$8,000): Global Imports still owns these<br><br>
+                    
+                    <strong>Calculation:</strong><br>
+                    $450,000 + $25,000 + $18,000 - $12,000 + $8,000 = <strong>$489,000</strong><br><br>
+                    
+                    <strong>Correct Inventory Amount: $489,000</strong>
+                </div>
+            </div>
+            
+            <!-- Case Study 3 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Case Study 3: Lower-of-Cost-or-Net Realizable Value</h3>
+                <p><strong>Scenario:</strong> Fashion Boutique has the following inventory at year-end:</p>
+                <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: rgba(74, 144, 226, 0.2);">
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">Product</th>
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">Units</th>
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">Cost/Unit</th>
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">NRV/Unit</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Dresses</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">200</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$75</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$85</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Shoes</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">150</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$60</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$50</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Handbags</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">100</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$120</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$110</td>
+                    </tr>
+                </table>
+                <p><strong>Question:</strong> Calculate the total inventory value using LCNRV. What is the total write-down amount?</p>
+                <button onclick="toggleAnswer('case3')" style="margin-top: 15px;">Show Answer</button>
+                <div id="case3" class="answer-explanation" style="display: none;">
+                    <strong>Solution:</strong><br><br>
+                    
+                    <strong>Dresses:</strong> Cost ($75) < NRV ($85) → Use $75 × 200 = $15,000<br>
+                    <strong>Shoes:</strong> NRV ($50) < Cost ($60) → Use $50 × 150 = $7,500<br>
+                    <strong>Handbags:</strong> NRV ($110) < Cost ($120) → Use $110 × 100 = $11,000<br><br>
+                    
+                    <strong>Total Inventory Value (LCNRV): $33,500</strong><br><br>
+                    
+                    <strong>Write-down Calculation:</strong><br>
+                    Original cost: (200 × $75) + (150 × $60) + (100 × $120) = $36,000<br>
+                    LCNRV value: $33,500<br>
+                    <strong>Total Write-down: $2,500</strong><br><br>
+                    
+                    This write-down consists of:<br>
+                    - Shoes: (150 × $10) = $1,500<br>
+                    - Handbags: (100 × $10) = $1,000
+                </div>
+            </div>
+            
+            <!-- Case Study 4 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Case Study 4: Inventory Errors</h3>
+                <p><strong>Scenario:</strong> Precision Manufacturing discovered that its December 31, 2022 ending inventory was overstated by $45,000 due to a counting error. The company had reported the following for 2022 and 2023:</p>
+                <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: rgba(74, 144, 226, 0.2);">
+                        <th style="padding: 8px; border: 1px solid #4a90e2;"></th>
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">2022 (Reported)</th>
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">2023 (Reported)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Sales</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$500,000</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$550,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Cost of Goods Sold</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$300,000</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$330,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Gross Profit</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$200,000</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$220,000</td>
+                    </tr>
+                </table>
+                <p><strong>Question:</strong> Calculate the corrected gross profit for both 2022 and 2023. What is the combined effect on total gross profit over the two years?</p>
+                <button onclick="toggleAnswer('case4')" style="margin-top: 15px;">Show Answer</button>
+                <div id="case4" class="answer-explanation" style="display: none;">
+                    <strong>Solution:</strong><br><br>
+                    
+                    <strong>2022 Analysis:</strong><br>
+                    Ending inventory overstated by $45,000<br>
+                    → COGS understated by $45,000<br>
+                    → Gross profit overstated by $45,000<br><br>
+                    
+                    Corrected 2022 COGS: $300,000 + $45,000 = $345,000<br>
+                    <strong>Corrected 2022 Gross Profit: $500,000 - $345,000 = $155,000</strong><br><br>
+                    
+                    <strong>2023 Analysis:</strong><br>
+                    Beginning inventory (2022 ending) overstated by $45,000<br>
+                    → COGS overstated by $45,000<br>
+                    → Gross profit understated by $45,000<br><br>
+                    
+                    Corrected 2023 COGS: $330,000 - $45,000 = $285,000<br>
+                    <strong>Corrected 2023 Gross Profit: $550,000 - $285,000 = $265,000</strong><br><br>
+                    
+                    <strong>Combined Effect:</strong><br>
+                    Reported total: $200,000 + $220,000 = $420,000<br>
+                    Corrected total: $155,000 + $265,000 = $420,000<br>
+                    <strong>Difference: $0 (errors offset over two years)</strong>
+                </div>
+            </div>
+            
+            <!-- Case Study 5 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Case Study 5: Inventory Analysis</h3>
+                <p><strong>Scenario:</strong> RetailCo and CompetitorX are both in the electronics retail industry. Their inventory information for 2023 is as follows:</p>
+                <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: rgba(74, 144, 226, 0.2);">
+                        <th style="padding: 8px; border: 1px solid #4a90e2;"></th>
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">RetailCo</th>
+                        <th style="padding: 8px; border: 1px solid #4a90e2;">CompetitorX</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Beginning Inventory</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$180,000</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$250,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Ending Inventory</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$220,000</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$290,000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">Cost of Goods Sold</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$1,600,000</td>
+                        <td style="padding: 8px; border: 1px solid #4a90e2;">$1,890,000</td>
+                    </tr>
+                </table>
+                <p><strong>Question:</strong> Calculate inventory turnover and days in inventory for both companies. Which company manages its inventory more efficiently and why?</p>
+                <button onclick="toggleAnswer('case5')" style="margin-top: 15px;">Show Answer</button>
+                <div id="case5" class="answer-explanation" style="display: none;">
+                    <strong>Solution:</strong><br><br>
+                    
+                    <strong>RetailCo:</strong><br>
+                    Average Inventory = ($180,000 + $220,000) ÷ 2 = $200,000<br>
+                    Inventory Turnover = $1,600,000 ÷ $200,000 = <strong>8.0 times</strong><br>
+                    Days in Inventory = 365 ÷ 8.0 = <strong>45.6 days</strong><br><br>
+                    
+                    <strong>CompetitorX:</strong><br>
+                    Average Inventory = ($250,000 + $290,000) ÷ 2 = $270,000<br>
+                    Inventory Turnover = $1,890,000 ÷ $270,000 = <strong>7.0 times</strong><br>
+                    Days in Inventory = 365 ÷ 7.0 = <strong>52.1 days</strong><br><br>
+                    
+                    <strong>Analysis:</strong><br>
+                    RetailCo manages inventory more efficiently because:<br>
+                    1. Higher turnover (8.0 vs 7.0) means inventory sells faster<br>
+                    2. Lower days in inventory (45.6 vs 52.1) means less capital tied up<br>
+                    3. RetailCo holds inventory about 6.5 days less than CompetitorX<br>
+                    4. This suggests better inventory management, lower carrying costs, and fresher merchandise
+                </div>
+            </div>
+        </div>
+        
+        <!-- ESSAY QUESTIONS -->
+        <div id="essay" class="quiz-container" style="margin-top: 30px;">
+            <h2 style="color: #4a90e2; text-align: center; margin-bottom: 30px;">📝 Essay Questions</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Answer the following questions in essay format. Consider all aspects of the topic and provide detailed explanations with examples.</p>
+            
+            <!-- Essay 1 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Essay Question 1: Inventory Costing Methods Comparison</h3>
+                <p><strong>Question:</strong> Compare and contrast the FIFO and Average-Cost inventory methods. In your answer, discuss:</p>
+                <ul>
+                    <li>How each method calculates cost of goods sold and ending inventory</li>
+                    <li>The effects of each method on financial statements during periods of rising prices</li>
+                    <li>The advantages and disadvantages of each method</li>
+                    <li>Which method you would recommend for a company operating in an inflationary environment and why</li>
+                </ul>
+                <textarea id="essay1" placeholder="Type your answer here..."></textarea>
+                <button onclick="showEssayGuidelines('guide1')" style="margin-top: 10px;">Show Answer Guidelines</button>
+                <div id="guide1" class="answer-explanation" style="display: none;">
+                    <strong>Answer Guidelines:</strong><br><br>
+                    
+                    <strong>Your essay should include:</strong><br><br>
+                    
+                    <strong>1. FIFO Method Explanation:</strong><br>
+                    - First costs in are first costs out to COGS<br>
+                    - Ending inventory consists of most recent costs<br>
+                    - During inflation: Lower COGS, higher net income, higher taxes<br>
+                    - Ending inventory approximates current cost<br><br>
+                    
+                    <strong>2. Average-Cost Method Explanation:</strong><br>
+                    - Uses weighted-average of all costs<br>
+                    - Formula: Total cost ÷ Total units<br>
+                    - During inflation: Higher COGS, lower net income, lower taxes<br>
+                    - Smooths out price fluctuations<br><br>
+                    
+                    <strong>3. Advantages/Disadvantages:</strong><br>
+                    FIFO Advantages: Better matches physical flow, current balance sheet values<br>
+                    FIFO Disadvantages: Higher taxes during inflation, may not match current costs to revenues<br>
+                    Average-Cost Advantages: Tax savings during inflation, simpler to apply<br>
+                    Average-Cost Disadvantages: Ending inventory may be understated<br><br>
+                    
+                    <strong>4. Recommendation:</strong><br>
+                    Should consider: tax implications, financial reporting objectives, industry norms, and management's goals for financial statement presentation.
+                </div>
+            </div>
+            
+            <!-- Essay 2 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Essay Question 2: Inventory Errors and Their Impact</h3>
+                <p><strong>Question:</strong> Explain how inventory errors affect financial statements. In your answer:</p>
+                <ul>
+                    <li>Describe the relationship between inventory, cost of goods sold, and net income</li>
+                    <li>Explain why inventory errors affect two accounting periods</li>
+                    <li>Discuss the impact on both the income statement and statement of financial position</li>
+                    <li>Provide a specific example showing how an overstatement of ending inventory affects financial statements over two years</li>
+                </ul>
+                <textarea id="essay2" placeholder="Type your answer here..."></textarea>
+                <button onclick="showEssayGuidelines('guide2')" style="margin-top: 10px;">Show Answer Guidelines</button>
+                <div id="guide2" class="answer-explanation" style="display: none;">
+                    <strong>Answer Guidelines:</strong><br><br>
+                    
+                    <strong>Your essay should include:</strong><br><br>
+                    
+                    <strong>1. Basic Relationship:</strong><br>
+                    - Formula: Beginning Inventory + Purchases - Ending Inventory = COGS<br>
+                    - COGS affects net income directly<br>
+                    - Inverse relationship: Higher COGS = Lower Net Income<br><br>
+                    
+                    <strong>2. Two-Period Effect:</strong><br>
+                    - Current period's ending inventory = Next period's beginning inventory<br>
+                    - Error in ending inventory affects current period one way<br>
+                    - Same error affects next period in opposite way<br>
+                    - Errors self-correct over two periods<br><br>
+                    
+                    <strong>3. Financial Statement Impact:</strong><br>
+                    Income Statement: Affects COGS and net income<br>
+                    Statement of Financial Position: Affects assets (inventory) and equity (retained earnings)<br>
+                    Liabilities are not affected<br><br>
+                    
+                    <strong>4. Example (Overstatement):</strong><br>
+                    Year 1: Ending inventory overstated → COGS understated → Net income overstated → Assets overstated → Equity overstated<br>
+                    Year 2: Beginning inventory overstated → COGS overstated → Net income understated<br>
+                    Combined: Total net income over two years is correct
+                </div>
+            </div>
+            
+            <!-- Essay 3 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Essay Question 3: Lower-of-Cost-or-Net Realizable Value</h3>
+                <p><strong>Question:</strong> Discuss the lower-of-cost-or-net realizable value (LCNRV) rule for inventory valuation. In your answer:</p>
+                <ul>
+                    <li>Explain what net realizable value means</li>
+                    <li>Describe why the LCNRV rule is necessary and what accounting principle it supports</li>
+                    <li>Explain how to apply the LCNRV rule</li>
+                    <li>Discuss the financial statement effects of writing down inventory to NRV</li>
+                </ul>
+                <textarea id="essay3" placeholder="Type your answer here..."></textarea>
+                <button onclick="showEssayGuidelines('guide3')" style="margin-top: 10px;">Show Answer Guidelines</button>
+                <div id="guide3" class="answer-explanation" style="display: none;">
+                    <strong>Answer Guidelines:</strong><br><br>
+                    
+                    <strong>Your essay should include:</strong><br><br>
+                    
+                    <strong>1. Net Realizable Value Definition:</strong><br>
+                    - Amount company expects to receive from selling inventory<br>
+                    - Estimated selling price in ordinary course of business<br>
+                    - Represents realizable value, not replacement cost<br><br>
+                    
+                    <strong>2. Why LCNRV is Necessary:</strong><br>
+                    - Supports conservatism principle<br>
+                    - Prevents overstatement of assets<br>
+                    - Recognizes losses when they occur, not when inventory is sold<br>
+                    - Reflects economic reality when inventory value declines<br><br>
+                    
+                    <strong>3. Application:</strong><br>
+                    - Compare cost to NRV for each inventory item<br>
+                    - Use lower amount for valuation<br>
+                    - If NRV < Cost, write down to NRV<br>
+                    - If Cost < NRV, keep at cost<br><br>
+                    
+                    <strong>4. Financial Statement Effects:</strong><br>
+                    - Reduces inventory on statement of financial position<br>
+                    - Increases cost of goods sold (or creates loss)<br>
+                    - Decreases net income<br>
+                    - Decreases assets and equity<br>
+                    - Write-down is not reversed if value later increases
+                </div>
+            </div>
+            
+            <!-- Essay 4 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Essay Question 4: Inventory Management and Analysis</h3>
+                <p><strong>Question:</strong> Discuss the importance of effective inventory management. In your answer:</p>
+                <ul>
+                    <li>Explain the challenges of maintaining optimal inventory levels</li>
+                    <li>Describe the costs associated with high inventory levels versus low inventory levels</li>
+                    <li>Explain how inventory turnover and days in inventory ratios help assess inventory management</li>
+                    <li>Discuss what factors a company should consider when determining optimal inventory levels</li>
+                </ul>
+                <textarea id="essay4" placeholder="Type your answer here..."></textarea>
+                <button onclick="showEssayGuidelines('guide4')" style="margin-top: 10px;">Show Answer Guidelines</button>
+                <div id="guide4" class="answer-explanation" style="display: none;">
+                    <strong>Answer Guidelines:</strong><br><br>
+                    
+                    <strong>Your essay should include:</strong><br><br>
+                    
+                    <strong>1. Challenges:</strong><br>
+                    - Balancing customer demand with carrying costs<br>
+                    - Predicting future sales accurately<br>
+                    - Managing seasonal fluctuations<br>
+                    - Dealing with supplier lead times<br>
+                    - Risk of obsolescence<br><br>
+                    
+                    <strong>2. High Inventory Costs:</strong><br>
+                    - Storage and warehousing costs<br>
+                    - Insurance costs<br>
+                    - Opportunity cost of capital tied up<br>
+                    - Risk of obsolescence and damage<br>
+                    - Increased handling costs<br><br>
+                    
+                    <strong>3. Low Inventory Costs:</strong><br>
+                    - Stock-outs leading to lost sales<br>
+                    - Customer dissatisfaction<br>
+                    - Lost market share to competitors<br>
+                    - Production disruptions<br>
+                    - Emergency ordering at higher costs<br><br>
+                    
+                    <strong>4. Ratio Analysis:</strong><br>
+                    - Inventory Turnover = COGS ÷ Average Inventory<br>
+                    - Days in Inventory = 365 ÷ Inventory Turnover<br>
+                    - Higher turnover generally indicates efficiency<br>
+                    - Compare to industry benchmarks and trends<br><br>
+                    
+                    <strong>5. Factors to Consider:</strong><br>
+                    - Industry norms and product type<br>
+                    - Customer service level goals<br>
+                    - Supplier reliability and lead times<br>
+                    - Storage capacity and costs<br>
+                    - Product shelf life and obsolescence risk<br>
+                    - Seasonal demand patterns<br>
+                    - Just-in-time vs. traditional inventory systems
+                </div>
+            </div>
+            
+            <!-- Essay 5 -->
+            <div class="case-study">
+                <h3 style="color: #3f51b5;">Essay Question 5: FOB Terms and Inventory Ownership</h3>
+                <p><strong>Question:</strong> Explain the importance of FOB (Free on Board) terms in determining inventory ownership. In your answer:</p>
+                <ul>
+                    <li>Define FOB Shipping Point and FOB Destination</li>
+                    <li>Explain when ownership transfers under each term</li>
+                    <li>Discuss who pays freight costs under each term</li>
+                    <li>Explain why understanding FOB terms is critical for accurate financial reporting</li>
+                    <li>Provide examples of how incorrect treatment of goods in transit can affect financial statements</li>
+                </ul>
+                <textarea id="essay5" placeholder="Type your answer here..."></textarea>
+                <button onclick="showEssayGuidelines('guide5')" style="margin-top: 10px;">Show Answer Guidelines</button>
+                <div id="guide5" class="answer-explanation" style="display: none;">
+                    <strong>Answer Guidelines:</strong><br><br>
+                    
+                    <strong>Your essay should include:</strong><br><br>
+                    
+                    <strong>1. FOB Shipping Point:</strong><br>
+                    - Ownership transfers when carrier accepts goods from seller<br>
+                    - Buyer pays freight costs<br>
+                    - Buyer includes goods in inventory while in transit<br>
+                    - Buyer bears risk of loss during shipment<br><br>
+                    
+                    <strong>2. FOB Destination:</strong><br>
+                    - Ownership transfers when goods reach buyer<br>
+                    - Seller pays freight costs<br>
+                    - Seller includes goods in inventory while in transit<br>
+                    - Seller bears risk of loss during shipment<br><br>
+                    
+                    <strong>3. Importance for Financial Reporting:</strong><br>
+                    - Determines which company includes goods in inventory<br>
+                    - Affects accuracy of inventory counts<br>
+                    - Impacts cost of goods sold calculation<br>
+                    - Critical for year-end cutoff procedures<br>
+                    - Affects both buyer's and seller's financial statements<br><br>
+                    
+                    <strong>4. Examples of Incorrect Treatment:</strong><br>
+                    - Buyer fails to include FOB shipping point purchases in transit → Understated inventory and assets<br>
+                    - Seller fails to include FOB destination sales in transit → Understated inventory<br>
+                    - Double counting if both parties include same goods<br>
+                    - Neither party includes goods → Inventory "disappears" from financial statements<br><br>
+                    
+                    <strong>5. Best Practices:</strong><br>
+                    - Maintain detailed shipping records<br>
+                    - Review FOB terms on all purchase orders and sales invoices<br>
+                    - Perform careful year-end cutoff procedures<br>
+                    - Reconcile goods in transit at period end<br>
+                    - Communicate between purchasing and accounting departments
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz functionality
+        document.querySelectorAll('.options li').forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.closest('.question');
+                const options = question.querySelectorAll('.options li');
+                
+                // Remove previous selections
+                options.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selection to clicked option
+                this.classList.add('selected');
+            });
+        });
+
+        function submitQuiz() {
+            let score = 0;
+            const questions = document.querySelectorAll('.question');
+            
+            questions.forEach(question => {
+                const correctAnswer = question.dataset.correct;
+                const selectedOption = question.querySelector('.options li.selected');
+                const options = question.querySelectorAll('.options li');
+                
+                if (selectedOption) {
+                    const selectedAnswer = selectedOption.dataset.answer;
+                    
+                    if (selectedAnswer === correctAnswer) {
+                        selectedOption.classList.add('correct');
+                        score++;
+                    } else {
+                        selectedOption.classList.add('incorrect');
+                        // Show correct answer
+                        options.forEach(opt => {
+                            if (opt.dataset.answer === correctAnswer) {
+                                opt.classList.add('correct');
+                            }
+                        });
+                    }
+                    
+                    // Show explanation
+                    const explanation = question.querySelector('.answer-explanation');
+                    explanation.style.display = 'block';
+                }
+            });
+            
+            // Display score
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const percentage = ((score / questions.length) * 100).toFixed(1);
+            scoreDisplay.innerHTML = `
+                <h3>Quiz Complete!</h3>
+                <p>Your Score: ${score} out of ${questions.length} (${percentage}%)</p>
+                <p>${getScoreMessage(percentage)}</p>
+            `;
+            scoreDisplay.style.display = 'block';
+            
+            // Scroll to score
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function getScoreMessage(percentage) {
+            if (percentage >= 90) return "🌟 Excellent! You have mastered this chapter!";
+            if (percentage >= 80) return "👍 Great job! You have a strong understanding!";
+            if (percentage >= 70) return "✓ Good work! Review the areas you missed.";
+            if (percentage >= 60) return "📚 Fair. Consider reviewing the material again.";
+            return "📖 Keep studying! Review the study guide carefully.";
+        }
+
+        function resetQuiz() {
+            // Remove all selections and feedback
+            document.querySelectorAll('.options li').forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            // Hide all explanations
+            document.querySelectorAll('.answer-explanation').forEach(exp => {
+                exp.style.display = 'none';
+            });
+            
+            // Hide score display
+            document.getElementById('scoreDisplay').style.display = 'none';
+            
+            // Scroll to top of quiz
+            document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Case study answer toggle
+        function toggleAnswer(id) {
+            const answer = document.getElementById(id);
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+
+        // Essay guidelines toggle
+        function showEssayGuidelines(id) {
+            const guide = document.getElementById(id);
+            if (guide.style.display === 'none' || guide.style.display === '') {
+                guide.style.display = 'block';
+            } else {
+                guide.style.display = 'none';
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>

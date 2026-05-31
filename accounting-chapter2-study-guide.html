@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 The Recording Process - Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4a90e2;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #a8d0ff;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 20px;
+            background: rgba(74, 144, 226, 0.3);
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(74, 144, 226, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active {
+            background: #4a90e2;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .topic-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #4a90e2;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .topic-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+        
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #a8d0ff;
+            margin: 20px 0 10px 0;
+            font-size: 1.4em;
+        }
+        
+        h4 {
+            color: #c8e0ff;
+            margin: 15px 0 10px 0;
+            font-size: 1.1em;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .example-box {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .t-account {
+            display: inline-block;
+            border: 2px solid #4a90e2;
+            padding: 10px;
+            margin: 10px;
+            min-width: 200px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .t-account-title {
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .t-account-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .debit-side, .credit-side {
+            flex: 1;
+            padding: 5px;
+        }
+        
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .question-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #4a90e2;
+        }
+        
+        .option.selected {
+            background: rgba(74, 144, 226, 0.3);
+            border-color: #4a90e2;
+        }
+        
+        .option.correct {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: #4caf50;
+        }
+        
+        .option.incorrect {
+            background: rgba(244, 67, 54, 0.3);
+            border-color: #f44336;
+        }
+        
+        .show-answer-btn {
+            padding: 10px 20px;
+            background: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .show-answer-btn:hover {
+            background: #ffca28;
+            transform: scale(1.05);
+        }
+        
+        .answer-explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            border-radius: 5px;
+        }
+        
+        .answer-explanation.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .case-study {
+            background: rgba(156, 39, 176, 0.2);
+            border-left: 4px solid #9c27b0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .essay-question {
+            background: rgba(255, 152, 0, 0.2);
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .essay-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1em;
+            margin-top: 15px;
+            resize: vertical;
+        }
+        
+        .submit-quiz-btn {
+            padding: 15px 40px;
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .submit-quiz-btn:hover {
+            background: #66bb6a;
+            transform: scale(1.05);
+        }
+        
+        .score-display {
+            display: none;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.3);
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        th, td {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+        
+        th {
+            background: rgba(74, 144, 226, 0.3);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 The Recording Process</h1>
+            <p class="subtitle">Chapter 2 - Financial Accounting IFRS 3rd Edition</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('accounts')">1. Accounts</button>
+            <button class="tab-btn" onclick="showTab('debits-credits')">2. Debits & Credits</button>
+            <button class="tab-btn" onclick="showTab('steps')">3. Recording Steps</button>
+            <button class="tab-btn" onclick="showTab('journal')">4. Journal</button>
+            <button class="tab-btn" onclick="showTab('ledger')">5. Ledger</button>
+            <button class="tab-btn" onclick="showTab('posting')">6. Posting</button>
+            <button class="tab-btn" onclick="showTab('trial-balance')">7. Trial Balance</button>
+            <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+        </div>
+
+        <!-- Section 1: The Account -->
+        <div id="accounts" class="content-section active">
+            <div class="topic-card">
+                <h2>What is an Account?</h2>
+                
+                <h3>Definition</h3>
+                <p>An <strong>account</strong> is an individual record of increases and decreases in a specific asset, liability, equity, revenue, or expense item.</p>
+                
+                <h3>T-Account Form</h3>
+                <p>Accounts can be illustrated in a T-account form, which shows the basic structure:</p>
+                
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Account Name</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit / Dr.</strong><br>(Left Side)</div>
+                            <div class="credit-side"><strong>Credit / Cr.</strong><br>(Right Side)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Key Terminology</h3>
+                <ul>
+                    <li><strong>Debit (Dr.):</strong> The left side of an account</li>
+                    <li><strong>Credit (Cr.):</strong> The right side of an account</li>
+                    <li><strong>Balance:</strong> The difference between total debits and total credits</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>Important Note:</strong> "Debit" and "Credit" are simply accounting terms meaning "left" and "right." They do NOT mean "increase" or "decrease" by themselves - the meaning depends on the type of account.
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Debits and Credits -->
+        <div id="debits-credits" class="content-section">
+            <div class="topic-card">
+                <h2>Debits and Credits</h2>
+                
+                <h3>The Double-Entry System</h3>
+                <p>The double-entry system is the foundation of accounting. Key principles:</p>
+                <ul>
+                    <li>Each transaction must affect <strong>two or more accounts</strong></li>
+                    <li>Recording is done by <strong>debiting at least one account</strong> and <strong>crediting at least one other account</strong></li>
+                    <li><strong>DEBITS must equal CREDITS</strong> for every transaction</li>
+                    <li>This keeps the accounting equation in balance</li>
+                </ul>
+                
+                <h3>Debit and Credit Rules for Each Account Type</h3>
+                
+                <h4>1. Assets</h4>
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Assets</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit</strong><br>Increases ↑</div>
+                            <div class="credit-side"><strong>Credit</strong><br>Decreases ↓</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;"><strong>Normal Balance: Debit</strong></div>
+                    </div>
+                    <p><strong>Examples:</strong> Cash, Accounts Receivable, Supplies, Equipment, Buildings, Land</p>
+                </div>
+                
+                <h4>2. Liabilities</h4>
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Liabilities</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit</strong><br>Decreases ↓</div>
+                            <div class="credit-side"><strong>Credit</strong><br>Increases ↑</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;"><strong>Normal Balance: Credit</strong></div>
+                    </div>
+                    <p><strong>Examples:</strong> Accounts Payable, Notes Payable, Salaries Payable, Unearned Revenue</p>
+                </div>
+
+                <h4>3. Equity (Share Capital)</h4>
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Share Capital</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit</strong><br>Decreases ↓</div>
+                            <div class="credit-side"><strong>Credit</strong><br>Increases ↑</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;"><strong>Normal Balance: Credit</strong></div>
+                    </div>
+                    <p><strong>Examples:</strong> Ordinary Share Capital, Preference Share Capital</p>
+                </div>
+                
+                <h4>4. Retained Earnings</h4>
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Retained Earnings</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit</strong><br>Decreases ↓</div>
+                            <div class="credit-side"><strong>Credit</strong><br>Increases ↑</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;"><strong>Normal Balance: Credit</strong></div>
+                    </div>
+                    <p>Retained Earnings represents accumulated profits kept in the business.</p>
+                </div>
+                
+                <h4>5. Dividends</h4>
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Dividends</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit</strong><br>Increases ↑</div>
+                            <div class="credit-side"><strong>Credit</strong><br>Decreases ↓</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;"><strong>Normal Balance: Debit</strong></div>
+                    </div>
+                    <p>Dividends reduce equity, so they increase with debits (opposite of equity accounts).</p>
+                </div>
+                
+                <h4>6. Revenues</h4>
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Revenues</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit</strong><br>Decreases ↓</div>
+                            <div class="credit-side"><strong>Credit</strong><br>Increases ↑</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;"><strong>Normal Balance: Credit</strong></div>
+                    </div>
+                    <p><strong>Examples:</strong> Service Revenue, Sales Revenue, Interest Revenue, Rent Revenue</p>
+                </div>
+
+                <h4>7. Expenses</h4>
+                <div class="example-box">
+                    <div class="t-account">
+                        <div class="t-account-title">Expenses</div>
+                        <div class="t-account-content">
+                            <div class="debit-side"><strong>Debit</strong><br>Increases ↑</div>
+                            <div class="credit-side"><strong>Credit</strong><br>Decreases ↓</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;"><strong>Normal Balance: Debit</strong></div>
+                    </div>
+                    <p><strong>Examples:</strong> Salaries Expense, Rent Expense, Utilities Expense, Supplies Expense, Depreciation Expense</p>
+                </div>
+                
+                <h3>Summary of Debit and Credit Rules</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account Type</th>
+                            <th>Increases</th>
+                            <th>Decreases</th>
+                            <th>Normal Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Assets</td>
+                            <td>Debit</td>
+                            <td>Credit</td>
+                            <td>Debit</td>
+                        </tr>
+                        <tr>
+                            <td>Liabilities</td>
+                            <td>Credit</td>
+                            <td>Debit</td>
+                            <td>Credit</td>
+                        </tr>
+                        <tr>
+                            <td>Share Capital</td>
+                            <td>Credit</td>
+                            <td>Debit</td>
+                            <td>Credit</td>
+                        </tr>
+                        <tr>
+                            <td>Retained Earnings</td>
+                            <td>Credit</td>
+                            <td>Debit</td>
+                            <td>Credit</td>
+                        </tr>
+                        <tr>
+                            <td>Dividends</td>
+                            <td>Debit</td>
+                            <td>Credit</td>
+                            <td>Debit</td>
+                        </tr>
+                        <tr>
+                            <td>Revenues</td>
+                            <td>Credit</td>
+                            <td>Debit</td>
+                            <td>Credit</td>
+                        </tr>
+                        <tr>
+                            <td>Expenses</td>
+                            <td>Debit</td>
+                            <td>Credit</td>
+                            <td>Debit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <h4>Memory Aid: DEALER</h4>
+                    <p><strong>D</strong>ividends, <strong>E</strong>xpenses, <strong>A</strong>ssets = <strong>L</strong>iabilities, <strong>E</strong>quity, <strong>R</strong>evenues</p>
+                    <p>The first three (DEA) increase with debits, the last three (LER) increase with credits.</p>
+                </div>
+                
+                <h3>Practical Example: Analyzing Transactions</h3>
+                <div class="example-box">
+                    <h4>Transaction 1: Owner invests €10,000 cash in the business</h4>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Cash (Asset) increases by €10,000 → <strong>Debit</strong> Cash</li>
+                        <li>Share Capital (Equity) increases by €10,000 → <strong>Credit</strong> Share Capital</li>
+                    </ul>
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <tr>
+                            <td>Cash</td>
+                            <td>€10,000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 30px;">Share Capital</td>
+                            <td></td>
+                            <td>€10,000</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Transaction 2: Purchased equipment for €5,000 cash</h4>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Equipment (Asset) increases by €5,000 → <strong>Debit</strong> Equipment</li>
+                        <li>Cash (Asset) decreases by €5,000 → <strong>Credit</strong> Cash</li>
+                    </ul>
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <tr>
+                            <td>Equipment</td>
+                            <td>€5,000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 30px;">Cash</td>
+                            <td></td>
+                            <td>€5,000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 3: Steps in the Recording Process -->
+        <div id="steps" class="content-section">
+            <div class="topic-card">
+                <h2>Steps in the Recording Process</h2>
+                
+                <p>The recording process involves three basic steps:</p>
+                
+                <h3>Step 1: Analyze Each Transaction</h3>
+                <div class="example-box">
+                    <p>Determine what accounts are affected and classify them by type:</p>
+                    <ul>
+                        <li>Identify the accounts involved</li>
+                        <li>Classify each account (Asset, Liability, Equity, Revenue, or Expense)</li>
+                        <li>Determine whether each account increases or decreases</li>
+                    </ul>
+                    
+                    <h4>Example:</h4>
+                    <p><strong>Transaction:</strong> Paid €1,200 for rent</p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Rent Expense (Expense account) increases</li>
+                        <li>Cash (Asset account) decreases</li>
+                    </ul>
+                </div>
+                
+                <h3>Step 2: Enter Transaction in a Journal</h3>
+                <div class="example-box">
+                    <p>Record the transaction in the journal using debits and credits:</p>
+                    <ul>
+                        <li>Apply debit and credit rules based on account types</li>
+                        <li>Ensure debits equal credits</li>
+                        <li>Include a brief explanation</li>
+                        <li>Record transactions in chronological order</li>
+                    </ul>
+                    
+                    <h4>Example (continuing from above):</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles and Explanation</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Rent Expense<br><span style="padding-left: 20px;">Cash</span><br><em>(Paid October rent)</em></td>
+                                <td>€1,200</td>
+                                <td><br>€1,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Step 3: Transfer Journal Information to Ledger Accounts</h3>
+                <div class="example-box">
+                    <p>Post the journal entries to the general ledger:</p>
+                    <ul>
+                        <li>Transfer debit and credit amounts to the appropriate ledger accounts</li>
+                        <li>Update account balances</li>
+                        <li>This process is called "posting"</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Point:</strong> These three steps ensure that all transactions are systematically recorded and organized, maintaining the integrity of the accounting records.
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 4: The Journal -->
+        <div id="journal" class="content-section">
+            <div class="topic-card">
+                <h2>The Journal</h2>
+                
+                <h3>What is a Journal?</h3>
+                <p>A <strong>journal</strong> (also called the "book of original entry") is an accounting record where transactions are initially recorded in chronological order.</p>
+                
+                <h3>Functions of the Journal</h3>
+                <ul>
+                    <li><strong>Discloses the complete effect</strong> of a transaction in one place</li>
+                    <li><strong>Provides a chronological record</strong> of all transactions</li>
+                    <li><strong>Helps prevent or locate errors</strong> because debits and credits can be easily compared</li>
+                </ul>
+                
+                <h3>The Journalizing Process</h3>
+                <p><strong>Journalizing</strong> is the process of entering transaction data in the journal. Follow these steps:</p>
+                
+                <div class="example-box">
+                    <h4>Steps to Journalize a Transaction:</h4>
+                    <ol>
+                        <li><strong>Date:</strong> Enter the date of the transaction in the Date column</li>
+                        <li><strong>Debit Entry:</strong> Enter the account title to be debited at the left margin, followed by the amount in the Debit column</li>
+                        <li><strong>Credit Entry:</strong> Enter the account title to be credited, indented, followed by the amount in the Credit column</li>
+                        <li><strong>Explanation:</strong> Write a brief explanation of the transaction below the credit entry</li>
+                        <li><strong>Space:</strong> Leave a blank line between journal entries</li>
+                    </ol>
+                </div>
+                
+                <h3>Types of Journal Entries</h3>
+                
+                <h4>1. Simple Entry</h4>
+                <p>A simple entry involves only two accounts (one debit and one credit).</p>
+                <div class="example-box">
+                    <p><strong>Example:</strong> Received €5,000 cash from customers for services performed</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles and Explanation</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 5</td>
+                                <td>Cash<br><span style="padding-left: 20px;">Service Revenue</span><br><em>(Received cash for services)</em></td>
+                                <td>€5,000</td>
+                                <td><br>€5,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>2. Compound Entry</h4>
+                <p>A compound entry involves three or more accounts (multiple debits and/or credits).</p>
+                <div class="example-box">
+                    <p><strong>Example:</strong> Purchased equipment for €8,000, paying €3,000 cash and signing a note payable for €5,000</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles and Explanation</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 10</td>
+                                <td>Equipment<br><span style="padding-left: 20px;">Cash</span><br><span style="padding-left: 20px;">Notes Payable</span><br><em>(Purchased equipment with cash and note)</em></td>
+                                <td>€8,000</td>
+                                <td><br>€3,000<br>€5,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Analysis:</strong> Equipment increases (debit €8,000), Cash decreases (credit €3,000), Notes Payable increases (credit €5,000). Total debits (€8,000) = Total credits (€8,000).</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Important Rules:</strong>
+                    <ul>
+                        <li>The debit account(s) are always listed first</li>
+                        <li>Credit account(s) are indented</li>
+                        <li>Total debits must always equal total credits</li>
+                        <li>Explanations should be brief but clear</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: The Ledger -->
+        <div id="ledger" class="content-section">
+            <div class="topic-card">
+                <h2>The Ledger</h2>
+                
+                <h3>What is a Ledger?</h3>
+                <p>The <strong>general ledger</strong> (or simply "ledger") contains all the asset, liability, equity, revenue, and expense accounts. It is the entire group of accounts maintained by a company.</p>
+                
+                <h3>Chart of Accounts</h3>
+                <p>A <strong>chart of accounts</strong> is a listing of all accounts and their account numbers in the ledger. Accounts are usually numbered for easy identification and reference.</p>
+                
+                <div class="example-box">
+                    <h4>Typical Numbering System:</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account Type</th>
+                                <th>Number Range</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Assets</td>
+                                <td>100-199</td>
+                                <td>101 Cash, 112 Accounts Receivable, 157 Equipment</td>
+                            </tr>
+                            <tr>
+                                <td>Liabilities</td>
+                                <td>200-299</td>
+                                <td>201 Accounts Payable, 230 Notes Payable</td>
+                            </tr>
+                            <tr>
+                                <td>Equity</td>
+                                <td>300-399</td>
+                                <td>311 Share Capital, 320 Retained Earnings, 332 Dividends</td>
+                            </tr>
+                            <tr>
+                                <td>Revenues</td>
+                                <td>400-499</td>
+                                <td>400 Service Revenue, 410 Sales Revenue</td>
+                            </tr>
+                            <tr>
+                                <td>Expenses</td>
+                                <td>500-599</td>
+                                <td>500 Salaries Expense, 510 Rent Expense, 520 Utilities Expense</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Standard Form of Account</h3>
+                <p>The standard form of account has three money columns:</p>
+                <ul>
+                    <li><strong>Debit column:</strong> Records debit entries</li>
+                    <li><strong>Credit column:</strong> Records credit entries</li>
+                    <li><strong>Balance column:</strong> Shows the account balance after each transaction</li>
+                </ul>
+                
+                <div class="example-box">
+                    <h4>Example: Cash Account in Standard Form</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="6" style="text-align: center;">Cash (Account No. 101)</th>
+                            </tr>
+                            <tr>
+                                <th>Date</th>
+                                <th>Explanation</th>
+                                <th>Ref.</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Investment</td>
+                                <td>J1</td>
+                                <td>€10,000</td>
+                                <td></td>
+                                <td>€10,000</td>
+                            </tr>
+                            <tr>
+                                <td>Oct. 3</td>
+                                <td>Equipment purchase</td>
+                                <td>J1</td>
+                                <td></td>
+                                <td>€5,000</td>
+                                <td>€5,000</td>
+                            </tr>
+                            <tr>
+                                <td>Oct. 5</td>
+                                <td>Service revenue</td>
+                                <td>J1</td>
+                                <td>€3,000</td>
+                                <td></td>
+                                <td>€8,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Features:</strong>
+                    <ul>
+                        <li>The <strong>Ref. column</strong> indicates the journal page from which the entry was posted</li>
+                        <li>The <strong>Balance column</strong> is updated after each transaction</li>
+                        <li>This format makes it easy to determine the current balance at any time</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Posting -->
+        <div id="posting" class="content-section">
+            <div class="topic-card">
+                <h2>Posting</h2>
+                
+                <h3>What is Posting?</h3>
+                <p><strong>Posting</strong> is the process of transferring journal entries to the ledger accounts. This is the third step in the recording process.</p>
+                
+                <h3>The Posting Process</h3>
+                <p>Follow these steps when posting from the journal to the ledger:</p>
+                
+                <div class="example-box">
+                    <h4>Steps to Post a Journal Entry:</h4>
+                    <ol>
+                        <li><strong>In the ledger:</strong> Enter the date from the journal in the Date column of the ledger account</li>
+                        <li><strong>In the ledger:</strong> Enter the amount from the journal in the appropriate Debit or Credit column</li>
+                        <li><strong>In the ledger:</strong> Enter the journal page number in the Reference column</li>
+                        <li><strong>In the ledger:</strong> Calculate and enter the new balance in the Balance column</li>
+                        <li><strong>In the journal:</strong> Enter the ledger account number in the Reference column (this indicates the entry has been posted)</li>
+                    </ol>
+                </div>
+
+                <h3>Illustration of Posting</h3>
+                <div class="example-box">
+                    <h4>Journal Entry:</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles and Explanation</th>
+                                <th>Ref.</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Cash<br><span style="padding-left: 20px;">Share Capital</span><br><em>(Owner investment)</em></td>
+                                <td>101<br>311</td>
+                                <td>€10,000</td>
+                                <td><br>€10,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4>After Posting to Ledger:</h4>
+                    <p><strong>Cash Account (No. 101):</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Explanation</th>
+                                <th>Ref.</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Owner investment</td>
+                                <td>J1</td>
+                                <td>€10,000</td>
+                                <td></td>
+                                <td>€10,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Share Capital Account (No. 311):</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Explanation</th>
+                                <th>Ref.</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Owner investment</td>
+                                <td>J1</td>
+                                <td></td>
+                                <td>€10,000</td>
+                                <td>€10,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Important Notes:</strong>
+                    <ul>
+                        <li>Posting should be performed in chronological order</li>
+                        <li>All journal entries must be posted to maintain accurate records</li>
+                        <li>The reference numbers create a cross-reference between journal and ledger</li>
+                        <li>This cross-referencing is called the <strong>audit trail</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 7: Trial Balance -->
+        <div id="trial-balance" class="content-section">
+            <div class="topic-card">
+                <h2>The Trial Balance</h2>
+                
+                <h3>What is a Trial Balance?</h3>
+                <p>A <strong>trial balance</strong> is a list of all accounts and their balances at a specific time. It is usually prepared at the end of an accounting period.</p>
+                
+                <h3>Purpose of the Trial Balance</h3>
+                <ul>
+                    <li><strong>Prove the mathematical equality</strong> of debits and credits after posting</li>
+                    <li><strong>Uncover errors</strong> in journalizing and posting</li>
+                    <li><strong>Provide a basis</strong> for preparing financial statements</li>
+                </ul>
+                
+                <h3>Preparing a Trial Balance</h3>
+                <div class="example-box">
+                    <h4>Steps to Prepare a Trial Balance:</h4>
+                    <ol>
+                        <li><strong>List account titles</strong> in the order they appear in the ledger (Assets, Liabilities, Equity, Revenues, Expenses)</li>
+                        <li><strong>Enter account balances</strong> in the appropriate Debit or Credit column</li>
+                        <li><strong>Total the Debit and Credit columns</strong></li>
+                        <li><strong>Verify equality</strong> - Total debits must equal total credits</li>
+                    </ol>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Example: Trial Balance</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3" style="text-align: center;"><strong>ABC Company</strong><br>Trial Balance<br>October 31, 2024</th>
+                            </tr>
+                            <tr>
+                                <th>Account</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cash</td>
+                                <td>€15,200</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Accounts Receivable</td>
+                                <td>€7,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Supplies</td>
+                                <td>€2,500</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Equipment</td>
+                                <td>€25,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Accounts Payable</td>
+                                <td></td>
+                                <td>€4,500</td>
+                            </tr>
+                            <tr>
+                                <td>Notes Payable</td>
+                                <td></td>
+                                <td>€10,000</td>
+                            </tr>
+                            <tr>
+                                <td>Share Capital</td>
+                                <td></td>
+                                <td>€20,000</td>
+                            </tr>
+                            <tr>
+                                <td>Dividends</td>
+                                <td>€1,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Service Revenue</td>
+                                <td></td>
+                                <td>€24,000</td>
+                            </tr>
+                            <tr>
+                                <td>Salaries Expense</td>
+                                <td>€5,200</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Rent Expense</td>
+                                <td>€1,800</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Utilities Expense</td>
+                                <td>€800</td>
+                                <td></td>
+                            </tr>
+                            <tr style="border-top: 2px solid #4a90e2;">
+                                <td><strong>Totals</strong></td>
+                                <td><strong>€58,500</strong></td>
+                                <td><strong>€58,500</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Limitations of a Trial Balance</h3>
+                <p>A trial balance does NOT prove that all transactions have been recorded or that the ledger is correct. It only proves that debits equal credits.</p>
+                
+                <div class="highlight-box">
+                    <h4>Errors NOT Detected by a Trial Balance:</h4>
+                    <ul>
+                        <li><strong>Transaction not journalized:</strong> If a transaction is completely omitted, the trial balance will still balance</li>
+                        <li><strong>Correct journal entry not posted:</strong> If an entry is journalized but never posted, debits still equal credits</li>
+                        <li><strong>Journal entry posted twice:</strong> Posting the same entry twice keeps debits equal to credits</li>
+                        <li><strong>Wrong accounts used:</strong> If you debit/credit the wrong accounts but use correct amounts, the trial balance balances</li>
+                        <li><strong>Offsetting errors:</strong> Two errors that cancel each other out (e.g., €100 overstatement and €100 understatement)</li>
+                    </ul>
+                </div>
+                
+                <h3>Currency Signs and Underlining</h3>
+                <div class="example-box">
+                    <p><strong>Conventions for Trial Balance Presentation:</strong></p>
+                    <ul>
+                        <li>Currency signs (€, $, £, etc.) appear only at the top of each column and for totals</li>
+                        <li>A single line is placed under the last figure in each column before totaling</li>
+                        <li>Double lines (double underline) are placed under the final totals</li>
+                        <li>These conventions apply to all financial statements</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Takeaway:</strong> The trial balance is a useful tool for checking mathematical accuracy, but it does not guarantee that all transactions are correctly recorded. Additional review and analysis are always necessary.
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="content-section">
+            <div class="quiz-container">
+                <h2>📝 Interactive Quiz - Chapter 2</h2>
+                <p style="margin-bottom: 20px;">Test your understanding of The Recording Process with these 25 questions!</p>
+                
+                <!-- Regular Multiple Choice Questions (15) -->
+                <div class="question" data-question="1">
+                    <div class="question-text">1. What is the left side of an account called?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 1, 'a')">a) Credit side</div>
+                        <div class="option" onclick="selectOption(this, 1, 'b')">b) Debit side</div>
+                        <div class="option" onclick="selectOption(this, 1, 'c')">c) Balance side</div>
+                        <div class="option" onclick="selectOption(this, 1, 'd')">d) Equity side</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="2">
+                    <div class="question-text">2. Which account type increases with a credit?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 2, 'a')">a) Assets and Expenses</div>
+                        <div class="option" onclick="selectOption(this, 2, 'b')">b) Liabilities and Revenues</div>
+                        <div class="option" onclick="selectOption(this, 2, 'c')">c) Dividends and Assets</div>
+                        <div class="option" onclick="selectOption(this, 2, 'd')">d) Expenses and Dividends</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="3">
+                    <div class="question-text">3. What is the fundamental principle of the double-entry system?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 3, 'a')">a) Every transaction affects only one account</div>
+                        <div class="option" onclick="selectOption(this, 3, 'b')">b) Debits must equal credits for every transaction</div>
+                        <div class="option" onclick="selectOption(this, 3, 'c')">c) Credits are always larger than debits</div>
+                        <div class="option" onclick="selectOption(this, 3, 'd')">d) Assets must always equal liabilities</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="4">
+                    <div class="question-text">4. Which of the following has a normal debit balance?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 4, 'a')">a) Accounts Payable</div>
+                        <div class="option" onclick="selectOption(this, 4, 'b')">b) Service Revenue</div>
+                        <div class="option" onclick="selectOption(this, 4, 'c')">c) Salaries Expense</div>
+                        <div class="option" onclick="selectOption(this, 4, 'd')">d) Share Capital</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="5">
+                    <div class="question-text">5. What is the first step in the recording process?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 5, 'a')">a) Post to the ledger accounts</div>
+                        <div class="option" onclick="selectOption(this, 5, 'b')">b) Prepare a trial balance</div>
+                        <div class="option" onclick="selectOption(this, 5, 'c')">c) Analyze each transaction</div>
+                        <div class="option" onclick="selectOption(this, 5, 'd')">d) Create financial statements</div>
+                    </div>
+                </div>
+
+                <div class="question" data-question="6">
+                    <div class="question-text">6. A journal is also known as:</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 6, 'a')">a) Book of final entry</div>
+                        <div class="option" onclick="selectOption(this, 6, 'b')">b) Book of original entry</div>
+                        <div class="option" onclick="selectOption(this, 6, 'c')">c) Book of secondary records</div>
+                        <div class="option" onclick="selectOption(this, 6, 'd')">d) Book of account balances</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="7">
+                    <div class="question-text">7. In a journal entry, which account is listed first?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 7, 'a')">a) The credit account</div>
+                        <div class="option" onclick="selectOption(this, 7, 'b')">b) The debit account</div>
+                        <div class="option" onclick="selectOption(this, 7, 'c')">c) The largest amount</div>
+                        <div class="option" onclick="selectOption(this, 7, 'd')">d) The asset account</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="8">
+                    <div class="question-text">8. A compound journal entry involves:</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 8, 'a')">a) Only two accounts</div>
+                        <div class="option" onclick="selectOption(this, 8, 'b')">b) Three or more accounts</div>
+                        <div class="option" onclick="selectOption(this, 8, 'c')">c) Only asset accounts</div>
+                        <div class="option" onclick="selectOption(this, 8, 'd')">d) Only liability accounts</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="9">
+                    <div class="question-text">9. What is a chart of accounts?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 9, 'a')">a) A list of all transactions in chronological order</div>
+                        <div class="option" onclick="selectOption(this, 9, 'b')">b) A listing of all accounts and their numbers</div>
+                        <div class="option" onclick="selectOption(this, 9, 'c')">c) A summary of all journal entries</div>
+                        <div class="option" onclick="selectOption(this, 9, 'd')">d) A report showing account balances</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="10">
+                    <div class="question-text">10. Asset accounts are typically numbered in which range?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 10, 'a')">a) 200-299</div>
+                        <div class="option" onclick="selectOption(this, 10, 'b')">b) 100-199</div>
+                        <div class="option" onclick="selectOption(this, 10, 'c')">c) 300-399</div>
+                        <div class="option" onclick="selectOption(this, 10, 'd')">d) 400-499</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="11">
+                    <div class="question-text">11. Posting is the process of:</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 11, 'a')">a) Recording transactions in the journal</div>
+                        <div class="option" onclick="selectOption(this, 11, 'b')">b) Transferring journal entries to ledger accounts</div>
+                        <div class="option" onclick="selectOption(this, 11, 'c')">c) Preparing financial statements</div>
+                        <div class="option" onclick="selectOption(this, 11, 'd')">d) Analyzing business transactions</div>
+                    </div>
+                </div>
+
+                <div class="question" data-question="12">
+                    <div class="question-text">12. The standard form of account includes how many money columns?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 12, 'a')">a) Two columns</div>
+                        <div class="option" onclick="selectOption(this, 12, 'b')">b) Four columns</div>
+                        <div class="option" onclick="selectOption(this, 12, 'c')">c) Three columns</div>
+                        <div class="option" onclick="selectOption(this, 12, 'd')">d) Five columns</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="13">
+                    <div class="question-text">13. What is the primary purpose of a trial balance?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 13, 'a')">a) To record daily transactions</div>
+                        <div class="option" onclick="selectOption(this, 13, 'b')">b) To prove the equality of debits and credits</div>
+                        <div class="option" onclick="selectOption(this, 13, 'c')">c) To calculate net income</div>
+                        <div class="option" onclick="selectOption(this, 13, 'd')">d) To determine cash flow</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="14">
+                    <div class="question-text">14. Which error would NOT be detected by a trial balance?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 14, 'a')">a) A transaction posted twice</div>
+                        <div class="option" onclick="selectOption(this, 14, 'b')">b) Debits not equaling credits</div>
+                        <div class="option" onclick="selectOption(this, 14, 'c')">c) An account balance calculated incorrectly</div>
+                        <div class="option" onclick="selectOption(this, 14, 'd')">d) A transposition error in posting</div>
+                    </div>
+                </div>
+                
+                <div class="question" data-question="15">
+                    <div class="question-text">15. The memory aid "DEALER" helps remember that:</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 15, 'a')">a) All accounts increase with debits</div>
+                        <div class="option" onclick="selectOption(this, 15, 'b')">b) Dividends, Expenses, Assets increase with debits</div>
+                        <div class="option" onclick="selectOption(this, 15, 'c')">c) Debits always equal liabilities</div>
+                        <div class="option" onclick="selectOption(this, 15, 'd')">d) Dealers use special accounting rules</div>
+                    </div>
+                </div>
+                
+                <!-- Case Study Multiple Choice Questions (5) -->
+                <div class="question case-study" data-question="16">
+                    <div class="question-text"><strong>CASE STUDY 1:</strong> On January 5, Martinez Company purchased office supplies for €2,500 on account from Office Depot. What is the correct journal entry?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 16, 'a')">a) Debit Supplies €2,500; Credit Cash €2,500</div>
+                        <div class="option" onclick="selectOption(this, 16, 'b')">b) Debit Accounts Payable €2,500; Credit Supplies €2,500</div>
+                        <div class="option" onclick="selectOption(this, 16, 'c')">c) Debit Supplies €2,500; Credit Accounts Payable €2,500</div>
+                        <div class="option" onclick="selectOption(this, 16, 'd')">d) Debit Cash €2,500; Credit Supplies €2,500</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(16)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-16">
+                        <strong>Correct Answer: c) Debit Supplies €2,500; Credit Accounts Payable €2,500</strong><br>
+                        <strong>Explanation:</strong> When purchasing supplies on account, Supplies (an asset) increases with a debit, and Accounts Payable (a liability) increases with a credit. No cash is involved since it's purchased "on account."
+                    </div>
+                </div>
+
+                <div class="question case-study" data-question="17">
+                    <div class="question-text"><strong>CASE STUDY 2:</strong> Thompson Services received €8,000 cash from clients for services performed. After this transaction, what happens to the accounting equation?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 17, 'a')">a) Assets increase €8,000; Liabilities increase €8,000</div>
+                        <div class="option" onclick="selectOption(this, 17, 'b')">b) Assets increase €8,000; Equity increases €8,000</div>
+                        <div class="option" onclick="selectOption(this, 17, 'c')">c) Assets decrease €8,000; Equity decreases €8,000</div>
+                        <div class="option" onclick="selectOption(this, 17, 'd')">d) Assets increase €8,000; Expenses increase €8,000</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(17)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-17">
+                        <strong>Correct Answer: b) Assets increase €8,000; Equity increases €8,000</strong><br>
+                        <strong>Explanation:</strong> Cash (asset) increases by €8,000, and Service Revenue (which increases equity) also increases by €8,000. Revenue increases retained earnings, which is part of equity. The accounting equation remains balanced: Assets = Liabilities + Equity.
+                    </div>
+                </div>
+                
+                <div class="question case-study" data-question="18">
+                    <div class="question-text"><strong>CASE STUDY 3:</strong> Wilson Corporation paid €3,600 for a one-year insurance policy on March 1. The policy covers March 1 through February 28 of the next year. What accounts are affected?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 18, 'a')">a) Debit Insurance Expense €3,600; Credit Cash €3,600</div>
+                        <div class="option" onclick="selectOption(this, 18, 'b')">b) Debit Prepaid Insurance €3,600; Credit Cash €3,600</div>
+                        <div class="option" onclick="selectOption(this, 18, 'c')">c) Debit Cash €3,600; Credit Insurance Expense €3,600</div>
+                        <div class="option" onclick="selectOption(this, 18, 'd')">d) Debit Accounts Payable €3,600; Credit Cash €3,600</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(18)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-18">
+                        <strong>Correct Answer: b) Debit Prepaid Insurance €3,600; Credit Cash €3,600</strong><br>
+                        <strong>Explanation:</strong> Since the insurance covers a future period (one year), it is recorded as Prepaid Insurance (an asset), not as an expense. Cash decreases (credit). The insurance will be expensed gradually over the coverage period through adjusting entries.
+                    </div>
+                </div>
+                
+                <div class="question case-study" data-question="19">
+                    <div class="question-text"><strong>CASE STUDY 4:</strong> Anderson Company purchased equipment for €15,000, paying €5,000 cash and signing a note payable for the balance. How many accounts are affected and what is the compound entry?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 19, 'a')">a) Two accounts: Debit Equipment €15,000; Credit Cash €15,000</div>
+                        <div class="option" onclick="selectOption(this, 19, 'b')">b) Three accounts: Debit Equipment €15,000; Credit Cash €5,000 and Notes Payable €10,000</div>
+                        <div class="option" onclick="selectOption(this, 19, 'c')">c) Two accounts: Debit Equipment €5,000; Credit Cash €5,000</div>
+                        <div class="option" onclick="selectOption(this, 19, 'd')">d) Three accounts: Debit Cash €5,000 and Notes Payable €10,000; Credit Equipment €15,000</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(19)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-19">
+                        <strong>Correct Answer: b) Three accounts: Debit Equipment €15,000; Credit Cash €5,000 and Notes Payable €10,000</strong><br>
+                        <strong>Explanation:</strong> This is a compound entry involving three accounts. Equipment (asset) increases by the full purchase price of €15,000 (debit). Cash (asset) decreases by €5,000 (credit), and Notes Payable (liability) increases by €10,000 (credit). Total debits (€15,000) equal total credits (€5,000 + €10,000 = €15,000).
+                    </div>
+                </div>
+
+                <div class="question case-study" data-question="20">
+                    <div class="question-text"><strong>CASE STUDY 5:</strong> Roberts Company's trial balance shows total debits of €125,000 and total credits of €128,000. What does this indicate?</div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 20, 'a')">a) The company has a net income of €3,000</div>
+                        <div class="option" onclick="selectOption(this, 20, 'b')">b) There is an error in the accounting records</div>
+                        <div class="option" onclick="selectOption(this, 20, 'c')">c) The company owes €3,000 to creditors</div>
+                        <div class="option" onclick="selectOption(this, 20, 'd')">d) The trial balance is correct and balanced</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(20)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-20">
+                        <strong>Correct Answer: b) There is an error in the accounting records</strong><br>
+                        <strong>Explanation:</strong> A trial balance must have equal debits and credits. If total debits (€125,000) do not equal total credits (€128,000), there is a €3,000 difference indicating an error in journalizing, posting, or calculating account balances. The error must be found and corrected before proceeding with financial statements.
+                    </div>
+                </div>
+                
+                <!-- Essay Case Study Questions (5) -->
+                <div class="question essay-question" data-question="21">
+                    <div class="question-text"><strong>ESSAY QUESTION 1:</strong> Explain the double-entry accounting system and why it is fundamental to modern accounting. Include in your answer how this system helps maintain the accounting equation and provide an example of a transaction showing both the debit and credit sides.</div>
+                    <textarea class="essay-textarea" placeholder="Type your answer here..." id="essay-21"></textarea>
+                </div>
+                
+                <div class="question essay-question" data-question="22">
+                    <div class="question-text"><strong>ESSAY QUESTION 2:</strong> Describe the three steps in the recording process. For each step, explain its purpose and how it contributes to maintaining accurate accounting records. Why is it important to follow these steps in order?</div>
+                    <textarea class="essay-textarea" placeholder="Type your answer here..." id="essay-22"></textarea>
+                </div>
+                
+                <div class="question essay-question" data-question="23">
+                    <div class="question-text"><strong>ESSAY QUESTION 3:</strong> A trial balance shows that debits equal credits, but the company later discovers that a €5,000 payment for rent was incorrectly recorded as a debit to Equipment instead of Rent Expense. Explain why the trial balance did not detect this error and discuss what other types of errors a trial balance cannot detect. What additional procedures should accountants use to catch such errors?</div>
+                    <textarea class="essay-textarea" placeholder="Type your answer here..." id="essay-23"></textarea>
+                </div>
+                
+                <div class="question essay-question" data-question="24">
+                    <div class="question-text"><strong>ESSAY QUESTION 4:</strong> Compare and contrast simple journal entries and compound journal entries. Provide one example of each type and explain when a compound entry would be necessary instead of recording multiple simple entries. What are the advantages of using compound entries?</div>
+                    <textarea class="essay-textarea" placeholder="Type your answer here..." id="essay-24"></textarea>
+                </div>
+                
+                <div class="question essay-question" data-question="25">
+                    <div class="question-text"><strong>ESSAY QUESTION 5:</strong> Explain the relationship between the journal and the ledger in the accounting cycle. Describe the posting process in detail, including the purpose of reference numbers and how they create an audit trail. Why is it important to maintain both a journal and a ledger rather than just one or the other?</div>
+                    <textarea class="essay-textarea" placeholder="Type your answer here..." id="essay-25"></textarea>
+                </div>
+                
+                <button class="submit-quiz-btn" onclick="submitQuiz()">Submit Quiz</button>
+                <div class="score-display" id="score-display"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Correct answers for multiple choice questions (1-20)
+        const correctAnswers = {
+            1: 'b', 2: 'b', 3: 'b', 4: 'c', 5: 'c',
+            6: 'b', 7: 'b', 8: 'b', 9: 'b', 10: 'b',
+            11: 'b', 12: 'c', 13: 'b', 14: 'a', 15: 'b',
+            16: 'c', 17: 'b', 18: 'b', 19: 'b', 20: 'b'
+        };
+        
+        // Store user's selected answers
+        let userAnswers = {};
+        
+        // Tab navigation
+        function showTab(tabName) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        // Select option for multiple choice
+        function selectOption(element, questionNum, answer) {
+            // Remove selected class from all options in this question
+            const questionDiv = element.closest('.question');
+            const options = questionDiv.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Store the answer
+            userAnswers[questionNum] = answer;
+        }
+        
+        // Show answer for case study questions
+        function showAnswer(questionNum) {
+            const answerDiv = document.getElementById('answer-' + questionNum);
+            answerDiv.classList.toggle('show');
+        }
+        
+        // Submit quiz and calculate score
+        function submitQuiz() {
+            let score = 0;
+            let totalQuestions = 20; // Only count multiple choice questions (1-20)
+            
+            // Check answers for questions 1-20
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionDiv = document.querySelector(`[data-question="${i}"]`);
+                const options = questionDiv.querySelectorAll('.option');
+                
+                // Remove previous correct/incorrect classes
+                options.forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+                
+                // Check if answer is correct
+                if (userAnswers[i] === correctAnswers[i]) {
+                    score++;
+                    // Highlight correct answer in green
+                    options.forEach(opt => {
+                        if (opt.textContent.trim().startsWith(correctAnswers[i] + ')')) {
+                            opt.classList.add('correct');
+                        }
+                    });
+                } else {
+                    // Highlight user's wrong answer in red and correct answer in green
+                    options.forEach(opt => {
+                        const optionLetter = opt.textContent.trim().charAt(0);
+                        if (userAnswers[i] && optionLetter === userAnswers[i]) {
+                            opt.classList.add('incorrect');
+                        }
+                        if (optionLetter === correctAnswers[i]) {
+                            opt.classList.add('correct');
+                        }
+                    });
+                }
+            }
+            
+            // Calculate percentage
+            const percentage = ((score / totalQuestions) * 100).toFixed(1);
+            
+            // Display score
+            const scoreDisplay = document.getElementById('score-display');
+            scoreDisplay.style.display = 'block';
+            scoreDisplay.innerHTML = `
+                <h3>Quiz Results</h3>
+                <p>You scored <strong>${score}</strong> out of <strong>${totalQuestions}</strong> multiple choice questions</p>
+                <p>Percentage: <strong>${percentage}%</strong></p>
+                <p style="margin-top: 15px; font-size: 0.9em;">
+                    ${percentage >= 90 ? '🌟 Excellent work! You have mastered this chapter!' :
+                      percentage >= 80 ? '👍 Great job! You have a strong understanding of the material.' :
+                      percentage >= 70 ? '✓ Good effort! Review the topics you missed to strengthen your knowledge.' :
+                      '📚 Keep studying! Review the chapter content and try again.'}
+                </p>
+                <p style="margin-top: 10px; font-size: 0.85em; color: #a8d0ff;">
+                    Note: Essay questions (21-25) require manual review by your instructor.
+                </p>
+            `;
+            
+            // Scroll to score display
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+
+</body>
+</html>

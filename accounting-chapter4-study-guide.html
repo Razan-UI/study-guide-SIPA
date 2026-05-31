@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Completing the Accounting Cycle - Comprehensive Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3c72 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            border-bottom: 2px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1e3c72;
+            text-decoration: underline;
+        }
+
+        .progress-tracker {
+            background: #e3f2fd;
+            padding: 1rem 2rem;
+            border-left: 4px solid #2c5aa0;
+            margin: 2rem;
+        }
+
+        .progress-tracker h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #2c5aa0, #667eea);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #2c5aa0;
+        }
+
+        h3 {
+            color: #2c5aa0;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        h4 {
+            color: #495057;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .content-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .example-box {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .important-note {
+            background: #f8d7da;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .formula {
+            background: #d1ecf1;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            font-size: 1.1rem;
+            border-left: 4px solid #17a2b8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+
+        th {
+            background: #2c5aa0;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .quiz-section {
+            background: #e7f3ff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .question {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .question h4 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .options {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .options li {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: #f8f9fa;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .options li:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .options li.selected {
+            background: #cfe2ff;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .options li.correct {
+            background: #d1e7dd;
+            border-left: 4px solid #198754;
+        }
+
+        .options li.incorrect {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+
+        button {
+            background: #2c5aa0;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .answer-explanation {
+            display: none;
+            background: #d1e7dd;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            border-left: 4px solid #198754;
+        }
+
+        .answer-explanation.show {
+            display: block;
+        }
+
+        .case-study {
+            background: #fff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .essay-question {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #6f42c1;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .score-display {
+            background: #2c5aa0;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            display: none;
+        }
+
+        .score-display.show {
+            display: block;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            padding-left: 3rem;
+            position: relative;
+            margin: 1rem 0;
+        }
+
+        .step-list li::before {
+            content: "Step " counter(step-counter);
+            position: absolute;
+            left: 0;
+            background: #2c5aa0;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 4: Completing the Accounting Cycle</h1>
+            <p>Financial Accounting IFRS 3rd Edition - Comprehensive Study Guide</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#worksheet">Using a Worksheet</a></li>
+                <li><a href="#closing">Closing the Books</a></li>
+                <li><a href="#post-closing">Post-Closing Trial Balance</a></li>
+                <li><a href="#accounting-cycle">Accounting Cycle</a></li>
+                <li><a href="#correcting">Correcting Entries</a></li>
+                <li><a href="#classified">Classified Statement</a></li>
+                <li><a href="#quiz">Interactive Quiz</a></li>
+            </ul>
+        </nav>
+
+        <div class="progress-tracker">
+            <h3>Your Progress</h3>
+            <p>Track your learning journey through Chapter 4</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p id="progressText">0% Complete</p>
+        </div>
+
+        <main>
+            <!-- Section 1: Using a Worksheet -->
+            <section id="worksheet">
+                <h2>Section 1: Using a Worksheet</h2>
+                
+                <h3>What is a Worksheet?</h3>
+                <div class="content-box">
+                    <p>A <strong>worksheet</strong> is a multiple-column form used in the adjustment process and in preparing financial statements. It is an optional tool that accountants use to organize data and ensure accuracy before preparing formal financial statements.</p>
+                    <p><strong>Key Points:</strong></p>
+                    <ul>
+                        <li>Worksheets are NOT a permanent accounting record</li>
+                        <li>They are NOT financial statements</li>
+                        <li>They are a working tool used internally by accountants</li>
+                        <li>Companies generally computerize worksheets using spreadsheet programs</li>
+                    </ul>
+                </div>
+
+                <h3>Steps in Preparing a Worksheet</h3>
+                <div class="content-box">
+                    <p>The worksheet preparation involves <strong>five steps</strong> that must be completed in order:</p>
+                    
+                    <ol class="step-list">
+                        <li><strong>Prepare a Trial Balance on the Worksheet</strong>
+                            <p>Enter all ledger accounts with balances in the account titles column. Enter debit and credit amounts from the ledger in the trial balance columns. Prove the equality of the two columns (total debits = total credits).</p>
+                        </li>
+                        
+                        <li><strong>Enter the Adjustments in the Adjustments Columns</strong>
+                            <p>Turn to the adjustment data and enter the adjustments in the adjustments columns. Use key letters to cross-reference debit and credit adjustments. Prove the equality of the adjustments columns (total debit adjustments = total credit adjustments).</p>
+                        </li>
+                        
+                        <li><strong>Enter Adjusted Balances in the Adjusted Trial Balance Columns</strong>
+                            <p>Combine the amounts in the trial balance and adjustments columns, and enter them in the adjusted trial balance columns. For each line, add or subtract the adjustment amount from the trial balance amount. Prove the equality of the adjusted trial balance columns.</p>
+                        </li>
+                        
+                        <li><strong>Extend Adjusted Trial Balance Amounts to Appropriate Financial Statement Columns</strong>
+                            <p>Transfer the amounts from the adjusted trial balance to either the income statement columns or the statement of financial position columns. Assets, liabilities, and equity accounts go to the statement of financial position columns. Revenue and expense accounts go to the income statement columns.</p>
+                        </li>
+                        
+                        <li><strong>Total the Statement Columns, Compute Profit or Loss, and Complete the Worksheet</strong>
+                            <p>Total each of the financial statement columns. Calculate profit or loss as the difference between total revenues and total expenses. Enter the profit (or loss) in the appropriate columns to balance the worksheet. Prove the equality: total debits = total credits in both the income statement and statement of financial position columns.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Example: Worksheet Preparation</h3>
+                <div class="example-box">
+                    <h4>Pioneer Advertising Inc. - October 31 Worksheet</h4>
+                    <p><strong>Trial Balance (Step 1):</strong></p>
+                    <table>
+                        <tr>
+                            <th>Account</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                        </tr>
+                        <tr>
+                            <td>Cash</td>
+                            <td>$15,200</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Supplies</td>
+                            <td>$2,500</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Prepaid Insurance</td>
+                            <td>$600</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Equipment</td>
+                            <td>$5,000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accounts Payable</td>
+                            <td></td>
+                            <td>$2,500</td>
+                        </tr>
+                        <tr>
+                            <td>Share Capital—Ordinary</td>
+                            <td></td>
+                            <td>$10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Service Revenue</td>
+                            <td></td>
+                            <td>$10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Salaries and Wages Expense</td>
+                            <td>$4,000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Rent Expense</td>
+                            <td>$900</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>Adjustments (Step 2):</strong></p>
+                    <ul>
+                        <li>(a) Supplies used: $1,500</li>
+                        <li>(b) Insurance expired: $50</li>
+                        <li>(c) Depreciation on equipment: $40</li>
+                        <li>(d) Accrued salaries: $1,200</li>
+                    </ul>
+                    
+                    <p><strong>Result (Step 5):</strong> After completing all steps, if total revenues ($10,000) exceed total expenses ($7,690), the difference is <strong>profit</strong> ($2,310). This amount is entered in the income statement debit column and the statement of financial position credit column to balance the worksheet.</p>
+                </div>
+
+                <h3>Preparing Financial Statements from a Worksheet</h3>
+                <div class="content-box">
+                    <p>Once the worksheet is complete, financial statements can be prepared directly from it:</p>
+                    <ul>
+                        <li><strong>Income Statement:</strong> Prepared from the income statement columns of the worksheet</li>
+                        <li><strong>Retained Earnings Statement:</strong> Prepared from the retained earnings account in the statement of financial position columns, plus profit (or minus loss) from the income statement</li>
+                        <li><strong>Statement of Financial Position:</strong> Prepared from the statement of financial position columns of the worksheet</li>
+                    </ul>
+                    <p><strong>Important:</strong> The worksheet does NOT replace these formal financial statements. It is merely a tool to help prepare them.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: Closing the Books -->
+            <section id="closing">
+                <h2>Section 2: Closing the Books</h2>
+                
+                <h3>Purpose of Closing Entries</h3>
+                <div class="content-box">
+                    <p><strong>Closing entries</strong> are journal entries made at the end of an accounting period to transfer the balances of temporary accounts to a permanent equity account (Retained Earnings).</p>
+                    <p><strong>Why Close the Books?</strong></p>
+                    <ul>
+                        <li>To prepare revenue, expense, and dividend accounts for the next period by reducing their balances to zero</li>
+                        <li>To update the Retained Earnings account to its end-of-period balance</li>
+                        <li>To separate financial data for each accounting period</li>
+                    </ul>
+                </div>
+
+                <h3>Temporary vs. Permanent Accounts</h3>
+                <div class="content-box">
+                    <h4>Temporary Accounts (Nominal Accounts)</h4>
+                    <p>These accounts relate ONLY to a given accounting period and are closed at the end of each period:</p>
+                    <ul>
+                        <li><strong>All revenue accounts</strong> (e.g., Service Revenue, Sales Revenue)</li>
+                        <li><strong>All expense accounts</strong> (e.g., Salaries Expense, Rent Expense, Depreciation Expense)</li>
+                        <li><strong>Dividends</strong> (or Drawings for sole proprietorships)</li>
+                    </ul>
+                    
+                    <h4>Permanent Accounts (Real Accounts)</h4>
+                    <p>These accounts relate to one or more future accounting periods and are NOT closed:</p>
+                    <ul>
+                        <li><strong>All asset accounts</strong> (e.g., Cash, Accounts Receivable, Equipment)</li>
+                        <li><strong>All liability accounts</strong> (e.g., Accounts Payable, Notes Payable)</li>
+                        <li><strong>All equity accounts</strong> (e.g., Share Capital, Retained Earnings)</li>
+                    </ul>
+                    <p>Permanent account balances are carried forward to the next accounting period.</p>
+                </div>
+
+                <h3>The Income Summary Account</h3>
+                <div class="content-box">
+                    <p><strong>Income Summary</strong> is a temporary account used ONLY during the closing process. It:</p>
+                    <ul>
+                        <li>Collects the balances of revenue and expense accounts</li>
+                        <li>Shows the profit or loss for the period</li>
+                        <li>Is then closed to Retained Earnings</li>
+                        <li>Has a zero balance after the closing process is complete</li>
+                    </ul>
+                </div>
+
+                <h3>Four Steps in the Closing Process</h3>
+                <div class="content-box">
+                    <p>Closing entries are prepared in a specific order:</p>
+                    
+                    <ol class="step-list">
+                        <li><strong>Close Revenue Accounts to Income Summary</strong>
+                            <p>Debit each revenue account for its balance and credit Income Summary for the total revenues.</p>
+                            <div class="formula">
+                                Dr. Service Revenue<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. Income Summary
+                            </div>
+                            <p><strong>Purpose:</strong> This entry transfers total revenues to Income Summary and reduces revenue accounts to zero.</p>
+                        </li>
+                        
+                        <li><strong>Close Expense Accounts to Income Summary</strong>
+                            <p>Debit Income Summary for the total expenses and credit each expense account for its balance.</p>
+                            <div class="formula">
+                                Dr. Income Summary<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. Salaries and Wages Expense<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. Rent Expense<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. Depreciation Expense<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. (all other expense accounts)
+                            </div>
+                            <p><strong>Purpose:</strong> This entry transfers total expenses to Income Summary and reduces expense accounts to zero.</p>
+                        </li>
+                        
+                        <li><strong>Close Income Summary to Retained Earnings</strong>
+                            <p><strong>If there is profit (credit balance in Income Summary):</strong></p>
+                            <div class="formula">
+                                Dr. Income Summary<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. Retained Earnings
+                            </div>
+                            <p><strong>If there is a loss (debit balance in Income Summary):</strong></p>
+                            <div class="formula">
+                                Dr. Retained Earnings<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. Income Summary
+                            </div>
+                            <p><strong>Purpose:</strong> This entry transfers profit or loss to Retained Earnings and reduces Income Summary to zero.</p>
+                        </li>
+                        
+                        <li><strong>Close Dividends to Retained Earnings</strong>
+                            <p>Debit Retained Earnings and credit Dividends for the balance in the Dividends account.</p>
+                            <div class="formula">
+                                Dr. Retained Earnings<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Cr. Dividends
+                            </div>
+                            <p><strong>Purpose:</strong> This entry transfers dividends to Retained Earnings and reduces the Dividends account to zero.</p>
+                            <p><strong>Note:</strong> Dividends are NOT an expense and are NOT closed to Income Summary. They are a distribution of profit and are closed directly to Retained Earnings.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Example: Closing Entries</h3>
+                <div class="example-box">
+                    <h4>Pioneer Advertising Inc. - October 31 Closing Entries</h4>
+                    <p><strong>Given Information:</strong></p>
+                    <ul>
+                        <li>Service Revenue: $10,600</li>
+                        <li>Salaries and Wages Expense: $5,200</li>
+                        <li>Supplies Expense: $1,500</li>
+                        <li>Rent Expense: $900</li>
+                        <li>Insurance Expense: $50</li>
+                        <li>Interest Expense: $50</li>
+                        <li>Depreciation Expense: $40</li>
+                        <li>Dividends: $500</li>
+                    </ul>
+                    
+                    <p><strong>Closing Entry 1 - Close Revenues:</strong></p>
+                    <div class="formula">
+                        Oct. 31 | Service Revenue | 10,600 |<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Income Summary | | 10,600<br>
+                        (To close revenue account)
+                    </div>
+                    
+                    <p><strong>Closing Entry 2 - Close Expenses:</strong></p>
+                    <div class="formula">
+                        Oct. 31 | Income Summary | 7,740 |<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Salaries and Wages Expense | | 5,200<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Supplies Expense | | 1,500<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Rent Expense | | 900<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Insurance Expense | | 50<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Interest Expense | | 50<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Depreciation Expense | | 40<br>
+                        (To close expense accounts)
+                    </div>
+                    
+                    <p><strong>Closing Entry 3 - Close Income Summary (Profit):</strong></p>
+                    <div class="formula">
+                        Oct. 31 | Income Summary | 2,860 |<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Retained Earnings | | 2,860<br>
+                        (To close Income Summary - profit of $2,860)
+                    </div>
+                    <p><em>Calculation: $10,600 revenues - $7,740 expenses = $2,860 profit</em></p>
+                    
+                    <p><strong>Closing Entry 4 - Close Dividends:</strong></p>
+                    <div class="formula">
+                        Oct. 31 | Retained Earnings | 500 |<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Dividends | | 500<br>
+                        (To close Dividends account)
+                    </div>
+                    
+                    <p><strong>Result:</strong> After posting these entries:</p>
+                    <ul>
+                        <li>All revenue accounts have zero balances</li>
+                        <li>All expense accounts have zero balances</li>
+                        <li>Income Summary has a zero balance</li>
+                        <li>Dividends has a zero balance</li>
+                        <li>Retained Earnings is updated: Beginning balance + Profit - Dividends = Ending balance</li>
+                    </ul>
+                </div>
+
+                <div class="important-note">
+                    <h4>⚠️ Important Reminders</h4>
+                    <ul>
+                        <li>Closing entries are recorded in the general journal and posted to the ledger</li>
+                        <li>The word "Closing Entry" is written in the description column of the journal</li>
+                        <li>Closing entries are dated the last day of the accounting period</li>
+                        <li>After closing, all temporary accounts have zero balances</li>
+                        <li>Only permanent accounts (assets, liabilities, equity) have balances carried forward</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3: Post-Closing Trial Balance -->
+            <section id="post-closing">
+                <h2>Section 3: Post-Closing Trial Balance</h2>
+                
+                <h3>What is a Post-Closing Trial Balance?</h3>
+                <div class="content-box">
+                    <p>A <strong>post-closing trial balance</strong> is a list of all permanent accounts and their balances after closing entries have been journalized and posted.</p>
+                    <p><strong>Purpose:</strong></p>
+                    <ul>
+                        <li>To prove the equality of permanent account balances (debits = credits)</li>
+                        <li>To verify that the closing process was completed correctly</li>
+                        <li>To ensure all temporary accounts have been closed (zero balances)</li>
+                        <li>To provide the opening balances for the next accounting period</li>
+                    </ul>
+                </div>
+
+                <h3>Content of Post-Closing Trial Balance</h3>
+                <div class="content-box">
+                    <p><strong>Accounts Included:</strong></p>
+                    <ul>
+                        <li>All asset accounts (Cash, Accounts Receivable, Supplies, Equipment, etc.)</li>
+                        <li>All liability accounts (Accounts Payable, Notes Payable, Salaries Payable, etc.)</li>
+                        <li>All permanent equity accounts (Share Capital, Retained Earnings)</li>
+                    </ul>
+                    
+                    <p><strong>Accounts NOT Included:</strong></p>
+                    <ul>
+                        <li>Revenue accounts (closed to zero)</li>
+                        <li>Expense accounts (closed to zero)</li>
+                        <li>Dividends account (closed to zero)</li>
+                        <li>Income Summary account (closed to zero)</li>
+                    </ul>
+                </div>
+
+                <h3>Example: Post-Closing Trial Balance</h3>
+                <div class="example-box">
+                    <h4>Pioneer Advertising Inc. - Post-Closing Trial Balance, October 31</h4>
+                    <table>
+                        <tr>
+                            <th>Account</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                        </tr>
+                        <tr>
+                            <td>Cash</td>
+                            <td>$15,200</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accounts Receivable</td>
+                            <td>$200</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Supplies</td>
+                            <td>$1,000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Prepaid Insurance</td>
+                            <td>$550</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Equipment</td>
+                            <td>$5,000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Accumulated Depreciation—Equipment</td>
+                            <td></td>
+                            <td>$40</td>
+                        </tr>
+                        <tr>
+                            <td>Notes Payable</td>
+                            <td></td>
+                            <td>$5,000</td>
+                        </tr>
+                        <tr>
+                            <td>Accounts Payable</td>
+                            <td></td>
+                            <td>$2,500</td>
+                        </tr>
+                        <tr>
+                            <td>Interest Payable</td>
+                            <td></td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td>Salaries and Wages Payable</td>
+                            <td></td>
+                            <td>$1,200</td>
+                        </tr>
+                        <tr>
+                            <td>Unearned Service Revenue</td>
+                            <td></td>
+                            <td>$800</td>
+                        </tr>
+                        <tr>
+                            <td>Share Capital—Ordinary</td>
+                            <td></td>
+                            <td>$10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Retained Earnings</td>
+                            <td></td>
+                            <td>$2,360</td>
+                        </tr>
+                        <tr>
+                            <th>Totals</th>
+                            <th>$21,950</th>
+                            <th>$21,950</th>
+                        </tr>
+                    </table>
+                    <p><strong>Note:</strong> The Retained Earnings balance of $2,360 reflects the updated balance after closing entries (beginning balance $0 + profit $2,860 - dividends $500 = $2,360).</p>
+                </div>
+
+                <div class="important-note">
+                    <h4>⚠️ Key Points</h4>
+                    <ul>
+                        <li>The post-closing trial balance contains ONLY permanent accounts</li>
+                        <li>If any temporary accounts appear, the closing process was not completed correctly</li>
+                        <li>The balances in the post-closing trial balance become the opening balances for the next period</li>
+                        <li>This is the final step before starting a new accounting period</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 4: The Accounting Cycle -->
+            <section id="accounting-cycle">
+                <h2>Section 4: Summary of the Accounting Cycle</h2>
+                
+                <h3>The Nine Steps of the Accounting Cycle</h3>
+                <div class="content-box">
+                    <p>The <strong>accounting cycle</strong> is the series of steps performed during each accounting period to classify, record, and summarize financial data for a business. The cycle begins when a transaction occurs and ends with the preparation of a post-closing trial balance.</p>
+                    
+                    <ol class="step-list">
+                        <li><strong>Analyze Business Transactions</strong>
+                            <p>Examine source documents (invoices, receipts, contracts) to determine the accounts affected and the amounts involved. Identify which accounts increase or decrease.</p>
+                        </li>
+                        
+                        <li><strong>Journalize the Transactions</strong>
+                            <p>Record transactions in chronological order in the general journal. Include the date, accounts, amounts, and a brief explanation for each entry.</p>
+                        </li>
+                        
+                        <li><strong>Post to Ledger Accounts</strong>
+                            <p>Transfer journal entries to the appropriate accounts in the general ledger. Update account balances after each posting.</p>
+                        </li>
+                        
+                        <li><strong>Prepare a Trial Balance</strong>
+                            <p>List all ledger accounts and their balances at the end of the period. Verify that total debits equal total credits.</p>
+                        </li>
+                        
+                        <li><strong>Journalize and Post Adjusting Entries</strong>
+                            <p>Record adjusting entries for accruals and deferrals at the end of the period. Post these entries to the ledger to update account balances.</p>
+                        </li>
+                        
+                        <li><strong>Prepare an Adjusted Trial Balance</strong>
+                            <p>List all ledger accounts with their updated balances after adjusting entries. Verify that total debits equal total credits. This trial balance is used to prepare financial statements.</p>
+                        </li>
+                        
+                        <li><strong>Prepare Financial Statements</strong>
+                            <p>Use the adjusted trial balance to prepare:</p>
+                            <ul>
+                                <li>Income Statement (revenues and expenses)</li>
+                                <li>Retained Earnings Statement (changes in retained earnings)</li>
+                                <li>Statement of Financial Position (assets, liabilities, and equity)</li>
+                                <li>Statement of Cash Flows (optional at this stage)</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Journalize and Post Closing Entries</strong>
+                            <p>Record closing entries to transfer temporary account balances to Retained Earnings. Post these entries to the ledger. All revenue, expense, and dividend accounts should have zero balances after closing.</p>
+                        </li>
+                        
+                        <li><strong>Prepare a Post-Closing Trial Balance</strong>
+                            <p>List all permanent accounts and their balances after closing entries. Verify that total debits equal total credits. This becomes the opening balance for the next accounting period.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Steps Performed Daily vs. Periodically</h3>
+                <div class="content-box">
+                    <p><strong>Steps Performed During the Period (Daily/Weekly):</strong></p>
+                    <ul>
+                        <li>Step 1: Analyze business transactions</li>
+                        <li>Step 2: Journalize the transactions</li>
+                        <li>Step 3: Post to ledger accounts</li>
+                    </ul>
+                    
+                    <p><strong>Steps Performed at the End of the Period (Monthly/Annually):</strong></p>
+                    <ul>
+                        <li>Step 4: Prepare a trial balance</li>
+                        <li>Step 5: Journalize and post adjusting entries</li>
+                        <li>Step 6: Prepare an adjusted trial balance</li>
+                        <li>Step 7: Prepare financial statements</li>
+                        <li>Step 8: Journalize and post closing entries</li>
+                        <li>Step 9: Prepare a post-closing trial balance</li>
+                    </ul>
+                </div>
+
+                <div class="important-note">
+                    <h4>⚠️ Optional Step: Reversing Entries</h4>
+                    <p>Some companies prepare <strong>reversing entries</strong> at the beginning of the next accounting period. These entries are the exact opposite of certain adjusting entries made at the end of the previous period. Reversing entries simplify the recording of subsequent transactions, particularly for accruals.</p>
+                </div>
+            </section>
+
+            <!-- Section 5: Correcting Entries -->
+            <section id="correcting">
+                <h2>Section 5: Correcting Entries</h2>
+                
+                <h3>What are Correcting Entries?</h3>
+                <div class="content-box">
+                    <p><strong>Correcting entries</strong> are journal entries made to correct errors in the accounting records. Errors can occur at any stage of the accounting process.</p>
+                    <p><strong>Important Distinction:</strong></p>
+                    <ul>
+                        <li><strong>Adjusting entries</strong> are a planned part of the accounting cycle to update accounts at the end of a period</li>
+                        <li><strong>Correcting entries</strong> are made whenever an error is discovered, regardless of the timing</li>
+                    </ul>
+                </div>
+
+                <h3>Types of Errors</h3>
+                <div class="content-box">
+                    <h4>1. Errors That Do NOT Affect Trial Balance Equality</h4>
+                    <p>These errors are harder to detect because debits still equal credits:</p>
+                    <ul>
+                        <li><strong>Error of omission:</strong> A transaction is completely omitted from the records</li>
+                        <li><strong>Error of commission:</strong> A transaction is recorded in the wrong account of the correct classification (e.g., debiting Office Supplies instead of Store Supplies)</li>
+                        <li><strong>Error of principle:</strong> A transaction violates an accounting principle (e.g., recording an asset purchase as an expense)</li>
+                        <li><strong>Compensating error:</strong> Two or more errors offset each other</li>
+                    </ul>
+                    
+                    <h4>2. Errors That DO Affect Trial Balance Equality</h4>
+                    <p>These errors are easier to detect because debits do not equal credits:</p>
+                    <ul>
+                        <li>Recording only the debit or only the credit of a transaction</li>
+                        <li>Recording different amounts for the debit and credit</li>
+                        <li>Recording a debit as a credit, or vice versa</li>
+                        <li>Making an error in addition or subtraction when calculating account balances</li>
+                        <li>Transposition error (e.g., writing $63 instead of $36)</li>
+                        <li>Slide error (e.g., writing $630 instead of $63)</li>
+                    </ul>
+                </div>
+
+                <h3>How to Prepare Correcting Entries</h3>
+                <div class="content-box">
+                    <p><strong>Two-Step Approach:</strong></p>
+                    <ol>
+                        <li><strong>Determine what the correct entry should have been</strong></li>
+                        <li><strong>Compare the correct entry with the incorrect entry that was made</strong></li>
+                    </ol>
+                    <p>The correcting entry should bring the accounts from their incorrect balances to their correct balances.</p>
+                </div>
+
+                <h3>Examples of Correcting Entries</h3>
+                <div class="example-box">
+                    <h4>Example 1: Error of Commission</h4>
+                    <p><strong>Situation:</strong> On May 10, a $50 cash collection on account was journalized and posted as a debit to Cash $50 and a credit to Service Revenue $50 (instead of Accounts Receivable).</p>
+                    
+                    <p><strong>Incorrect Entry Made:</strong></p>
+                    <div class="formula">
+                        Dr. Cash | 50<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Service Revenue | 50
+                    </div>
+                    
+                    <p><strong>Correct Entry Should Have Been:</strong></p>
+                    <div class="formula">
+                        Dr. Cash | 50<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Accounts Receivable | 50
+                    </div>
+                    
+                    <p><strong>Correcting Entry:</strong></p>
+                    <div class="formula">
+                        Dr. Service Revenue | 50<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Accounts Receivable | 50<br>
+                        (To correct entry of May 10)
+                    </div>
+                    <p><strong>Explanation:</strong> Cash was correctly debited, so no correction is needed for Cash. Service Revenue was incorrectly credited and needs to be debited. Accounts Receivable was not credited but should have been, so it needs to be credited now.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: Error of Principle</h4>
+                    <p><strong>Situation:</strong> On May 18, equipment costing $450 was purchased on account. The transaction was journalized and posted as a debit to Supplies Expense $450 and a credit to Accounts Payable $450.</p>
+                    
+                    <p><strong>Incorrect Entry Made:</strong></p>
+                    <div class="formula">
+                        Dr. Supplies Expense | 450<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Accounts Payable | 450
+                    </div>
+                    
+                    <p><strong>Correct Entry Should Have Been:</strong></p>
+                    <div class="formula">
+                        Dr. Equipment | 450<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Accounts Payable | 450
+                    </div>
+                    
+                    <p><strong>Correcting Entry:</strong></p>
+                    <div class="formula">
+                        Dr. Equipment | 450<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Supplies Expense | 450<br>
+                        (To correct entry of May 18)
+                    </div>
+                    <p><strong>Explanation:</strong> Accounts Payable was correctly credited, so no correction is needed. Supplies Expense was incorrectly debited and needs to be credited. Equipment was not debited but should have been, so it needs to be debited now.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 3: Incorrect Amount</h4>
+                    <p><strong>Situation:</strong> On May 22, a $90 payment for salaries was journalized and posted as a debit to Salaries and Wages Expense $90 and a credit to Cash $9.</p>
+                    
+                    <p><strong>Incorrect Entry Made:</strong></p>
+                    <div class="formula">
+                        Dr. Salaries and Wages Expense | 90<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Cash | 9
+                    </div>
+                    
+                    <p><strong>Correct Entry Should Have Been:</strong></p>
+                    <div class="formula">
+                        Dr. Salaries and Wages Expense | 90<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Cash | 90
+                    </div>
+                    
+                    <p><strong>Correcting Entry:</strong></p>
+                    <div class="formula">
+                        Dr. Salaries and Wages Expense | 0<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Cr. Cash | 81<br>
+                        (To correct entry of May 22)
+                    </div>
+                    <p><strong>Explanation:</strong> Salaries and Wages Expense was correctly debited for $90. Cash was only credited for $9 but should have been credited for $90, so an additional credit of $81 is needed ($90 - $9 = $81).</p>
+                </div>
+
+                <div class="important-note">
+                    <h4>⚠️ Important Points About Correcting Entries</h4>
+                    <ul>
+                        <li>Correcting entries should be made as soon as an error is discovered</li>
+                        <li>Never erase or alter original journal entries or ledger postings</li>
+                        <li>Always prepare a correcting entry and post it properly</li>
+                        <li>Include a clear explanation in the correcting entry</li>
+                        <li>If the error affects prior period financial statements, additional procedures may be required</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 6: Classified Statement of Financial Position -->
+            <section id="classified">
+                <h2>Section 6: Classified Statement of Financial Position</h2>
+                
+                <h3>What is a Classified Statement of Financial Position?</h3>
+                <div class="content-box">
+                    <p>A <strong>classified statement of financial position</strong> (also called a classified balance sheet) groups together similar assets and similar liabilities using standard classifications and sections. This makes the statement more useful for analysis and decision-making.</p>
+                    <p><strong>Benefits:</strong></p>
+                    <ul>
+                        <li>Easier to identify key relationships and trends</li>
+                        <li>Facilitates comparison between companies</li>
+                        <li>Highlights liquidity (ability to pay short-term obligations)</li>
+                        <li>Shows financial flexibility and solvency</li>
+                    </ul>
+                </div>
+
+                <h3>Standard Classifications</h3>
+                <div class="content-box">
+                    <p>A classified statement of financial position typically contains the following standard classifications:</p>
+                    
+                    <h4>ASSETS</h4>
+                    <ul>
+                        <li>Current Assets</li>
+                        <li>Long-term Investments</li>
+                        <li>Property, Plant, and Equipment</li>
+                        <li>Intangible Assets</li>
+                    </ul>
+                    
+                    <h4>LIABILITIES</h4>
+                    <ul>
+                        <li>Current Liabilities</li>
+                        <li>Non-current Liabilities (Long-term Liabilities)</li>
+                    </ul>
+                    
+                    <h4>EQUITY</h4>
+                    <ul>
+                        <li>Share Capital—Ordinary</li>
+                        <li>Retained Earnings</li>
+                    </ul>
+                </div>
+
+                <h3>Current Assets</h3>
+                <div class="content-box">
+                    <p><strong>Definition:</strong> Assets that a company expects to convert to cash or use up within one year or its operating cycle, whichever is longer.</p>
+                    <p><strong>Operating Cycle:</strong> The average time required to purchase inventory, sell it on account, and collect the cash from customers.</p>
+                    <p><strong>Common Current Assets (listed in order of liquidity):</strong></p>
+                    <ol>
+                        <li><strong>Cash:</strong> Currency, coins, and funds in bank accounts</li>
+                        <li><strong>Short-term Investments:</strong> Investments that can be readily converted to cash (e.g., trading securities)</li>
+                        <li><strong>Accounts Receivable:</strong> Amounts owed by customers</li>
+                        <li><strong>Notes Receivable:</strong> Written promises to receive cash (due within one year)</li>
+                        <li><strong>Inventory:</strong> Goods held for sale to customers</li>
+                        <li><strong>Supplies:</strong> Items to be used in operations</li>
+                        <li><strong>Prepaid Expenses:</strong> Expenses paid in advance (e.g., prepaid insurance, prepaid rent)</li>
+                    </ol>
+                </div>
+
+                <h3>Long-term Investments</h3>
+                <div class="content-box">
+                    <p><strong>Definition:</strong> Resources that a company does not intend to convert to cash or use up within one year or the operating cycle.</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>Investments in shares and bonds of other companies (held for long-term)</li>
+                        <li>Investments in real estate not currently used in operations</li>
+                        <li>Long-term notes receivable</li>
+                        <li>Cash surrender value of life insurance</li>
+                    </ul>
+                </div>
+
+                <h3>Property, Plant, and Equipment</h3>
+                <div class="content-box">
+                    <p><strong>Definition:</strong> Long-lived assets that a company uses in operations to generate revenue. Also called <strong>fixed assets</strong> or <strong>plant assets</strong>.</p>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li>Tangible (physical) assets</li>
+                        <li>Used in operations (not held for resale)</li>
+                        <li>Long-term in nature (useful life exceeds one year)</li>
+                        <li>Subject to depreciation (except land)</li>
+                    </ul>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li><strong>Land:</strong> Property owned (not depreciated)</li>
+                        <li><strong>Buildings:</strong> Structures used in operations</li>
+                        <li><strong>Equipment:</strong> Machinery, tools, vehicles, furniture</li>
+                        <li><strong>Delivery Equipment:</strong> Trucks, vans used for deliveries</li>
+                    </ul>
+                    <p><strong>Presentation:</strong> Property, plant, and equipment is shown at cost less accumulated depreciation. The difference is called <strong>book value</strong> or <strong>carrying amount</strong>.</p>
+                </div>
+
+                <h3>Intangible Assets</h3>
+                <div class="content-box">
+                    <p><strong>Definition:</strong> Long-lived assets that lack physical substance but have value based on rights or privileges they confer on their owner.</p>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li>No physical form</li>
+                        <li>Provide economic benefits over multiple periods</li>
+                        <li>Subject to amortization (similar to depreciation)</li>
+                    </ul>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li><strong>Patents:</strong> Exclusive rights to manufacture, sell, or control an invention (typically 20 years)</li>
+                        <li><strong>Copyrights:</strong> Exclusive rights to reproduce and sell artistic or published works</li>
+                        <li><strong>Trademarks:</strong> Words, phrases, or symbols that identify a particular enterprise or product</li>
+                        <li><strong>Trade Names:</strong> Brand names under which a product is sold</li>
+                        <li><strong>Franchises:</strong> Contractual arrangements to sell products or services in a specific area</li>
+                        <li><strong>Goodwill:</strong> The value of favorable attributes related to a business (only recorded when a business is purchased)</li>
+                    </ul>
+                </div>
+
+                <h3>Current Liabilities</h3>
+                <div class="content-box">
+                    <p><strong>Definition:</strong> Obligations that a company expects to pay within one year or the operating cycle, whichever is longer.</p>
+                    <p><strong>Common Current Liabilities:</strong></p>
+                    <ul>
+                        <li><strong>Accounts Payable:</strong> Amounts owed to suppliers for goods or services purchased on credit</li>
+                        <li><strong>Notes Payable:</strong> Written promises to pay (due within one year)</li>
+                        <li><strong>Salaries and Wages Payable:</strong> Amounts owed to employees</li>
+                        <li><strong>Interest Payable:</strong> Interest owed on borrowed funds</li>
+                        <li><strong>Taxes Payable:</strong> Income taxes or other taxes owed to government</li>
+                        <li><strong>Unearned Revenues:</strong> Cash received in advance for services or goods not yet provided</li>
+                        <li><strong>Current Portion of Long-term Debt:</strong> The portion of long-term debt due within one year</li>
+                    </ul>
+                </div>
+
+                <h3>Non-current Liabilities</h3>
+                <div class="content-box">
+                    <p><strong>Definition:</strong> Obligations that a company does not expect to pay within one year or the operating cycle. Also called <strong>long-term liabilities</strong>.</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li><strong>Bonds Payable:</strong> Long-term debt securities issued to investors</li>
+                        <li><strong>Long-term Notes Payable:</strong> Written promises to pay (due after one year)</li>
+                        <li><strong>Mortgage Payable:</strong> Debt secured by real estate</li>
+                        <li><strong>Lease Liabilities:</strong> Obligations under long-term lease agreements</li>
+                        <li><strong>Pension Liabilities:</strong> Obligations to provide retirement benefits to employees</li>
+                    </ul>
+                </div>
+
+                <h3>Equity</h3>
+                <div class="content-box">
+                    <p><strong>Definition:</strong> The residual interest in the assets of a company after deducting liabilities. Also called <strong>shareholders' equity</strong> or <strong>stockholders' equity</strong>.</p>
+                    <p><strong>Components for a Corporation:</strong></p>
+                    <ul>
+                        <li><strong>Share Capital—Ordinary:</strong> The amount paid by shareholders for shares of ownership in the company</li>
+                        <li><strong>Retained Earnings:</strong> Cumulative profit that has been retained in the business (not distributed as dividends)</li>
+                    </ul>
+                    <p><strong>Formula:</strong></p>
+                    <div class="formula">
+                        Equity = Assets - Liabilities
+                    </div>
+                    <p><strong>Note:</strong> For sole proprietorships, equity is called <strong>Owner's Capital</strong>. For partnerships, it is called <strong>Partners' Capital</strong>.</p>
+                </div>
+
+                <h3>Example: Classified Statement of Financial Position</h3>
+                <div class="example-box">
+                    <h4>Pioneer Advertising Inc. - Statement of Financial Position, October 31</h4>
+                    <table>
+                        <tr>
+                            <th colspan="2">ASSETS</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Current Assets</strong></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Cash</td>
+                            <td>$15,200</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Accounts Receivable</td>
+                            <td>$200</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Supplies</td>
+                            <td>$1,000</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Prepaid Insurance</td>
+                            <td>$550</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Total Current Assets</strong></td>
+                            <td><strong>$16,950</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Property, Plant, and Equipment</strong></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Equipment</td>
+                            <td>$5,000</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Less: Accumulated Depreciation</td>
+                            <td>($40)</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Total Property, Plant, and Equipment</strong></td>
+                            <td><strong>$4,960</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL ASSETS</strong></td>
+                            <td><strong>$21,910</strong></td>
+                        </tr>
+                    </table>
+                    
+                    <table style="margin-top: 1rem;">
+                        <tr>
+                            <th colspan="2">LIABILITIES AND EQUITY</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Current Liabilities</strong></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Accounts Payable</td>
+                            <td>$2,500</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Salaries and Wages Payable</td>
+                            <td>$1,200</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Interest Payable</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Unearned Service Revenue</td>
+                            <td>$800</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Total Current Liabilities</strong></td>
+                            <td><strong>$4,550</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Non-current Liabilities</strong></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Notes Payable</td>
+                            <td>$5,000</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Total Non-current Liabilities</strong></td>
+                            <td><strong>$5,000</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Liabilities</strong></td>
+                            <td><strong>$9,550</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Equity</strong></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Share Capital—Ordinary</td>
+                            <td>$10,000</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;Retained Earnings</td>
+                            <td>$2,360</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Total Equity</strong></td>
+                            <td><strong>$12,360</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL LIABILITIES AND EQUITY</strong></td>
+                            <td><strong>$21,910</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="important-note">
+                    <h4>⚠️ Key Ratios from Classified Statement</h4>
+                    <p><strong>Working Capital:</strong> Current Assets - Current Liabilities</p>
+                    <p>Example: $16,950 - $4,550 = $12,400</p>
+                    <p><em>Measures the company's ability to pay short-term obligations</em></p>
+                    
+                    <p><strong>Current Ratio:</strong> Current Assets ÷ Current Liabilities</p>
+                    <p>Example: $16,950 ÷ $4,550 = 3.73:1</p>
+                    <p><em>Indicates liquidity; a ratio above 2:1 is generally considered healthy</em></p>
+                    
+                    <p><strong>Debt to Total Assets Ratio:</strong> Total Liabilities ÷ Total Assets</p>
+                    <p>Example: $9,550 ÷ $21,910 = 0.44 or 44%</p>
+                    <p><em>Shows the percentage of assets financed by debt; lower is generally better</em></p>
+                </div>
+            </section>
+
+            <!-- Interactive Quiz Section -->
+            <section id="quiz">
+                <h2>Interactive Multiple-Choice Quiz</h2>
+                <div class="quiz-section">
+                    <p>Test your understanding of Chapter 4 concepts with these 25 questions. Click on your answer choice, then click "Check Answer" to see if you're correct!</p>
+                    
+                    <!-- Question 1 -->
+                    <div class="question" data-question="1">
+                        <h4>Question 1: What is the primary purpose of a worksheet?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">To replace the general ledger in the accounting system</li>
+                            <li data-answer="correct">To organize data and ensure accuracy before preparing financial statements</li>
+                            <li data-answer="wrong">To serve as a permanent accounting record for external reporting</li>
+                            <li data-answer="wrong">To eliminate the need for adjusting entries at period-end</li>
+                        </ul>
+                        <button onclick="checkAnswer(1)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> A worksheet is an optional tool used internally to organize data and ensure accuracy. It is NOT a permanent record or financial statement.
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question" data-question="2">
+                        <h4>Question 2: In which step of worksheet preparation do you combine trial balance and adjustment amounts?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Step 2: Enter the adjustments in the adjustments columns</li>
+                            <li data-answer="correct">Step 3: Enter adjusted balances in the adjusted trial balance columns</li>
+                            <li data-answer="wrong">Step 4: Extend amounts to appropriate financial statement columns</li>
+                            <li data-answer="wrong">Step 1: Prepare a trial balance on the worksheet</li>
+                        </ul>
+                        <button onclick="checkAnswer(2)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Step 3 involves combining trial balance amounts with adjustments to arrive at adjusted balances.
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question" data-question="3">
+                        <h4>Question 3: Which of the following is a temporary account?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Accumulated Depreciation</li>
+                            <li data-answer="correct">Service Revenue</li>
+                            <li data-answer="wrong">Accounts Receivable</li>
+                            <li data-answer="wrong">Retained Earnings</li>
+                        </ul>
+                        <button onclick="checkAnswer(3)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Service Revenue is a temporary account that is closed at the end of each period. The other options are permanent accounts.
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question" data-question="4">
+                        <h4>Question 4: What is the first step in the closing process?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Close expense accounts to Income Summary</li>
+                            <li data-answer="wrong">Close Income Summary to Retained Earnings</li>
+                            <li data-answer="correct">Close revenue accounts to Income Summary</li>
+                            <li data-answer="wrong">Close Dividends to Retained Earnings</li>
+                        </ul>
+                        <button onclick="checkAnswer(4)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> The first closing entry transfers all revenue account balances to Income Summary by debiting revenues and crediting Income Summary.
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-question="5">
+                        <h4>Question 5: The Income Summary account is used:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Throughout the accounting period to record all revenues and expenses</li>
+                            <li data-answer="correct">Only during the closing process to temporarily hold profit or loss</li>
+                            <li data-answer="wrong">As a permanent account to track cumulative company performance</li>
+                            <li data-answer="wrong">To replace the Retained Earnings account in the ledger</li>
+                        </ul>
+                        <button onclick="checkAnswer(5)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Income Summary is a temporary account used ONLY during closing to collect revenues and expenses before transferring the net amount to Retained Earnings.
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-question="6">
+                        <h4>Question 6: If a company has total revenues of $50,000 and total expenses of $32,000, the closing entry for Income Summary would be:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Debit Retained Earnings $18,000; Credit Income Summary $18,000</li>
+                            <li data-answer="correct">Debit Income Summary $18,000; Credit Retained Earnings $18,000</li>
+                            <li data-answer="wrong">Debit Income Summary $32,000; Credit Retained Earnings $32,000</li>
+                            <li data-answer="wrong">Debit Retained Earnings $50,000; Credit Income Summary $50,000</li>
+                        </ul>
+                        <button onclick="checkAnswer(6)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> With profit of $18,000 ($50,000 - $32,000), Income Summary has a credit balance. To close it, debit Income Summary and credit Retained Earnings.
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-question="7">
+                        <h4>Question 7: Why are dividends NOT closed to Income Summary?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Because dividends are considered an operating expense of the business</li>
+                            <li data-answer="correct">Because dividends are a distribution of profit, not an expense</li>
+                            <li data-answer="wrong">Because dividends are a permanent account that carries forward</li>
+                            <li data-answer="wrong">Because dividends must be closed before revenues and expenses</li>
+                        </ul>
+                        <button onclick="checkAnswer(7)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Dividends represent a distribution of profit to shareholders, not a business expense. They are closed directly to Retained Earnings.
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-question="8">
+                        <h4>Question 8: Which accounts appear on a post-closing trial balance?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">All revenue, expense, and dividend accounts with zero balances</li>
+                            <li data-answer="wrong">Only revenue and expense accounts after closing entries</li>
+                            <li data-answer="correct">Only permanent accounts: assets, liabilities, and equity</li>
+                            <li data-answer="wrong">All accounts from the adjusted trial balance including temporary accounts</li>
+                        </ul>
+                        <button onclick="checkAnswer(8)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> The post-closing trial balance contains only permanent accounts (assets, liabilities, equity) because all temporary accounts have been closed to zero.
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-question="9">
+                        <h4>Question 9: How many steps are in the complete accounting cycle?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Five steps, from analyzing transactions to preparing financial statements</li>
+                            <li data-answer="wrong">Seven steps, ending with the adjusted trial balance</li>
+                            <li data-answer="correct">Nine steps, from analyzing transactions to post-closing trial balance</li>
+                            <li data-answer="wrong">Twelve steps, including reversing entries as a required step</li>
+                        </ul>
+                        <button onclick="checkAnswer(9)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> The accounting cycle consists of nine steps, beginning with analyzing transactions and ending with preparing a post-closing trial balance.
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-question="10">
+                        <h4>Question 10: Which step in the accounting cycle is performed daily or continuously?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Preparing the adjusted trial balance</li>
+                            <li data-answer="correct">Journalizing transactions</li>
+                            <li data-answer="wrong">Preparing closing entries</li>
+                            <li data-answer="wrong">Preparing the post-closing trial balance</li>
+                        </ul>
+                        <button onclick="checkAnswer(10)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Journalizing transactions (along with analyzing and posting) occurs daily as transactions happen, while the other steps occur at period-end.
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-question="11">
+                        <h4>Question 11: A correcting entry is needed when:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">The accounting period ends and accounts need to be updated</li>
+                            <li data-answer="correct">An error has been made in recording a transaction</li>
+                            <li data-answer="wrong">Revenue needs to be recognized under accrual accounting</li>
+                            <li data-answer="wrong">Temporary accounts need to be closed to permanent accounts</li>
+                        </ul>
+                        <button onclick="checkAnswer(11)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Correcting entries fix errors in the accounting records, while adjusting entries are routine period-end updates.
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-question="12">
+                        <h4>Question 12: Which type of error does NOT affect the equality of the trial balance?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Recording only the debit portion of a transaction</li>
+                            <li data-answer="correct">Recording a transaction in the wrong account of the correct classification</li>
+                            <li data-answer="wrong">Recording different amounts for the debit and credit</li>
+                            <li data-answer="wrong">Making a transposition error in only one account</li>
+                        </ul>
+                        <button onclick="checkAnswer(12)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> An error of commission (wrong account, correct classification) maintains debit-credit equality, making it harder to detect.
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-question="13">
+                        <h4>Question 13: Equipment costing $800 was recorded as Supplies Expense $800. The correcting entry would be:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Debit Supplies Expense $800; Credit Equipment $800</li>
+                            <li data-answer="correct">Debit Equipment $800; Credit Supplies Expense $800</li>
+                            <li data-answer="wrong">Debit Equipment $800; Credit Cash $800</li>
+                            <li data-answer="wrong">Debit Supplies Expense $800; Credit Accounts Payable $800</li>
+                        </ul>
+                        <button onclick="checkAnswer(13)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> To correct this error of principle, debit Equipment (should have been debited) and credit Supplies Expense (incorrectly debited).
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-question="14">
+                        <h4>Question 14: Current assets are listed on the statement of financial position in order of:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Historical cost, from highest to lowest value</li>
+                            <li data-answer="correct">Liquidity, from most liquid to least liquid</li>
+                            <li data-answer="wrong">Alphabetical order for ease of reference</li>
+                            <li data-answer="wrong">Importance to business operations</li>
+                        </ul>
+                        <button onclick="checkAnswer(14)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Current assets are listed in order of liquidity, starting with cash and ending with prepaid expenses.
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-question="15">
+                        <h4>Question 15: Which of the following is classified as an intangible asset?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Prepaid Insurance</li>
+                            <li data-answer="wrong">Accounts Receivable</li>
+                            <li data-answer="correct">Patent</li>
+                            <li data-answer="wrong">Equipment</li>
+                        </ul>
+                        <button onclick="checkAnswer(15)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> A patent is an intangible asset (no physical substance). The others are either current assets or property, plant, and equipment.
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-question="16">
+                        <h4>Question 16: Property, plant, and equipment is reported on the statement of financial position at:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Current market value as determined by independent appraisal</li>
+                            <li data-answer="correct">Cost less accumulated depreciation (book value)</li>
+                            <li data-answer="wrong">Original cost without any adjustments for depreciation</li>
+                            <li data-answer="wrong">Replacement cost based on current market prices</li>
+                        </ul>
+                        <button onclick="checkAnswer(16)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Property, plant, and equipment is shown at cost minus accumulated depreciation, which equals book value or carrying amount.
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-question="17">
+                        <h4>Question 17: Which of the following is a current liability?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Bonds Payable due in 5 years</li>
+                            <li data-answer="correct">Unearned Service Revenue</li>
+                            <li data-answer="wrong">Mortgage Payable due in 10 years</li>
+                            <li data-answer="wrong">Long-term Notes Payable</li>
+                        </ul>
+                        <button onclick="checkAnswer(17)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Unearned Service Revenue is a current liability because the company expects to provide the service within one year. The others are non-current liabilities.
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-question="18">
+                        <h4>Question 18: Working capital is calculated as:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Total Assets minus Total Liabilities</li>
+                            <li data-answer="correct">Current Assets minus Current Liabilities</li>
+                            <li data-answer="wrong">Total Assets minus Current Liabilities</li>
+                            <li data-answer="wrong">Current Assets divided by Current Liabilities</li>
+                        </ul>
+                        <button onclick="checkAnswer(18)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Working capital = Current Assets - Current Liabilities. It measures the company's ability to pay short-term obligations.
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-question="19">
+                        <h4>Question 19: A current ratio of 2.5:1 means:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">The company has $2.50 in total assets for every $1 in total liabilities</li>
+                            <li data-answer="correct">The company has $2.50 in current assets for every $1 in current liabilities</li>
+                            <li data-answer="wrong">The company's profit margin is 2.5% of sales revenue</li>
+                            <li data-answer="wrong">The company can pay its long-term debt 2.5 times over</li>
+                        </ul>
+                        <button onclick="checkAnswer(19)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> The current ratio compares current assets to current liabilities. A ratio of 2.5:1 indicates strong liquidity.
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-question="20">
+                        <h4>Question 20: The operating cycle is:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Always exactly one year for all companies</li>
+                            <li data-answer="correct">The average time to purchase inventory, sell it, and collect cash</li>
+                            <li data-answer="wrong">The time between preparing financial statements</li>
+                            <li data-answer="wrong">The period from hiring employees to paying their salaries</li>
+                        </ul>
+                        <button onclick="checkAnswer(20)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> The operating cycle is the time from purchasing inventory to collecting cash from customers. It varies by industry.
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-question="21">
+                        <h4>Question 21: Goodwill is recorded on the books only when:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">A company develops a strong reputation over many years</li>
+                            <li data-answer="correct">A company purchases another business</li>
+                            <li data-answer="wrong">A company's stock price increases significantly</li>
+                            <li data-answer="wrong">A company receives positive customer reviews</li>
+                        </ul>
+                        <button onclick="checkAnswer(21)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Goodwill is only recorded when one company purchases another business and pays more than the fair value of identifiable net assets.
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-question="22">
+                        <h4>Question 22: After all closing entries are posted, which account will NOT have a zero balance?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Service Revenue</li>
+                            <li data-answer="wrong">Salaries and Wages Expense</li>
+                            <li data-answer="correct">Accumulated Depreciation</li>
+                            <li data-answer="wrong">Dividends</li>
+                        </ul>
+                        <button onclick="checkAnswer(22)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Accumulated Depreciation is a permanent account (contra-asset) and is NOT closed. The others are temporary accounts that are closed to zero.
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-question="23">
+                        <h4>Question 23: If total debits in the adjusted trial balance equal $85,000 and total credits equal $85,000, but revenues total $40,000 and expenses total $28,000, what is the profit?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">$85,000</li>
+                            <li data-answer="wrong">$28,000</li>
+                            <li data-answer="correct">$12,000</li>
+                            <li data-answer="wrong">$40,000</li>
+                        </ul>
+                        <button onclick="checkAnswer(23)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Profit = Revenues - Expenses = $40,000 - $28,000 = $12,000. The trial balance totals are not used to calculate profit.
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-question="24">
+                        <h4>Question 24: Which financial statement is prepared FIRST from the worksheet?</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">Statement of Financial Position</li>
+                            <li data-answer="wrong">Retained Earnings Statement</li>
+                            <li data-answer="correct">Income Statement</li>
+                            <li data-answer="wrong">Statement of Cash Flows</li>
+                        </ul>
+                        <button onclick="checkAnswer(24)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> The Income Statement is prepared first because its profit/loss figure is needed for the Retained Earnings Statement, which in turn is needed for the Statement of Financial Position.
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-question="25">
+                        <h4>Question 25: The debt to total assets ratio measures:</h4>
+                        <ul class="options">
+                            <li data-answer="wrong">The company's ability to pay current liabilities with current assets</li>
+                            <li data-answer="correct">The percentage of total assets financed by creditors</li>
+                            <li data-answer="wrong">The company's profitability relative to its asset base</li>
+                            <li data-answer="wrong">The efficiency of asset utilization in generating revenue</li>
+                        </ul>
+                        <button onclick="checkAnswer(25)">Check Answer</button>
+                        <div class="answer-explanation">
+                            <strong>Correct!</strong> Debt to Total Assets Ratio = Total Liabilities ÷ Total Assets. It shows what percentage of assets are financed by debt rather than equity.
+                        </div>
+                    </div>
+
+                    <div class="score-display" id="scoreDisplay">
+                        <p>Your Score: <span id="score">0</span> out of 25</p>
+                        <p>Percentage: <span id="percentage">0</span>%</p>
+                    </div>
+
+                    <button onclick="showScore()" style="background: #28a745; margin-top: 1rem;">Show My Score</button>
+                    <button onclick="resetQuiz()" style="background: #dc3545; margin-top: 1rem;">Reset Quiz</button>
+                </div>
+            </section>
+
+            <!-- Case Study Questions -->
+            <section id="case-studies">
+                <h2>Case Study Questions</h2>
+                <p>Apply your knowledge to these practical scenarios. Click "Show Answer" to reveal the solution.</p>
+
+                <!-- Case Study 1 -->
+                <div class="case-study">
+                    <h3>Case Study 1: Worksheet Preparation</h3>
+                    <p><strong>Scenario:</strong> Bright Future Tutoring has the following trial balance on December 31:</p>
+                    <ul>
+                        <li>Cash: $8,000 (Dr)</li>
+                        <li>Supplies: $3,000 (Dr)</li>
+                        <li>Equipment: $15,000 (Dr)</li>
+                        <li>Accounts Payable: $4,000 (Cr)</li>
+                        <li>Share Capital: $20,000 (Cr)</li>
+                        <li>Service Revenue: $12,000 (Cr)</li>
+                        <li>Rent Expense: $6,000 (Dr)</li>
+                        <li>Salaries Expense: $4,000 (Dr)</li>
+                    </ul>
+                    <p><strong>Adjustments needed:</strong></p>
+                    <ul>
+                        <li>Supplies on hand at year-end: $800 (supplies used: $2,200)</li>
+                        <li>Depreciation on equipment: $1,500</li>
+                        <li>Accrued salaries: $600</li>
+                    </ul>
+                    <p><strong>Question:</strong> Prepare the adjusting entries and calculate the adjusted profit or loss.</p>
+                    <button onclick="toggleAnswer('case1')">Show Answer</button>
+                    <div class="answer-explanation" id="case1">
+                        <h4>Solution:</h4>
+                        <p><strong>Adjusting Entries:</strong></p>
+                        <ol>
+                            <li>Supplies Expense 2,200 / Supplies 2,200</li>
+                            <li>Depreciation Expense 1,500 / Accumulated Depreciation 1,500</li>
+                            <li>Salaries Expense 600 / Salaries Payable 600</li>
+                        </ol>
+                        <p><strong>Adjusted Balances:</strong></p>
+                        <ul>
+                            <li>Total Revenues: $12,000</li>
+                            <li>Total Expenses: Rent $6,000 + Salaries $4,600 + Supplies $2,200 + Depreciation $1,500 = $14,300</li>
+                            <li><strong>Loss: $2,300</strong> ($12,000 - $14,300)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-study">
+                    <h3>Case Study 2: Closing Entries</h3>
+                    <p><strong>Scenario:</strong> Tech Solutions Inc. has the following account balances after adjustments on June 30:</p>
+                    <ul>
+                        <li>Service Revenue: $95,000</li>
+                        <li>Consulting Revenue: $45,000</li>
+                        <li>Salaries and Wages Expense: $60,000</li>
+                        <li>Rent Expense: $18,000</li>
+                        <li>Utilities Expense: $8,000</li>
+                        <li>Depreciation Expense: $12,000</li>
+                        <li>Supplies Expense: $5,000</li>
+                        <li>Dividends: $10,000</li>
+                        <li>Retained Earnings (beginning): $25,000</li>
+                    </ul>
+                    <p><strong>Question:</strong> Prepare all four closing entries and calculate the ending Retained Earnings balance.</p>
+                    <button onclick="toggleAnswer('case2')">Show Answer</button>
+                    <div class="answer-explanation" id="case2">
+                        <h4>Solution:</h4>
+                        <p><strong>Closing Entry 1 - Close Revenues:</strong></p>
+                        <p>Dr. Service Revenue 95,000<br>Dr. Consulting Revenue 45,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Income Summary 140,000</p>
+                        
+                        <p><strong>Closing Entry 2 - Close Expenses:</strong></p>
+                        <p>Dr. Income Summary 103,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Salaries and Wages Expense 60,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Rent Expense 18,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Utilities Expense 8,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Depreciation Expense 12,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Supplies Expense 5,000</p>
+                        
+                        <p><strong>Closing Entry 3 - Close Income Summary (Profit):</strong></p>
+                        <p>Dr. Income Summary 37,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Retained Earnings 37,000<br>(Profit: $140,000 - $103,000 = $37,000)</p>
+                        
+                        <p><strong>Closing Entry 4 - Close Dividends:</strong></p>
+                        <p>Dr. Retained Earnings 10,000<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Dividends 10,000</p>
+                        
+                        <p><strong>Ending Retained Earnings:</strong> $25,000 + $37,000 - $10,000 = <strong>$52,000</strong></p>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="case-study">
+                    <h3>Case Study 3: Correcting Entries</h3>
+                    <p><strong>Scenario:</strong> During an audit of Green Landscaping, the following errors were discovered:</p>
+                    <ol>
+                        <li>A $1,200 payment for equipment was recorded as: Dr. Repairs Expense 1,200 / Cr. Cash 1,200</li>
+                        <li>A $500 collection on account was recorded as: Dr. Cash 500 / Cr. Service Revenue 500</li>
+                        <li>A $300 purchase of supplies on account was completely omitted from the records</li>
+                    </ol>
+                    <p><strong>Question:</strong> Prepare the correcting entries for each error.</p>
+                    <button onclick="toggleAnswer('case3')">Show Answer</button>
+                    <div class="answer-explanation" id="case3">
+                        <h4>Solution:</h4>
+                        <p><strong>Correcting Entry 1 (Error of Principle):</strong></p>
+                        <p>Dr. Equipment 1,200<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Repairs Expense 1,200<br>(To correct recording of equipment purchase as expense)</p>
+                        
+                        <p><strong>Correcting Entry 2 (Error of Commission):</strong></p>
+                        <p>Dr. Service Revenue 500<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Accounts Receivable 500<br>(To correct recording of collection on account)</p>
+                        
+                        <p><strong>Correcting Entry 3 (Error of Omission):</strong></p>
+                        <p>Dr. Supplies 300<br>&nbsp;&nbsp;&nbsp;&nbsp;Cr. Accounts Payable 300<br>(To record omitted purchase of supplies on account)</p>
+                        
+                        <p><strong>Explanation:</strong> Error 1 is an error of principle (asset recorded as expense). Error 2 is an error of commission (wrong revenue account). Error 3 is an error of omission (transaction not recorded).</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="case-study">
+                    <h3>Case Study 4: Classified Statement of Financial Position</h3>
+                    <p><strong>Scenario:</strong> Metro Retail has the following account balances on December 31:</p>
+                    <ul>
+                        <li>Cash: $12,000</li>
+                        <li>Accounts Receivable: $18,000</li>
+                        <li>Inventory: $35,000</li>
+                        <li>Supplies: $2,500</li>
+                        <li>Prepaid Insurance: $1,800</li>
+                        <li>Equipment: $80,000</li>
+                        <li>Accumulated Depreciation—Equipment: $20,000</li>
+                        <li>Patent: $15,000</li>
+                        <li>Accounts Payable: $14,000</li>
+                        <li>Salaries Payable: $3,500</li>
+                        <li>Notes Payable (due in 3 years): $40,000</li>
+                        <li>Share Capital: $50,000</li>
+                        <li>Retained Earnings: $36,800</li>
+                    </ul>
+                    <p><strong>Question:</strong> Calculate (a) Total Current Assets, (b) Total Assets, (c) Working Capital, and (d) Current Ratio.</p>
+                    <button onclick="toggleAnswer('case4')">Show Answer</button>
+                    <div class="answer-explanation" id="case4">
+                        <h4>Solution:</h4>
+                        <p><strong>(a) Total Current Assets:</strong></p>
+                        <p>Cash $12,000 + Accounts Receivable $18,000 + Inventory $35,000 + Supplies $2,500 + Prepaid Insurance $1,800 = <strong>$69,300</strong></p>
+                        
+                        <p><strong>(b) Total Assets:</strong></p>
+                        <ul>
+                            <li>Current Assets: $69,300</li>
+                            <li>Property, Plant & Equipment: $80,000 - $20,000 = $60,000</li>
+                            <li>Intangible Assets: $15,000</li>
+                            <li><strong>Total: $144,300</strong></li>
+                        </ul>
+                        
+                        <p><strong>(c) Working Capital:</strong></p>
+                        <p>Current Assets $69,300 - Current Liabilities ($14,000 + $3,500) = $69,300 - $17,500 = <strong>$51,800</strong></p>
+                        
+                        <p><strong>(d) Current Ratio:</strong></p>
+                        <p>Current Assets ÷ Current Liabilities = $69,300 ÷ $17,500 = <strong>3.96:1</strong></p>
+                        <p><em>This indicates strong liquidity and ability to pay short-term obligations.</em></p>
+                    </div>
+                </div>
+
+                <!-- Case Study 5 -->
+                <div class="case-study">
+                    <h3>Case Study 5: Complete Accounting Cycle</h3>
+                    <p><strong>Scenario:</strong> Sunshine Cleaning Services started operations on January 1. During January, the following transactions occurred:</p>
+                    <ul>
+                        <li>Jan 1: Issued shares for $30,000 cash</li>
+                        <li>Jan 5: Purchased equipment for $10,000 cash</li>
+                        <li>Jan 10: Purchased supplies on account for $2,000</li>
+                        <li>Jan 15: Provided services for $8,000 cash</li>
+                        <li>Jan 20: Paid $1,500 for rent</li>
+                        <li>Jan 25: Paid $1,200 on account</li>
+                        <li>Jan 31: Paid salaries of $3,000</li>
+                    </ul>
+                    <p><strong>Adjustments on January 31:</strong></p>
+                    <ul>
+                        <li>Supplies on hand: $600 (supplies used: $1,400)</li>
+                        <li>Depreciation on equipment: $200</li>
+                    </ul>
+                    <p><strong>Question:</strong> Identify which steps of the accounting cycle would be performed, calculate the profit for January, and determine the ending Retained Earnings balance (no dividends were paid).</p>
+                    <button onclick="toggleAnswer('case5')">Show Answer</button>
+                    <div class="answer-explanation" id="case5">
+                        <h4>Solution:</h4>
+                        <p><strong>Steps of Accounting Cycle Performed:</strong></p>
+                        <ol>
+                            <li>Analyze transactions ✓</li>
+                            <li>Journalize transactions ✓</li>
+                            <li>Post to ledger ✓</li>
+                            <li>Prepare trial balance ✓</li>
+                            <li>Journalize and post adjusting entries ✓</li>
+                            <li>Prepare adjusted trial balance ✓</li>
+                            <li>Prepare financial statements ✓</li>
+                            <li>Journalize and post closing entries ✓</li>
+                            <li>Prepare post-closing trial balance ✓</li>
+                        </ol>
+                        
+                        <p><strong>Profit Calculation:</strong></p>
+                        <ul>
+                            <li>Revenue: Service Revenue $8,000</li>
+                            <li>Expenses: Rent $1,500 + Salaries $3,000 + Supplies $1,400 + Depreciation $200 = $6,100</li>
+                            <li><strong>Profit: $1,900</strong> ($8,000 - $6,100)</li>
+                        </ul>
+                        
+                        <p><strong>Ending Retained Earnings:</strong></p>
+                        <p>Beginning balance $0 + Profit $1,900 - Dividends $0 = <strong>$1,900</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Essay Case Study Questions -->
+            <section id="essay-questions">
+                <h2>Essay Case Study Questions</h2>
+                <p>Demonstrate your comprehensive understanding by answering these essay questions. Write your responses in the text areas provided.</p>
+
+                <!-- Essay Question 1 -->
+                <div class="essay-question">
+                    <h3>Essay Question 1: Worksheet Benefits and Limitations</h3>
+                    <p><strong>Question:</strong> Explain the purpose and benefits of using a worksheet in the accounting cycle. Why is a worksheet considered an optional tool rather than a required component? Discuss at least three advantages and two limitations of using worksheets. In your answer, consider both manual and computerized accounting systems.</p>
+                    <textarea placeholder="Type your answer here..." id="essay1"></textarea>
+                    <button onclick="saveEssay(1)">Save Answer</button>
+                </div>
+
+                <!-- Essay Question 2 -->
+                <div class="essay-question">
+                    <h3>Essay Question 2: Closing Process Rationale</h3>
+                    <p><strong>Question:</strong> Explain why companies close temporary accounts at the end of each accounting period. In your answer, discuss: (a) the difference between temporary and permanent accounts, (b) why dividends are closed directly to Retained Earnings rather than to Income Summary, and (c) what would happen if a company failed to prepare closing entries. Provide specific examples to support your explanation.</p>
+                    <textarea placeholder="Type your answer here..." id="essay2"></textarea>
+                    <button onclick="saveEssay(2)">Save Answer</button>
+                </div>
+
+                <!-- Essay Question 3 -->
+                <div class="essay-question">
+                    <h3>Essay Question 3: Error Detection and Correction</h3>
+                    <p><strong>Question:</strong> Compare and contrast errors that affect trial balance equality with those that do not. Explain why errors that maintain debit-credit equality are more difficult to detect. Describe the systematic approach an accountant should use to discover and correct errors. Include in your answer at least two specific examples of each type of error and explain how they would be corrected.</p>
+                    <textarea placeholder="Type your answer here..." id="essay3"></textarea>
+                    <button onclick="saveEssay(3)">Save Answer</button>
+                </div>
+
+                <!-- Essay Question 4 -->
+                <div class="essay-question">
+                    <h3>Essay Question 4: Classified Statement Analysis</h3>
+                    <p><strong>Question:</strong> Discuss the importance of classifying assets and liabilities on the statement of financial position. Explain how the classification system (current vs. non-current) helps users of financial statements make better decisions. In your answer, define and explain the significance of: (a) working capital, (b) current ratio, and (c) debt to total assets ratio. Provide an example of how a banker might use these metrics when evaluating a loan application.</p>
+                    <textarea placeholder="Type your answer here..." id="essay4"></textarea>
+                    <button onclick="saveEssay(4)">Save Answer</button>
+                </div>
+
+                <!-- Essay Question 5 -->
+                <div class="essay-question">
+                    <h3>Essay Question 5: Accounting Cycle Integration</h3>
+                    <p><strong>Question:</strong> The accounting cycle consists of nine steps that must be performed in a specific sequence. Explain why the order of these steps is important and what problems would arise if steps were performed out of sequence. Choose any three consecutive steps from the cycle and explain: (a) what is accomplished in each step, (b) how each step depends on the previous step, and (c) how errors or omissions in one step would affect subsequent steps. Use a specific example to illustrate your explanation.</p>
+                    <textarea placeholder="Type your answer here..." id="essay5"></textarea>
+                    <button onclick="saveEssay(5)">Save Answer</button>
+                </div>
+
+                <div class="important-note" style="margin-top: 2rem;">
+                    <h4>💡 Essay Writing Tips</h4>
+                    <ul>
+                        <li>Structure your answer with a clear introduction, body paragraphs, and conclusion</li>
+                        <li>Use specific accounting terminology correctly</li>
+                        <li>Support your explanations with concrete examples</li>
+                        <li>Show the relationships between different concepts</li>
+                        <li>Demonstrate critical thinking, not just memorization</li>
+                        <li>Proofread for clarity and accuracy before submitting</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // Progress Tracking
+        function updateProgress() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const progress = (scrollPosition / documentHeight) * 100;
+            
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '% Complete';
+        }
+
+        window.addEventListener('scroll', updateProgress);
+        window.addEventListener('load', updateProgress);
+
+        // Quiz Functionality
+        let userAnswers = {};
+
+        function checkAnswer(questionNum) {
+            const question = document.querySelector(`[data-question="${questionNum}"]`);
+            const options = question.querySelectorAll('.options li');
+            const explanation = question.querySelector('.answer-explanation');
+            let selectedOption = null;
+
+            options.forEach(option => {
+                if (option.classList.contains('selected')) {
+                    selectedOption = option;
+                }
+            });
+
+            if (!selectedOption) {
+                alert('Please select an answer first!');
+                return;
+            }
+
+            const isCorrect = selectedOption.dataset.answer === 'correct';
+            userAnswers[questionNum] = isCorrect;
+
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                if (option.dataset.answer === 'correct') {
+                    option.classList.add('correct');
+                } else if (option.classList.contains('selected')) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            explanation.classList.add('show');
+            question.querySelector('button').disabled = true;
+        }
+
+        // Add click handlers to options
+        document.querySelectorAll('.options li').forEach(option => {
+            option.addEventListener('click', function() {
+                const options = this.parentElement.querySelectorAll('li');
+                options.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        function showScore() {
+            const totalQuestions = 25;
+            const correctAnswers = Object.values(userAnswers).filter(answer => answer === true).length;
+            const percentage = ((correctAnswers / totalQuestions) * 100).toFixed(1);
+
+            document.getElementById('score').textContent = correctAnswers;
+            document.getElementById('percentage').textContent = percentage;
+            document.getElementById('scoreDisplay').classList.add('show');
+
+            // Scroll to score display
+            document.getElementById('scoreDisplay').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function resetQuiz() {
+            if (!confirm('Are you sure you want to reset the quiz? All your answers will be cleared.')) {
+                return;
+            }
+
+            userAnswers = {};
+            
+            document.querySelectorAll('.question').forEach(question => {
+                const options = question.querySelectorAll('.options li');
+                options.forEach(option => {
+                    option.classList.remove('selected', 'correct', 'incorrect');
+                    option.style.pointerEvents = 'auto';
+                });
+                
+                const explanation = question.querySelector('.answer-explanation');
+                explanation.classList.remove('show');
+                
+                const button = question.querySelector('button');
+                button.disabled = false;
+            });
+
+            document.getElementById('scoreDisplay').classList.remove('show');
+            
+            // Scroll to top of quiz
+            document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Case Study Answer Toggle
+        function toggleAnswer(caseId) {
+            const answer = document.getElementById(caseId);
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                event.target.textContent = 'Show Answer';
+            } else {
+                answer.classList.add('show');
+                event.target.textContent = 'Hide Answer';
+            }
+        }
+
+        // Essay Answer Saving
+        function saveEssay(essayNum) {
+            const textarea = document.getElementById(`essay${essayNum}`);
+            const answer = textarea.value.trim();
+            
+            if (answer === '') {
+                alert('Please write an answer before saving!');
+                return;
+            }
+
+            // Save to localStorage
+            localStorage.setItem(`chapter4_essay${essayNum}`, answer);
+            
+            // Visual feedback
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = '✓ Saved!';
+            button.style.background = '#28a745';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#2c5aa0';
+            }, 2000);
+        }
+
+        // Load saved essay answers on page load
+        window.addEventListener('load', function() {
+            for (let i = 1; i <= 5; i++) {
+                const savedAnswer = localStorage.getItem(`chapter4_essay${i}`);
+                if (savedAnswer) {
+                    document.getElementById(`essay${i}`).value = savedAnswer;
+                }
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Print functionality
+        function printStudyGuide() {
+            window.print();
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + P for print
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                printStudyGuide();
+            }
+        });
+    </script>
+</body>
+</html>

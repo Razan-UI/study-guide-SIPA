@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Accounting in Action - Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4a90e2;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #a8d0ff;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 20px;
+            background: rgba(74, 144, 226, 0.3);
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(74, 144, 226, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active {
+            background: #4a90e2;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .topic-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #4a90e2;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .topic-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+        
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #a8d0ff;
+            margin: 20px 0 10px 0;
+            font-size: 1.4em;
+        }
+        
+        h4 {
+            color: #c8e0ff;
+            margin: 15px 0 10px 0;
+            font-size: 1.1em;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .example-box {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .question-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #4a90e2;
+        }
+        
+        .option.selected {
+            background: rgba(74, 144, 226, 0.3);
+            border-color: #4a90e2;
+        }
+        
+        .option.correct {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: #4caf50;
+        }
+        
+        .option.incorrect {
+            background: rgba(244, 67, 54, 0.3);
+            border-color: #f44336;
+        }
+        
+        .show-answer-btn {
+            padding: 10px 20px;
+            background: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .show-answer-btn:hover {
+            background: #ffca28;
+            transform: scale(1.05);
+        }
+        
+        .answer-explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            border-radius: 5px;
+        }
+        
+        .answer-explanation.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .case-study {
+            background: rgba(156, 39, 176, 0.2);
+            border-left: 4px solid #9c27b0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .submit-quiz-btn {
+            padding: 15px 40px;
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .submit-quiz-btn:hover {
+            background: #66bb6a;
+            transform: scale(1.05);
+        }
+        
+        .score-display {
+            display: none;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.3);
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Accounting in Action</h1>
+            <p class="subtitle">Chapter 1 - Financial Accounting IFRS 3rd Edition</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('overview')">1. Overview</button>
+            <button class="tab-btn" onclick="showTab('users')">2. Users & Uses</button>
+            <button class="tab-btn" onclick="showTab('ethics')">3. Ethics</button>
+            <button class="tab-btn" onclick="showTab('standards')">4. Standards</button>
+            <button class="tab-btn" onclick="showTab('assumptions')">5. Assumptions</button>
+            <button class="tab-btn" onclick="showTab('equation')">6. Accounting Equation</button>
+            <button class="tab-btn" onclick="showTab('transactions')">7. Transactions</button>
+            <button class="tab-btn" onclick="showTab('statements')">8. Financial Statements</button>
+            <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+        </div>
+
+        <!-- Section 1: What is Accounting -->
+        <div id="overview" class="content-section active">
+            <div class="topic-card">
+                <h2>What is Accounting?</h2>
+                
+                <h3>Definition</h3>
+                <p>Accounting consists of three basic activities that identify, record, and communicate the economic events of an organization to interested users.</p>
+                
+                <h3>The Three Basic Activities</h3>
+                
+                <h4>1. Identifying</h4>
+                <p>The first step in the accounting process involves selecting economic events (transactions) that are relevant to a particular business.</p>
+                <div class="example-box">
+                    <strong>Example:</strong> When a company purchases computer equipment, this is an economic event that needs to be identified and recorded. However, hiring a new employee is not immediately recorded as a transaction (though their salary payments will be).
+                </div>
+                
+                <h4>2. Recording</h4>
+                <p>Once identified, economic events are recorded, classified, and summarized in a systematic manner. This process includes the bookkeeping function.</p>
+                <ul>
+                    <li><strong>Recording:</strong> Entering transaction data in accounting records</li>
+                    <li><strong>Classifying:</strong> Grouping similar items together (e.g., all cash transactions)</li>
+                    <li><strong>Summarizing:</strong> Aggregating data into useful formats</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Key Point:</strong> The accounting process includes the bookkeeping function, but accounting is much broader than just bookkeeping. Accountants also analyze and interpret financial information.
+                </div>
+                
+                <h4>3. Communicating</h4>
+                <p>The final step involves preparing accounting reports and analyzing and interpreting them for users. This communication happens through financial statements.</p>
+                <ul>
+                    <li>Prepare accounting reports (financial statements)</li>
+                    <li>Analyze financial information</li>
+                    <li>Interpret results for decision-makers</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2: Users and Uses of Accounting -->
+        <div id="users" class="content-section">
+            <div class="topic-card">
+                <h2>Users and Uses of Accounting Data</h2>
+                
+                <h3>Internal Users</h3>
+                <p>Internal users are managers and employees who plan, organize, and run the business. They use accounting information to make decisions about company operations.</p>
+                
+                <h4>Types of Internal Users and Their Questions:</h4>
+                
+                <ol>
+                    <li><strong>Marketing:</strong> "What price for a Nokia cell phone will maximize the company's net income?"</li>
+                    <li><strong>Management:</strong> "Which PepsiCo product line is the most profitable? Should any product lines be eliminated?"</li>
+                    <li><strong>Finance:</strong> "Is cash sufficient to pay dividends to SAP shareholders?"</li>
+                    <li><strong>Human Resources:</strong> "Can we afford to give Toyota employees pay raises this year?"</li>
+                </ol>
+                
+                <h3>External Users</h3>
+                <p>External users are individuals and organizations outside the company who need financial information about the company.</p>
+                
+                <h4>Types of External Users and Their Questions:</h4>
+                
+                <div class="example-box">
+                    <h4>1. Investors</h4>
+                    <p>Use accounting information to decide whether to buy, hold, or sell shares.</p>
+                    <ul>
+                        <li>"Is Royal Dutch Shell earning satisfactory income?"</li>
+                        <li>"How does Disney compare in size and profitability with Time Warner?"</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>2. Creditors</h4>
+                    <p>Use accounting information to evaluate the risks of lending money.</p>
+                    <ul>
+                        <li>"Will Singapore Airlines be able to pay its debts as they come due?"</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Important Distinction:</strong> Internal users need detailed, frequent information for day-to-day operations. External users typically receive summarized information at regular intervals (monthly, quarterly, annually).
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 3: Ethics in Financial Reporting -->
+        <div id="ethics" class="content-section">
+            <div class="topic-card">
+                <h2>Ethics in Financial Reporting</h2>
+                
+                <h3>Definition of Ethics</h3>
+                <p>Ethics are the standards of conduct by which one's actions are judged as right or wrong, honest or dishonest, fair or not fair.</p>
+                
+                <h3>Why Ethics Matter in Accounting</h3>
+                <p>Effective financial reporting depends on sound ethical behavior. Without ethical practices, financial statements lose their credibility and usefulness.</p>
+                
+                <div class="highlight-box">
+                    <h4>Recent Financial Scandals Include:</h4>
+                    <ul>
+                        <li><strong>Enron (USA)</strong> - Accounting fraud and corporate corruption</li>
+                        <li><strong>Parmalat (ITA)</strong> - Europe's largest bankruptcy due to fraud</li>
+                        <li><strong>Satyam Computer Services (IND)</strong> - Massive accounting fraud</li>
+                        <li><strong>AIG (USA)</strong> - Financial crisis involvement</li>
+                        <li><strong>Garuda Indonesia (2018)</strong> - Financial reporting irregularities</li>
+                        <li><strong>e-fishery (2024)</strong> - Recent accounting issues</li>
+                    </ul>
+                </div>
+                
+                <h3>Steps in Analyzing Ethics Cases</h3>
+                
+                <h4>Step 1: Recognize an Ethical Situation and the Ethical Issues Involved</h4>
+                <ul>
+                    <li>Use your personal ethics to identify ethical situations and issues</li>
+                    <li>Some businesses and professional organizations provide written codes of ethics for guidance</li>
+                    <li>Be aware that ethical dilemmas exist in business situations</li>
+                </ul>
+                
+                <h4>Step 2: Identify and Analyze the Principal Elements in the Situation</h4>
+                <ul>
+                    <li>Identify the <strong>stakeholders</strong> - persons or groups who may be harmed or benefited</li>
+                    <li>Ask: "What are the responsibilities and obligations of the parties involved?"</li>
+                    <li>Consider all parties who might be affected by the decision</li>
+                </ul>
+                
+                <h4>Step 3: Identify the Alternatives and Weigh the Impact of Each Alternative on Various Stakeholders</h4>
+                <ul>
+                    <li>Select the most ethical alternative, considering all the consequences</li>
+                    <li>Sometimes there will be one right answer</li>
+                    <li>Other situations involve more than one right solution</li>
+                    <li>These situations require an evaluation of each alternative and selection of the best one</li>
+                </ul>
+                
+                <div class="example-box">
+                    <h4>Case Study: Dewey & LeBoeuf LLP</h4>
+                    <p><strong>Situation:</strong> Employees of the law firm helped overstate revenue and use accounting tricks to hide losses and cover up cash shortages.</p>
+                    
+                    <p><strong>Employee Comments:</strong></p>
+                    <ul>
+                        <li>"I was instructed by the CFO to create invoices, knowing they would not be sent to clients. When I created these invoices, I knew that it was inappropriate."</li>
+                        <li>"I intentionally gave the auditors incorrect information in the course of the audit."</li>
+                    </ul>
+                    
+                    <p><strong>Analysis:</strong> A small group of lower-level employees over a period of years carried out the instructions of their bosses. Their bosses seemed to have no concern, referring to their financial manipulations as "accounting tricks," "cooking the books," and "fake income."</p>
+                    
+                    <p><strong>Ethical Issue:</strong> Employees felt pressure to comply with unethical requests from superiors, compromising their professional integrity.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 4: Accounting Standards and Measurement Principles -->
+        <div id="standards" class="content-section">
+            <div class="topic-card">
+                <h2>Accounting Standards and Measurement Principles</h2>
+                
+                <h3>Two Major Accounting Standard-Setting Bodies</h3>
+                
+                <h4>1. International Accounting Standards Board (IASB)</h4>
+                <ul>
+                    <li><strong>Website:</strong> http://www.iasb.org/</li>
+                    <li><strong>Standards:</strong> International Financial Reporting Standards (IFRS)</li>
+                    <li><strong>Usage:</strong> Used by more than 130 countries worldwide</li>
+                    <li><strong>Scope:</strong> Global accounting standards</li>
+                </ul>
+                
+                <h4>2. Financial Accounting Standards Board (FASB)</h4>
+                <ul>
+                    <li><strong>Website:</strong> http://www.fasb.org/</li>
+                    <li><strong>Standards:</strong> Generally Accepted Accounting Principles (GAAP)</li>
+                    <li><strong>Usage:</strong> Used almost exclusively in the USA</li>
+                    <li><strong>Scope:</strong> U.S. accounting standards</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>Key Point:</strong> This textbook focuses on IFRS (International Financial Reporting Standards) as they are used globally. However, understanding both IFRS and GAAP is valuable for international business.
+                </div>
+                
+                <h3>Measurement Principles</h3>
+                
+                <h4>1. Historical Cost Principle (Cost Principle)</h4>
+                <p>Dictates that companies record assets at their cost - the amount paid to acquire them.</p>
+                
+                <div class="example-box">
+                    <strong>Example:</strong> If company ABC buys an office for 2 Milyar (2 billion rupiah) in 1990, it will still be recorded as 2 Milyar in 2024, even though the market value may have changed significantly.
+                </div>
+                
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Reliable and verifiable</li>
+                    <li>Based on actual transactions</li>
+                    <li>Objective measurement</li>
+                </ul>
+                
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>May not reflect current market value</li>
+                    <li>Can become outdated over time</li>
+                </ul>
+                
+                <h4>2. Fair Value Principle</h4>
+                <p>States that assets and liabilities should be reported at fair value - the price received to sell an asset or settle a liability.</p>
+                
+                <p><strong>Fair value is:</strong></p>
+                <ul>
+                    <li>The price that would be received to sell an asset</li>
+                    <li>The price that would be paid to settle a liability</li>
+                    <li>Based on current market conditions</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>Helpful Hint</h4>
+                    <p><strong>Relevance</strong> and <strong>faithful representation</strong> are two primary qualities that make accounting information useful for decision-making.</p>
+                    <ul>
+                        <li><strong>Relevance:</strong> Information that can influence decisions</li>
+                        <li><strong>Faithful Representation:</strong> Information that accurately depicts what it claims to represent</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 5: Assumptions -->
+        <div id="assumptions" class="content-section">
+            <div class="topic-card">
+                <h2>Accounting Assumptions</h2>
+                
+                <h3>1. Monetary Unit Assumption</h3>
+                <p>Requires that companies include in the accounting records only transaction data that can be expressed in terms of money.</p>
+                
+                <div class="example-box">
+                    <h4>What Gets Recorded:</h4>
+                    <ul>
+                        <li>✓ Purchase of equipment for $10,000</li>
+                        <li>✓ Payment of salaries totaling €50,000</li>
+                        <li>✓ Sale of goods for £25,000</li>
+                    </ul>
+                    
+                    <h4>What Does NOT Get Recorded:</h4>
+                    <ul>
+                        <li>✗ Employee morale</li>
+                        <li>✗ Customer satisfaction</li>
+                        <li>✗ Quality of management</li>
+                        <li>✗ Brand reputation</li>
+                    </ul>
+                    
+                    <p><strong>Reason:</strong> These items, while important, cannot be reliably measured in monetary terms.</p>
+                </div>
+                
+                <h3>2. Economic Entity Assumption</h3>
+                <p>Requires that activities of the entity be kept separate and distinct from the activities of its owner and all other economic entities.</p>
+                
+                <div class="highlight-box">
+                    <strong>Key Principle:</strong> The business is separate from its owners. Personal transactions of owners should not be mixed with business transactions.
+                </div>
+                
+                <h3>Forms of Business Ownership</h3>
+                <p>The economic entity assumption applies to all forms of business ownership:</p>
+                
+                <h4>1. Proprietorship</h4>
+                <ul>
+                    <li><strong>Ownership:</strong> Owned by one person</li>
+                    <li><strong>Management:</strong> Owner is often manager/operator</li>
+                    <li><strong>Profits/Losses:</strong> Owner receives any profits, suffers any losses</li>
+                    <li><strong>Liability:</strong> Owner is personally liable for all debts</li>
+                    <li><strong>Examples:</strong> Small retail stores, service businesses, consultants</li>
+                </ul>
+                
+                <h4>2. Partnership</h4>
+                <ul>
+                    <li><strong>Ownership:</strong> Owned by two or more persons</li>
+                    <li><strong>Common Types:</strong> Often retail and service-type businesses</li>
+                    <li><strong>Liability:</strong> Generally unlimited personal liability for all partners</li>
+                    <li><strong>Agreement:</strong> Governed by partnership agreement</li>
+                    <li><strong>Examples:</strong> Law firms, accounting firms, medical practices</li>
+                </ul>
+                
+                <h4>3. Corporation</h4>
+                <ul>
+                    <li><strong>Ownership:</strong> Ownership divided into shares of stock</li>
+                    <li><strong>Legal Status:</strong> Separate legal entity organized under corporation law</li>
+                    <li><strong>Liability:</strong> Limited liability for shareholders</li>
+                    <li><strong>Advantages:</strong> Easy to transfer ownership, can raise capital more easily</li>
+                    <li><strong>Examples:</strong> Most large businesses (Apple, Toyota, Samsung)</li>
+                </ul>
+                
+                <div class="example-box">
+                    <h4>Economic Entity Assumption in Practice:</h4>
+                    <p>If the owner of a proprietorship buys a car:</p>
+                    <ul>
+                        <li>✓ If purchased for business use → Record in business accounts</li>
+                        <li>✗ If purchased for personal use → Do NOT record in business accounts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 6: The Basic Accounting Equation -->
+        <div id="equation" class="content-section">
+            <div class="topic-card">
+                <h2>The Basic Accounting Equation</h2>
+                
+                <h3>The Fundamental Equation</h3>
+                <div class="highlight-box" style="text-align: center; font-size: 1.5em; padding: 30px;">
+                    <strong>Assets = Liabilities + Equity</strong>
+                </div>
+                
+                <p>This equation provides the underlying framework for recording and summarizing economic events. The two sides of the equation must always be equal.</p>
+                
+                <h3>Components of the Equation</h3>
+                
+                <h4>1. Assets</h4>
+                <p><strong>Definition:</strong> Resources a business owns that provide future services or benefits.</p>
+                
+                <p><strong>Examples of Assets:</strong></p>
+                <ul>
+                    <li><strong>Cash:</strong> Money in bank accounts and on hand</li>
+                    <li><strong>Accounts Receivable:</strong> Money owed to the company by customers</li>
+                    <li><strong>Inventory:</strong> Goods held for sale</li>
+                    <li><strong>Supplies:</strong> Items used in operations (office supplies, etc.)</li>
+                    <li><strong>Equipment:</strong> Machinery, computers, vehicles</li>
+                    <li><strong>Buildings:</strong> Structures owned by the company</li>
+                    <li><strong>Land:</strong> Property owned by the company</li>
+                </ul>
+                
+                <h4>2. Liabilities</h4>
+                <p><strong>Definition:</strong> Claims against assets - debts and obligations of the business.</p>
+                
+                <p><strong>Creditors:</strong> The party to whom money is owed.</p>
+                
+                <p><strong>Examples of Liabilities:</strong></p>
+                <ul>
+                    <li><strong>Accounts Payable:</strong> Money owed to suppliers</li>
+                    <li><strong>Notes Payable:</strong> Formal written promises to pay</li>
+                    <li><strong>Salaries and Wages Payable:</strong> Money owed to employees</li>
+                    <li><strong>Interest Payable:</strong> Interest owed on loans</li>
+                    <li><strong>Taxes Payable:</strong> Taxes owed to government</li>
+                </ul>
+                
+                <h4>3. Equity</h4>
+                <p><strong>Definition:</strong> The ownership claim on total assets. Also referred to as residual equity.</p>
+                
+                <p><strong>Components of Equity:</strong></p>
+                <ul>
+                    <li><strong>Share Capital—Ordinary:</strong> Investments by shareholders (amount paid for shares)</li>
+                    <li><strong>Retained Earnings:</strong> Cumulative net income retained in the business</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>Expanded Accounting Equation:</h4>
+                    <p style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                        <strong>Assets = Liabilities + Share Capital + Retained Earnings</strong>
+                    </p>
+                    <p style="text-align: center; font-size: 1.1em;">
+                        <strong>Retained Earnings = Revenues - Expenses - Dividends</strong>
+                    </p>
+                </div>
+                
+                <h3>Changes in Equity</h3>
+                
+                <h4>Increases in Equity:</h4>
+                <ol>
+                    <li><strong>Investments by Shareholders:</strong> When shareholders purchase shares, equity increases</li>
+                    <li><strong>Revenues:</strong> Result from business activities entered into for the purpose of earning income</li>
+                </ol>
+                
+                <h4>Decreases in Equity:</h4>
+                <ol>
+                    <li><strong>Dividends:</strong> Distribution of cash or other assets to shareholders</li>
+                    <li><strong>Expenses:</strong> The cost of assets consumed or services used in earning revenue</li>
+                </ol>
+                
+                <div class="example-box">
+                    <h4>Common Sources of Revenue:</h4>
+                    <ul>
+                        <li>Sales revenue (from selling goods)</li>
+                        <li>Service revenue (from providing services)</li>
+                        <li>Fees earned</li>
+                        <li>Commissions</li>
+                        <li>Interest revenue</li>
+                        <li>Dividend revenue</li>
+                        <li>Royalties</li>
+                        <li>Rent revenue</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Common Types of Expenses:</h4>
+                    <ul>
+                        <li>Salaries and wages expense</li>
+                        <li>Rent expense</li>
+                        <li>Utilities expense (electricity, water, gas)</li>
+                        <li>Property tax expense</li>
+                        <li>Advertising expense</li>
+                        <li>Interest expense</li>
+                        <li>Insurance expense</li>
+                        <li>Supplies expense</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Important Note:</strong> Dividends are NOT expenses. Dividends are distributions of retained earnings to shareholders and are shown as a reduction of equity, not as an expense on the income statement.
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 7: Transaction Analysis -->
+        <div id="transactions" class="content-section">
+            <div class="topic-card">
+                <h2>Analyzing Business Transactions</h2>
+                
+                <h3>What is a Transaction?</h3>
+                <p>Transactions are a business's economic events recorded by accountants.</p>
+                
+                <h4>Characteristics of Transactions:</h4>
+                <ul>
+                    <li>May be <strong>external</strong> (with outside parties) or <strong>internal</strong> (within the company)</li>
+                    <li>Not all activities represent transactions</li>
+                    <li>Each transaction has a <strong>dual effect</strong> on the accounting equation</li>
+                    <li>Must be measurable in monetary terms</li>
+                </ul>
+                
+                <div class="example-box">
+                    <h4>Transaction Identification Process:</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                        <tr style="background: rgba(255,255,255,0.1);">
+                            <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Event</th>
+                            <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Record?</th>
+                            <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Reason</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Purchase computer</td>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">✓ Yes</td>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Changes financial position (assets)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Discuss product design with customer</td>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">✗ No</td>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">No change in financial position yet</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Pay rent</td>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">✓ Yes</td>
+                            <td style="padding: 10px; border: 1px solid rgba(255,255,255,0.3);">Changes financial position (assets and equity)</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Rules for Transaction Analysis</h3>
+                <ol>
+                    <li>Each transaction must be analyzed in terms of its effect on:
+                        <ul>
+                            <li>The three components of the basic accounting equation</li>
+                            <li>Specific types (kinds) of items within each component</li>
+                        </ul>
+                    </li>
+                    <li>The two sides of the equation must always be equal</li>
+                    <li>The Share Capital and Retained Earnings columns indicate the causes of each change in shareholders' equity</li>
+                </ol>
+                
+                <h3>Example: Softbyte SA Transactions</h3>
+                
+                <div class="example-box">
+                    <h4>Transaction 1: Investment by Shareholders</h4>
+                    <p><strong>Event:</strong> Ray and Barbara Neal invest €15,000 cash in exchange for ordinary shares of Softbyte SA.</p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Assets (Cash) increase by €15,000</li>
+                        <li>Equity (Share Capital) increases by €15,000</li>
+                    </ul>
+                    <p><strong>Equation:</strong> Assets (+€15,000) = Liabilities (0) + Equity (+€15,000)</p>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Transaction 2: Purchase of Equipment for Cash</h4>
+                    <p><strong>Event:</strong> Softbyte SA purchases computer equipment for €7,000 cash.</p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Assets (Cash) decrease by €7,000</li>
+                        <li>Assets (Equipment) increase by €7,000</li>
+                        <li>Total assets remain unchanged</li>
+                    </ul>
+                    <p><strong>Equation:</strong> Assets (-€7,000 + €7,000 = 0) = Liabilities (0) + Equity (0)</p>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Transaction 3: Purchase of Supplies on Credit</h4>
+                    <p><strong>Event:</strong> Softbyte SA purchases supplies for €1,600 on credit (to be paid later).</p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Assets (Supplies) increase by €1,600</li>
+                        <li>Liabilities (Accounts Payable) increase by €1,600</li>
+                    </ul>
+                    <p><strong>Equation:</strong> Assets (+€1,600) = Liabilities (+€1,600) + Equity (0)</p>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Transaction 4: Services Performed for Cash</h4>
+                    <p><strong>Event:</strong> Softbyte SA receives €1,200 cash from customers for services performed.</p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Assets (Cash) increase by €1,200</li>
+                        <li>Equity (Retained Earnings - Revenue) increases by €1,200</li>
+                    </ul>
+                    <p><strong>Equation:</strong> Assets (+€1,200) = Liabilities (0) + Equity (+€1,200 Revenue)</p>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Transaction 5: Purchase of Advertising on Credit</h4>
+                    <p><strong>Event:</strong> Softbyte SA receives a bill for €250 for advertising but postpones payment.</p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Liabilities (Accounts Payable) increase by €250</li>
+                        <li>Equity (Retained Earnings - Expense) decreases by €250</li>
+                    </ul>
+                    <p><strong>Equation:</strong> Assets (0) = Liabilities (+€250) + Equity (-€250 Expense)</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 8: Financial Statements -->
+        <div id="statements" class="content-section">
+            <div class="topic-card">
+                <h2>Financial Statements</h2>
+                
+                <p>Companies prepare five financial statements from the accounting data:</p>
+                <ol>
+                    <li>Income Statement</li>
+                    <li>Retained Earnings Statement</li>
+                    <li>Statement of Financial Position (Balance Sheet)</li>
+                    <li>Statement of Cash Flows</li>
+                    <li>Comprehensive Income Statement</li>
+                </ol>
+                
+                <h3>1. Income Statement</h3>
+                
+                <h4>Purpose:</h4>
+                <p>Reports the profitability of the company's operations over a specific period of time.</p>
+                
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Lists <strong>revenues</strong> first, followed by <strong>expenses</strong></li>
+                    <li>Shows <strong>net income</strong> (when revenues > expenses) or <strong>net loss</strong> (when expenses > revenues)</li>
+                    <li>Does NOT include investment and dividend transactions between shareholders and the business</li>
+                    <li>Covers a period of time (e.g., "For the Month Ended September 30, 2017")</li>
+                </ul>
+                
+                <h4>Formula:</h4>
+                <div class="highlight-box" style="text-align: center; font-size: 1.3em;">
+                    <strong>Net Income = Revenues - Expenses</strong>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Example: Softbyte SA Income Statement</h4>
+                    <p><strong>For the Month Ended September 30, 2017</strong></p>
+                    <table style="width: 100%; margin: 10px 0;">
+                        <tr><td><strong>Revenues</strong></td><td></td></tr>
+                        <tr><td style="padding-left: 20px;">Service revenue</td><td style="text-align: right;">€4,700</td></tr>
+                        <tr><td><strong>Expenses</strong></td><td></td></tr>
+                        <tr><td style="padding-left: 20px;">Salaries and wages expense</td><td style="text-align: right;">€900</td></tr>
+                        <tr><td style="padding-left: 20px;">Rent expense</td><td style="text-align: right;">600</td></tr>
+                        <tr><td style="padding-left: 20px;">Advertising expense</td><td style="text-align: right;">250</td></tr>
+                        <tr><td style="padding-left: 20px;">Utilities expense</td><td style="text-align: right;">200</td></tr>
+                        <tr><td style="padding-left: 40px;">Total expenses</td><td style="text-align: right; border-top: 1px solid;">1,950</td></tr>
+                        <tr><td><strong>Net income</strong></td><td style="text-align: right; border-top: 2px solid; border-bottom: 2px solid;"><strong>€2,750</strong></td></tr>
+                    </table>
+                </div>
+                
+                <h3>2. Retained Earnings Statement</h3>
+                
+                <h4>Purpose:</h4>
+                <p>Reports the changes in retained earnings for a specific period of time.</p>
+                
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>The time period is the same as that covered by the income statement</li>
+                    <li>Shows why retained earnings increased or decreased during the period</li>
+                    <li>Connects the income statement to the statement of financial position</li>
+                </ul>
+                
+                <h4>Formula:</h4>
+                <div class="highlight-box" style="text-align: center; font-size: 1.2em;">
+                    <strong>Ending Retained Earnings = Beginning Retained Earnings + Net Income - Dividends</strong>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Example: Softbyte SA Retained Earnings Statement</h4>
+                    <p><strong>For the Month Ended September 30, 2017</strong></p>
+                    <table style="width: 100%; margin: 10px 0;">
+                        <tr><td>Retained earnings, September 1</td><td style="text-align: right;">€ 0</td></tr>
+                        <tr><td>Add: Net income</td><td style="text-align: right; border-bottom: 1px solid;">2,750</td></tr>
+                        <tr><td></td><td style="text-align: right;">2,750</td></tr>
+                        <tr><td>Less: Dividends</td><td style="text-align: right; border-bottom: 1px solid;">1,300</td></tr>
+                        <tr><td><strong>Retained earnings, September 30</strong></td><td style="text-align: right; border-bottom: 2px solid;"><strong>€1,450</strong></td></tr>
+                    </table>
+                </div>
+                
+                <h3>3. Statement of Financial Position (Balance Sheet)</h3>
+                
+                <h4>Purpose:</h4>
+                <p>Reports the assets, liabilities, and equity at a specific date.</p>
+                
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Lists <strong>assets</strong> at the top, followed by <strong>liabilities</strong> and <strong>equity</strong></li>
+                    <li>Total assets must equal total liabilities and equity</li>
+                    <li>Is a snapshot of the company's financial condition at a specific moment in time</li>
+                    <li>Usually prepared at month-end or year-end</li>
+                </ul>
+                
+                <div class="example-box">
+                    <h4>Example: Softbyte SA Statement of Financial Position</h4>
+                    <p><strong>September 30, 2017</strong></p>
+                    <table style="width: 100%; margin: 10px 0;">
+                        <tr><td colspan="2"><strong>Assets</strong></td></tr>
+                        <tr><td>Equipment</td><td style="text-align: right;">€ 7,000</td></tr>
+                        <tr><td>Supplies</td><td style="text-align: right;">1,600</td></tr>
+                        <tr><td>Accounts receivable</td><td style="text-align: right;">1,400</td></tr>
+                        <tr><td>Cash</td><td style="text-align: right; border-bottom: 1px solid;">8,050</td></tr>
+                        <tr><td style="padding-left: 20px;">Total assets</td><td style="text-align: right; border-bottom: 2px solid;">€18,050</td></tr>
+                        <tr><td colspan="2" style="padding-top: 15px;"><strong>Equity and Liabilities</strong></td></tr>
+                        <tr><td><strong>Equity</strong></td><td></td></tr>
+                        <tr><td style="padding-left: 20px;">Share capital—ordinary</td><td style="text-align: right;">€15,000</td></tr>
+                        <tr><td style="padding-left: 20px;">Retained earnings</td><td style="text-align: right; border-bottom: 1px solid;">1,450</td></tr>
+                        <tr><td></td><td style="text-align: right;">16,450</td></tr>
+                        <tr><td><strong>Liabilities</strong></td><td></td></tr>
+                        <tr><td style="padding-left: 20px;">Accounts payable</td><td style="text-align: right; border-bottom: 1px solid;">1,600</td></tr>
+                        <tr><td style="padding-left: 20px;">Total equity and liabilities</td><td style="text-align: right; border-bottom: 2px solid;"><strong>€18,050</strong></td></tr>
+                    </table>
+                </div>
+
+                <h3>4. Statement of Cash Flows</h3>
+                
+                <h4>Purpose:</h4>
+                <p>Provides information about the cash receipts and cash payments of a company during a period.</p>
+                
+                <h4>Three Categories of Cash Flows:</h4>
+                
+                <div class="example-box">
+                    <h4>1. Operating Activities</h4>
+                    <p>Cash flows from operating activities are the cash effects of transactions that create revenues and expenses.</p>
+                    <ul>
+                        <li>Cash received from customers</li>
+                        <li>Cash paid to suppliers</li>
+                        <li>Cash paid for operating expenses</li>
+                        <li>Cash paid for interest and taxes</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>2. Investing Activities</h4>
+                    <p>Cash flows from investing activities include making and collecting loans and acquiring and disposing of investments and property, plant, and equipment.</p>
+                    <ul>
+                        <li>Purchase or sale of equipment</li>
+                        <li>Purchase or sale of buildings</li>
+                        <li>Purchase or sale of investments</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>3. Financing Activities</h4>
+                    <p>Cash flows from financing activities include obtaining cash from issuing debt and repaying amounts borrowed, and obtaining cash from shareholders and providing them with a return on their investment.</p>
+                    <ul>
+                        <li>Issuance of shares</li>
+                        <li>Payment of dividends</li>
+                        <li>Borrowing money</li>
+                        <li>Repayment of loans</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Softbyte SA Statement of Cash Flows</h4>
+                    <p><strong>For the Month Ended September 30, 2017</strong></p>
+                    <table style="width: 100%; margin: 10px 0;">
+                        <tr><td><strong>Cash flows from operating activities</strong></td><td></td></tr>
+                        <tr><td style="padding-left: 20px;">Cash receipts from revenues</td><td style="text-align: right;">€ 3,300</td></tr>
+                        <tr><td style="padding-left: 20px;">Cash payments for expenses</td><td style="text-align: right; border-bottom: 1px solid;">(1,950)</td></tr>
+                        <tr><td style="padding-left: 40px;">Net cash provided by operating activities</td><td style="text-align: right;">1,350</td></tr>
+                        <tr><td style="padding-top: 10px;"><strong>Cash flows from investing activities</strong></td><td></td></tr>
+                        <tr><td style="padding-left: 20px;">Purchase of equipment</td><td style="text-align: right; border-bottom: 1px solid;">(7,000)</td></tr>
+                        <tr><td style="padding-left: 40px;">Net cash used by investing activities</td><td style="text-align: right;">(7,000)</td></tr>
+                        <tr><td style="padding-top: 10px;"><strong>Cash flows from financing activities</strong></td><td></td></tr>
+                        <tr><td style="padding-left: 20px;">Issuance of ordinary shares</td><td style="text-align: right;">€15,000</td></tr>
+                        <tr><td style="padding-left: 20px;">Payment of cash dividends</td><td style="text-align: right; border-bottom: 1px solid;">(1,300)</td></tr>
+                        <tr><td style="padding-left: 40px;">Net cash provided by financing activities</td><td style="text-align: right; border-bottom: 1px solid;">13,700</td></tr>
+                        <tr><td><strong>Net increase in cash</strong></td><td style="text-align: right;">8,050</td></tr>
+                        <tr><td>Cash at beginning of period</td><td style="text-align: right; border-bottom: 1px solid;">0</td></tr>
+                        <tr><td><strong>Cash at end of period</strong></td><td style="text-align: right; border-bottom: 2px solid;"><strong>€ 8,050</strong></td></tr>
+                    </table>
+                </div>
+                
+                <h3>5. Comprehensive Income Statement</h3>
+                
+                <h4>Purpose:</h4>
+                <p>Reports all changes in equity during a period except those resulting from investments by shareholders and distributions to shareholders.</p>
+
+                <h4>Components:</h4>
+                <ul>
+                    <li><strong>Net Income:</strong> From the income statement</li>
+                    <li><strong>Other Comprehensive Income:</strong> Items that bypass the income statement but affect equity</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>Interrelationships of Financial Statements</h4>
+                    <p>The financial statements are interconnected:</p>
+                    <ol>
+                        <li><strong>Income Statement</strong> → Net income flows to → <strong>Retained Earnings Statement</strong></li>
+                        <li><strong>Retained Earnings Statement</strong> → Ending retained earnings flows to → <strong>Statement of Financial Position</strong></li>
+                        <li><strong>Statement of Cash Flows</strong> → Ending cash balance equals cash on → <strong>Statement of Financial Position</strong></li>
+                    </ol>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>📊 Accounting Across the Organization</h4>
+                    <p><strong>Reliable Financial Reporting: A Matter of Trust</strong></p>
+                    <p>The collapse of Enron, WorldCom, and other companies has made investors very concerned about the accuracy of financial statements. Regulators and lawmakers have responded by taking steps to improve the quality and reliability of financial reporting.</p>
+                    <p><strong>Key Insight:</strong> Effective financial reporting depends on sound ethical behavior. Users of financial statements must have confidence that the information is reliable and prepared according to accepted standards.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="content-section">
+            <div class="quiz-container">
+                <h2 style="text-align: center; margin-bottom: 30px;">🎯 Interactive Quiz</h2>
+                <p style="text-align: center; margin-bottom: 30px;">Test your understanding of Chapter 1 concepts with these 20 questions!</p>
+                
+                <!-- Question 1 -->
+                <div class="question" data-question="1">
+                    <div class="question-text"><strong>Question 1:</strong> Which of the following is NOT one of the three basic activities of accounting?</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Identifying economic events relevant to the business</div>
+                        <div class="option" data-answer="false">B) Recording, classifying, and summarizing economic events</div>
+                        <div class="option" data-answer="true">C) Forecasting future market trends and stock prices</div>
+                        <div class="option" data-answer="false">D) Communicating information to interested users through reports</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(1)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-1">
+                        <strong>Correct Answer: C</strong><br>
+                        The three basic activities of accounting are identifying, recording, and communicating. Forecasting market trends is not a basic accounting activity.
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question" data-question="2">
+                    <div class="question-text"><strong>Question 2:</strong> Which type of user would ask: "Can we afford to give employees pay raises this year?"</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) External users - investors seeking dividend information</div>
+                        <div class="option" data-answer="true">B) Internal users - human resources department managers</div>
+                        <div class="option" data-answer="false">C) External users - creditors evaluating loan applications</div>
+                        <div class="option" data-answer="false">D) External users - regulatory agencies monitoring compliance</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(2)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-2">
+                        <strong>Correct Answer: B</strong><br>
+                        Human resources is an internal user that needs information about the company's ability to afford salary increases for employees.
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="question" data-question="3">
+                    <div class="question-text"><strong>Question 3:</strong> The first step in analyzing an ethical dilemma is to:</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Identify all stakeholders who may be affected by the decision</div>
+                        <div class="option" data-answer="true">B) Recognize that an ethical situation exists and identify the issues</div>
+                        <div class="option" data-answer="false">C) Weigh the impact of each alternative on various stakeholders</div>
+                        <div class="option" data-answer="false">D) Select the alternative that provides the greatest financial benefit</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(3)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-3">
+                        <strong>Correct Answer: B</strong><br>
+                        The first step in the three-step ethics analysis process is to recognize an ethical situation and identify the ethical issues involved.
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question" data-question="4">
+                    <div class="question-text"><strong>Question 4:</strong> Which organization issues International Financial Reporting Standards (IFRS)?</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Financial Accounting Standards Board (FASB)</div>
+                        <div class="option" data-answer="true">B) International Accounting Standards Board (IASB)</div>
+                        <div class="option" data-answer="false">C) Securities and Exchange Commission (SEC)</div>
+                        <div class="option" data-answer="false">D) Generally Accepted Accounting Principles (GAAP)</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(4)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-4">
+                        <strong>Correct Answer: B</strong><br>
+                        The IASB (International Accounting Standards Board) issues IFRS, which are used by more than 130 countries worldwide.
+                    </div>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="question" data-question="5">
+                    <div class="question-text"><strong>Question 5:</strong> Under the historical cost principle, if a company purchased land in 1995 for $500,000, how should it be reported in 2024 if its current market value is $2,000,000?</div>
+                    <div class="options">
+                        <div class="option" data-answer="true">A) At $500,000, the original purchase price from 1995</div>
+                        <div class="option" data-answer="false">B) At $2,000,000, reflecting the current market value</div>
+                        <div class="option" data-answer="false">C) At $1,250,000, the average of cost and market value</div>
+                        <div class="option" data-answer="false">D) At the value adjusted for inflation since purchase</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(5)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-5">
+                        <strong>Correct Answer: A</strong><br>
+                        The historical cost principle requires assets to be recorded at their original cost, regardless of changes in market value over time.
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question" data-question="6">
+                    <div class="question-text"><strong>Question 6:</strong> Which of the following would NOT be recorded as a transaction under the monetary unit assumption?</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Purchase of office supplies for $350 cash</div>
+                        <div class="option" data-answer="true">B) Hiring a highly skilled manager with 15 years experience</div>
+                        <div class="option" data-answer="false">C) Payment of monthly rent expense of $2,000</div>
+                        <div class="option" data-answer="false">D) Receipt of $5,000 cash from customers for services</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(6)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-6">
+                        <strong>Correct Answer: B</strong><br>
+                        The monetary unit assumption requires that only transactions measurable in monetary terms be recorded. Hiring an employee is not recorded until salary payments are made.
+                    </div>
+                </div>
+                
+                <!-- Question 7 -->
+                <div class="question" data-question="7">
+                    <div class="question-text"><strong>Question 7:</strong> In which form of business organization do owners have unlimited personal liability?</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Corporation only</div>
+                        <div class="option" data-answer="true">B) Proprietorship and partnership</div>
+                        <div class="option" data-answer="false">C) Partnership only</div>
+                        <div class="option" data-answer="false">D) All forms of business have unlimited liability</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(7)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-7">
+                        <strong>Correct Answer: B</strong><br>
+                        Both proprietorships and partnerships have unlimited personal liability. Corporations provide limited liability to shareholders.
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question" data-question="8">
+                    <div class="question-text"><strong>Question 8:</strong> The basic accounting equation can be expressed as:</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Assets = Liabilities - Equity</div>
+                        <div class="option" data-answer="true">B) Assets = Liabilities + Equity</div>
+                        <div class="option" data-answer="false">C) Assets + Liabilities = Equity</div>
+                        <div class="option" data-answer="false">D) Assets + Equity = Liabilities</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(8)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-8">
+                        <strong>Correct Answer: B</strong><br>
+                        The fundamental accounting equation is Assets = Liabilities + Equity. This equation must always balance.
+                    </div>
+                </div>
+                
+                <!-- Question 9 -->
+                <div class="question" data-question="9">
+                    <div class="question-text"><strong>Question 9:</strong> Which of the following is considered a liability?</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Cash received from customers for services to be performed</div>
+                        <div class="option" data-answer="false">B) Equipment purchased for use in business operations</div>
+                        <div class="option" data-answer="true">C) Amounts owed to suppliers for goods purchased on credit</div>
+                        <div class="option" data-answer="false">D) Investments made by shareholders in exchange for shares</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(9)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-9">
+                        <strong>Correct Answer: C</strong><br>
+                        Accounts payable (amounts owed to suppliers) is a liability. It represents a claim against the company's assets.
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="question" data-question="10">
+                    <div class="question-text"><strong>Question 10:</strong> Dividends are:</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Expenses that reduce net income on the income statement</div>
+                        <div class="option" data-answer="true">B) Distributions of retained earnings to shareholders</div>
+                        <div class="option" data-answer="false">C) Increases in equity from business operations</div>
+                        <div class="option" data-answer="false">D) Liabilities that must be paid to creditors</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(10)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-10">
+                        <strong>Correct Answer: B</strong><br>
+                        Dividends are distributions of retained earnings to shareholders. They are NOT expenses and do not appear on the income statement.
+                    </div>
+                </div>
+                
+                <!-- Question 11 -->
+                <div class="question" data-question="11">
+                    <div class="question-text"><strong>Question 11:</strong> When a company purchases equipment for cash, the effect on the accounting equation is:</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Total assets increase and equity increases</div>
+                        <div class="option" data-answer="true">B) One asset increases and another asset decreases</div>
+                        <div class="option" data-answer="false">C) Total assets decrease and liabilities decrease</div>
+                        <div class="option" data-answer="false">D) Total assets increase and liabilities increase</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(11)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-11">
+                        <strong>Correct Answer: B</strong><br>
+                        Purchasing equipment for cash increases equipment (asset) and decreases cash (asset). Total assets remain unchanged.
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="question" data-question="12">
+                    <div class="question-text"><strong>Question 12:</strong> Which financial statement reports the profitability of a company over a specific period?</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Statement of Financial Position (Balance Sheet)</div>
+                        <div class="option" data-answer="true">B) Income Statement</div>
+                        <div class="option" data-answer="false">C) Statement of Cash Flows</div>
+                        <div class="option" data-answer="false">D) Retained Earnings Statement</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(12)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-12">
+                        <strong>Correct Answer: B</strong><br>
+                        The income statement reports revenues and expenses to show the profitability (net income or net loss) over a period of time.
+                    </div>
+                </div>
+                
+                <!-- Question 13 -->
+                <div class="question" data-question="13">
+                    <div class="question-text"><strong>Question 13:</strong> The formula for calculating net income is:</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Assets - Liabilities = Net Income</div>
+                        <div class="option" data-answer="true">B) Revenues - Expenses = Net Income</div>
+                        <div class="option" data-answer="false">C) Cash Receipts - Cash Payments = Net Income</div>
+                        <div class="option" data-answer="false">D) Beginning Retained Earnings + Revenues - Dividends = Net Income</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(13)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-13">
+                        <strong>Correct Answer: B</strong><br>
+                        Net income is calculated as Revenues minus Expenses. If expenses exceed revenues, the result is a net loss.
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="question" data-question="14">
+                    <div class="question-text"><strong>Question 14:</strong> Which statement is prepared at a specific point in time rather than for a period of time?</div>
+                    <div class="options">
+                        <div class="option" data-answer="true">A) Statement of Financial Position</div>
+                        <div class="option" data-answer="false">B) Income Statement</div>
+                        <div class="option" data-answer="false">C) Statement of Cash Flows</div>
+                        <div class="option" data-answer="false">D) Retained Earnings Statement</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(14)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-14">
+                        <strong>Correct Answer: A</strong><br>
+                        The Statement of Financial Position (Balance Sheet) is a snapshot at a specific date, showing assets, liabilities, and equity at that moment.
+                    </div>
+                </div>
+                
+                <!-- Question 15 -->
+                <div class="question" data-question="15">
+                    <div class="question-text"><strong>Question 15:</strong> Cash flows from purchasing equipment would be classified as:</div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Operating activities</div>
+                        <div class="option" data-answer="true">B) Investing activities</div>
+                        <div class="option" data-answer="false">C) Financing activities</div>
+                        <div class="option" data-answer="false">D) Non-cash activities</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(15)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-15">
+                        <strong>Correct Answer: B</strong><br>
+                        Investing activities include acquiring and disposing of property, plant, and equipment. Purchasing equipment is an investing activity.
+                    </div>
+                </div>
+
+                <!-- Case Study Question 1 -->
+                <div class="question case-study" data-question="16">
+                    <div class="question-text">
+                        <strong>Case Study Question 16:</strong><br><br>
+                        <strong>Scenario:</strong> TechStart SA is a new software development company. On January 1, 2024, the following transactions occurred:<br>
+                        - The founders invested €50,000 cash in exchange for ordinary shares<br>
+                        - The company purchased computer equipment for €20,000 cash<br>
+                        - The company purchased office supplies for €3,000 on credit<br>
+                        - The company paid €2,000 cash for January rent<br><br>
+                        <strong>Question:</strong> What is TechStart SA's total assets at the end of January 1, 2024?
+                    </div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) €50,000 representing only the initial cash investment</div>
+                        <div class="option" data-answer="true">B) €51,000 including cash, equipment, and supplies</div>
+                        <div class="option" data-answer="false">C) €48,000 after deducting rent and credit purchases</div>
+                        <div class="option" data-answer="false">D) €71,000 including all transactions without adjustments</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(16)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-16">
+                        <strong>Correct Answer: B (€51,000)</strong><br>
+                        <strong>Analysis:</strong><br>
+                        Cash: €50,000 - €20,000 - €2,000 = €28,000<br>
+                        Equipment: €20,000<br>
+                        Supplies: €3,000<br>
+                        <strong>Total Assets = €28,000 + €20,000 + €3,000 = €51,000</strong><br>
+                        The rent payment is an expense that reduces equity, not assets. The supplies purchase on credit increases both assets and liabilities.
+                    </div>
+                </div>
+
+                <!-- Case Study Question 2 -->
+                <div class="question case-study" data-question="17">
+                    <div class="question-text">
+                        <strong>Case Study Question 17:</strong><br><br>
+                        <strong>Scenario:</strong> Maria is the CFO of GlobalTech Corporation. The company's financial statements show strong profitability, but the CEO has asked Maria to delay recording €500,000 in expenses until next quarter to make this quarter's results look better for an upcoming investor presentation. Maria knows this violates accounting standards but feels pressure to comply.<br><br>
+                        <strong>Question:</strong> According to the three-step ethics analysis process, what should Maria do FIRST?
+                    </div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) Immediately comply with the CEO's request to maintain employment</div>
+                        <div class="option" data-answer="false">B) Identify all stakeholders including investors, employees, and creditors</div>
+                        <div class="option" data-answer="true">C) Recognize that this is an ethical situation involving financial reporting fraud</div>
+                        <div class="option" data-answer="false">D) Weigh alternatives such as partial delay or gradual expense recognition</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(17)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-17">
+                        <strong>Correct Answer: C</strong><br>
+                        <strong>Analysis:</strong> Step 1 of the ethics analysis process is to recognize an ethical situation and identify the ethical issues. Maria must first acknowledge that delaying expense recognition to manipulate financial results is unethical and violates accounting standards. Only after recognizing the ethical issue can she proceed to identify stakeholders (Step 2) and evaluate alternatives (Step 3). The request to delay expenses is a form of "cooking the books" similar to the Dewey & LeBoeuf case study.
+                    </div>
+                </div>
+
+                <!-- Case Study Question 3 -->
+                <div class="question case-study" data-question="18">
+                    <div class="question-text">
+                        <strong>Case Study Question 18:</strong><br><br>
+                        <strong>Scenario:</strong> RetailCo SA reported the following for September 2024:<br>
+                        - Service revenue: €45,000<br>
+                        - Salaries expense: €18,000<br>
+                        - Rent expense: €5,000<br>
+                        - Utilities expense: €2,000<br>
+                        - Dividends paid: €8,000<br>
+                        - Beginning retained earnings: €30,000<br><br>
+                        <strong>Question:</strong> What is RetailCo SA's ending retained earnings for September 2024?
+                    </div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) €42,000 calculated by adding net income to beginning balance</div>
+                        <div class="option" data-answer="true">B) €42,000 after adding net income and subtracting dividends</div>
+                        <div class="option" data-answer="false">C) €50,000 by adding revenues directly to retained earnings</div>
+                        <div class="option" data-answer="false">D) €12,000 representing only the net income for the period</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(18)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-18">
+                        <strong>Correct Answer: B (€42,000)</strong><br>
+                        <strong>Analysis:</strong><br>
+                        Net Income = Revenues - Expenses = €45,000 - (€18,000 + €5,000 + €2,000) = €20,000<br>
+                        Ending Retained Earnings = Beginning RE + Net Income - Dividends<br>
+                        = €30,000 + €20,000 - €8,000 = €42,000<br>
+                        Remember: Dividends are NOT expenses; they are distributions of retained earnings to shareholders.
+                    </div>
+                </div>
+
+                <!-- Case Study Question 4 -->
+                <div class="question case-study" data-question="19">
+                    <div class="question-text">
+                        <strong>Case Study Question 19:</strong><br><br>
+                        <strong>Scenario:</strong> DesignPro Partnership has the following account balances on December 31, 2024:<br>
+                        - Cash: €25,000<br>
+                        - Accounts Receivable: €15,000<br>
+                        - Equipment: €80,000<br>
+                        - Accounts Payable: €20,000<br>
+                        - Notes Payable: €40,000<br><br>
+                        The partners are considering whether to incorporate. They want to know their current equity position.<br><br>
+                        <strong>Question:</strong> What is the total equity of DesignPro Partnership?
+                    </div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) €120,000 representing the sum of all asset accounts</div>
+                        <div class="option" data-answer="true">B) €60,000 calculated using the accounting equation</div>
+                        <div class="option" data-answer="false">C) €40,000 representing only the cash and receivables</div>
+                        <div class="option" data-answer="false">D) €80,000 equal to the value of equipment owned</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(19)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-19">
+                        <strong>Correct Answer: B (€60,000)</strong><br>
+                        <strong>Analysis:</strong><br>
+                        Using the accounting equation: Assets = Liabilities + Equity<br>
+                        Total Assets = €25,000 + €15,000 + €80,000 = €120,000<br>
+                        Total Liabilities = €20,000 + €40,000 = €60,000<br>
+                        Equity = Assets - Liabilities = €120,000 - €60,000 = €60,000<br>
+                        This equity represents the partners' ownership claim on the business assets after all liabilities are paid.
+                    </div>
+                </div>
+
+                <!-- Case Study Question 5 -->
+                <div class="question case-study" data-question="20">
+                    <div class="question-text">
+                        <strong>Case Study Question 20:</strong><br><br>
+                        <strong>Scenario:</strong> ConsultCo SA is preparing its Statement of Cash Flows for March 2024. The following cash transactions occurred:<br>
+                        - Received €60,000 cash from customers for services<br>
+                        - Paid €25,000 cash for employee salaries<br>
+                        - Purchased office equipment for €30,000 cash<br>
+                        - Received €50,000 cash from issuing new shares<br>
+                        - Paid €10,000 cash dividend to shareholders<br>
+                        - Paid €8,000 cash for rent and utilities<br><br>
+                        <strong>Question:</strong> What is the net cash provided by (or used in) operating activities?
+                    </div>
+                    <div class="options">
+                        <div class="option" data-answer="false">A) €60,000 representing total cash received from customers</div>
+                        <div class="option" data-answer="false">B) €35,000 after subtracting only salary expenses from revenue</div>
+                        <div class="option" data-answer="true">C) €27,000 from operating cash receipts minus operating payments</div>
+                        <div class="option" data-answer="false">D) €37,000 including all cash transactions for the period</div>
+                    </div>
+                    <button class="show-answer-btn" onclick="showAnswer(20)">Show Answer</button>
+                    <div class="answer-explanation" id="answer-20">
+                        <strong>Correct Answer: C (€27,000)</strong><br>
+                        <strong>Analysis:</strong><br>
+                        <strong>Operating Activities:</strong><br>
+                        Cash from customers: +€60,000<br>
+                        Cash paid for salaries: -€25,000<br>
+                        Cash paid for rent/utilities: -€8,000<br>
+                        Net cash from operating activities = €60,000 - €25,000 - €8,000 = €27,000<br><br>
+                        <strong>Note:</strong> Equipment purchase (€30,000) is an investing activity. Share issuance (€50,000) and dividends (€10,000) are financing activities. These are NOT included in operating activities.
+                    </div>
+                </div>
+                
+                <button class="submit-quiz-btn" onclick="submitQuiz()">Submit Quiz</button>
+                <div class="score-display" id="score-display"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Tab Navigation
+        function showTab(tabName) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        // Quiz Functionality
+        let selectedAnswers = {};
+        
+        // Handle option selection
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('option')) {
+                const question = e.target.closest('.question');
+                const questionNum = question.dataset.question;
+                
+                // Remove selected class from all options in this question
+                const options = question.querySelectorAll('.option');
+                options.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                e.target.classList.add('selected');
+                
+                // Store the selected answer
+                selectedAnswers[questionNum] = e.target.dataset.answer === 'true';
+            }
+        });
+
+        
+        // Show answer for individual question
+        function showAnswer(questionNum) {
+            const answerDiv = document.getElementById('answer-' + questionNum);
+            const question = document.querySelector(`[data-question="${questionNum}"]`);
+            const options = question.querySelectorAll('.option');
+            
+            // Toggle answer visibility
+            if (answerDiv.classList.contains('show')) {
+                answerDiv.classList.remove('show');
+                // Remove correct/incorrect highlighting
+                options.forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+            } else {
+                answerDiv.classList.add('show');
+                // Highlight correct and incorrect answers
+                options.forEach(opt => {
+                    if (opt.dataset.answer === 'true') {
+                        opt.classList.add('correct');
+                    } else if (opt.classList.contains('selected')) {
+                        opt.classList.add('incorrect');
+                    }
+                });
+            }
+        }
+        
+        // Submit entire quiz
+        function submitQuiz() {
+            let correctCount = 0;
+            let totalQuestions = 20;
+            
+            // Check each question
+            for (let i = 1; i <= totalQuestions; i++) {
+                const question = document.querySelector(`[data-question="${i}"]`);
+                const options = question.querySelectorAll('.option');
+                const selectedOption = question.querySelector('.option.selected');
+                
+                if (selectedOption && selectedOption.dataset.answer === 'true') {
+                    correctCount++;
+                }
+                
+                // Highlight all answers
+                options.forEach(opt => {
+                    if (opt.dataset.answer === 'true') {
+                        opt.classList.add('correct');
+                    } else if (opt.classList.contains('selected')) {
+                        opt.classList.add('incorrect');
+                    }
+                });
+                
+                // Show explanation
+                const answerDiv = document.getElementById('answer-' + i);
+                if (answerDiv) {
+                    answerDiv.classList.add('show');
+                }
+            }
+
+            
+            // Calculate percentage
+            const percentage = ((correctCount / totalQuestions) * 100).toFixed(1);
+            
+            // Display score
+            const scoreDisplay = document.getElementById('score-display');
+            scoreDisplay.style.display = 'block';
+            
+            let gradeMessage = '';
+            if (percentage >= 90) {
+                gradeMessage = '🌟 Excellent! Outstanding understanding!';
+            } else if (percentage >= 80) {
+                gradeMessage = '🎉 Great job! Very good understanding!';
+            } else if (percentage >= 70) {
+                gradeMessage = '👍 Good work! Solid understanding!';
+            } else if (percentage >= 60) {
+                gradeMessage = '📚 Fair. Review the material for better understanding.';
+            } else {
+                gradeMessage = '📖 Keep studying! Review the chapter carefully.';
+            }
+            
+            scoreDisplay.innerHTML = `
+                <h3>Quiz Results</h3>
+                <p style="font-size: 2em; margin: 20px 0;">${correctCount} / ${totalQuestions}</p>
+                <p style="font-size: 1.5em; margin: 10px 0;">${percentage}%</p>
+                <p style="margin-top: 15px;">${gradeMessage}</p>
+            `;
+            
+            // Scroll to score
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Accounting for Merchandising Operations - Study Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4a90e2;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #a8d0ff;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 20px;
+            background: rgba(74, 144, 226, 0.3);
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(74, 144, 226, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active {
+            background: #4a90e2;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .topic-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #4a90e2;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .topic-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+        
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #a8d0ff;
+            margin: 20px 0 10px 0;
+            font-size: 1.4em;
+        }
+        
+        h4 {
+            color: #c8e0ff;
+            margin: 15px 0 10px 0;
+            font-size: 1.1em;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .example-box {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .question-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #4a90e2;
+        }
+        
+        .option.selected {
+            background: rgba(74, 144, 226, 0.3);
+            border-color: #4a90e2;
+        }
+        
+        .option.correct {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: #4caf50;
+        }
+        
+        .option.incorrect {
+            background: rgba(244, 67, 54, 0.3);
+            border-color: #f44336;
+        }
+        
+        .show-answer-btn {
+            padding: 10px 20px;
+            background: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .show-answer-btn:hover {
+            background: #ffca28;
+            transform: scale(1.05);
+        }
+        
+        .answer-explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            border-radius: 5px;
+        }
+        
+        .answer-explanation.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .case-study {
+            background: rgba(156, 39, 176, 0.2);
+            border-left: 4px solid #9c27b0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .essay-question {
+            background: rgba(255, 152, 0, 0.2);
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .essay-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1em;
+            margin-top: 15px;
+            resize: vertical;
+        }
+        
+        .submit-quiz-btn {
+            padding: 15px 40px;
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .submit-quiz-btn:hover {
+            background: #66bb6a;
+            transform: scale(1.05);
+        }
+        
+        .score-display {
+            display: none;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.3);
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        th, td {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: left;
+        }
+        
+        th {
+            background: rgba(74, 144, 226, 0.3);
+            font-weight: bold;
+        }
+        
+        .formula-box {
+            background: rgba(33, 150, 243, 0.2);
+            border: 2px solid #2196f3;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Accounting for Merchandising Operations</h1>
+            <p class="subtitle">Chapter 5 - Financial Accounting IFRS 3rd Edition</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('overview')">1. Overview</button>
+            <button class="tab-btn" onclick="showTab('purchases')">2. Recording Purchases</button>
+            <button class="tab-btn" onclick="showTab('sales')">3. Recording Sales</button>
+            <button class="tab-btn" onclick="showTab('cycle')">4. Accounting Cycle</button>
+            <button class="tab-btn" onclick="showTab('statements')">5. Financial Statements</button>
+            <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            <button class="tab-btn" onclick="showTab('case-studies')">📋 Case Studies</button>
+            <button class="tab-btn" onclick="showTab('essays')">✍️ Essay Questions</button>
+        </div>
+
+
+        <!-- Section 1: Overview of Merchandising Operations -->
+        <div id="overview" class="content-section active">
+            <div class="topic-card">
+                <h2>Learning Objective 1: Identify the Differences Between Service and Merchandising Companies</h2>
+                
+                <h3>What is a Merchandising Company?</h3>
+                <p>A <strong>merchandising company</strong> is a business that buys and sells goods (merchandise) to earn a profit. Unlike service companies that provide services, merchandising companies deal with tangible products.</p>
+                
+                <h3>Types of Merchandising Companies</h3>
+                
+                <h4>1. Wholesalers</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> Companies that buy goods from manufacturers and sell them to retailers.</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>Costco Wholesale</li>
+                        <li>Metro Cash & Carry</li>
+                        <li>Sysco Corporation (food distributor)</li>
+                    </ul>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li>Sell in large quantities</li>
+                        <li>Do not sell directly to end consumers</li>
+                        <li>Act as intermediaries between manufacturers and retailers</li>
+                    </ul>
+                </div>
+                
+                <h4>2. Retailers</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> Companies that sell goods directly to consumers.</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>Walmart, Target, Carrefour</li>
+                        <li>Amazon (online retailer)</li>
+                        <li>Local grocery stores and boutiques</li>
+                    </ul>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li>Sell in smaller quantities</li>
+                        <li>Deal directly with end consumers</li>
+                        <li>May operate physical stores or online platforms</li>
+                    </ul>
+                </div>
+                
+                <h3>Service Companies vs. Merchandising Companies</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Service Company</th>
+                            <th>Merchandising Company</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Activity</strong></td>
+                            <td>Provide services</td>
+                            <td>Buy and sell goods</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue Source</strong></td>
+                            <td>Service Revenue</td>
+                            <td>Sales Revenue</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inventory</strong></td>
+                            <td>No inventory of goods</td>
+                            <td>Maintains inventory</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost of Goods Sold</strong></td>
+                            <td>Not applicable</td>
+                            <td>Major expense item</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Examples</strong></td>
+                            <td>Law firms, accounting firms, airlines</td>
+                            <td>Walmart, Amazon, grocery stores</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>The Operating Cycle</h3>
+                <p>The <strong>operating cycle</strong> is the time it takes to go from cash to cash in producing revenue.</p>
+                
+                <h4>Service Company Operating Cycle</h4>
+                <div class="example-box">
+                    <p><strong>Steps:</strong></p>
+                    <ol>
+                        <li><strong>Cash</strong> → Pay for operating expenses</li>
+                        <li><strong>Perform Services</strong> → Provide services to customers</li>
+                        <li><strong>Accounts Receivable</strong> → Bill customers (if on credit)</li>
+                        <li><strong>Cash</strong> → Collect payment from customers</li>
+                    </ol>
+                    <p><strong>Duration:</strong> Typically shorter (days to weeks)</p>
+                </div>
+                
+                <h4>Merchandising Company Operating Cycle</h4>
+                <div class="example-box">
+                    <p><strong>Steps:</strong></p>
+                    <ol>
+                        <li><strong>Cash</strong> → Purchase inventory</li>
+                        <li><strong>Inventory</strong> → Store goods for sale</li>
+                        <li><strong>Accounts Receivable</strong> → Sell goods (on credit)</li>
+                        <li><strong>Cash</strong> → Collect payment from customers</li>
+                    </ol>
+                    <p><strong>Duration:</strong> Typically longer (weeks to months)</p>
+                    <p><strong>Key Difference:</strong> Includes an inventory stage, making the cycle longer and more complex</p>
+                </div>
+                
+                <h3>Income Measurement in Merchandising Companies</h3>
+                <p>The income statement for a merchandising company differs from a service company by including <strong>Cost of Goods Sold</strong>.</p>
+                
+                <div class="formula-box">
+                    <strong>Basic Income Statement Formula:</strong><br><br>
+                    <strong>Sales Revenue</strong><br>
+                    - <strong>Cost of Goods Sold</strong><br>
+                    = <strong>Gross Profit</strong><br>
+                    - <strong>Operating Expenses</strong><br>
+                    = <strong>Profit (Net Income)</strong>
+                </div>
+                
+                <h4>Key Terms Explained</h4>
+                
+                <div class="highlight-box">
+                    <h4>Sales Revenue</h4>
+                    <p>The total amount earned from selling merchandise to customers during the period. Also called <strong>Sales</strong>.</p>
+                    <p><strong>Formula:</strong> Sales Revenue = Number of Units Sold × Selling Price per Unit</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Cost of Goods Sold (COGS)</h4>
+                    <p>The total cost of merchandise sold during the period. This is the cost the company paid to acquire the goods it sold.</p>
+                    <p><strong>Formula:</strong> COGS = Beginning Inventory + Purchases - Ending Inventory</p>
+                    <p><strong>Also known as:</strong> Cost of Sales</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Gross Profit</h4>
+                    <p>The difference between sales revenue and cost of goods sold. It represents the profit before deducting operating expenses.</p>
+                    <p><strong>Formula:</strong> Gross Profit = Sales Revenue - Cost of Goods Sold</p>
+                    <p><strong>Also known as:</strong> Gross Margin</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Operating Expenses</h4>
+                    <p>Expenses incurred in the process of earning sales revenue. These are expenses not directly tied to the cost of inventory.</p>
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>Salaries and wages expense</li>
+                        <li>Rent expense</li>
+                        <li>Utilities expense</li>
+                        <li>Advertising expense</li>
+                        <li>Depreciation expense</li>
+                    </ul>
+                </div>
+                
+                <h3>Inventory Systems</h3>
+                <p>Companies use one of two systems to account for inventory:</p>
+                
+                <h4>1. Perpetual Inventory System</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> A system that maintains detailed records of the cost of each inventory purchase and sale, and continuously shows the inventory on hand.</p>
+                    
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li>Records are updated <strong>continuously</strong> with each purchase and sale</li>
+                        <li>Inventory account is updated in real-time</li>
+                        <li>Cost of Goods Sold is recorded with each sale</li>
+                        <li>Provides up-to-date inventory balances</li>
+                    </ul>
+                    
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>Better control over inventory</li>
+                        <li>Immediate information on inventory levels</li>
+                        <li>Helps prevent stockouts and overstocking</li>
+                        <li>Easier to detect theft or errors</li>
+                    </ul>
+                    
+                    <p><strong>When Used:</strong></p>
+                    <ul>
+                        <li>Companies with computerized systems</li>
+                        <li>Businesses selling high-value items (cars, electronics)</li>
+                        <li>Most modern retail businesses</li>
+                    </ul>
+                    
+                    <p><strong>Journal Entries Example:</strong></p>
+                    <p>When merchandise is purchased:</p>
+                    <table>
+                        <tr>
+                            <td>Inventory</td>
+                            <td>XXX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20px;">Cash (or Accounts Payable)</td>
+                            <td></td>
+                            <td>XXX</td>
+                        </tr>
+                    </table>
+                    
+                    <p>When merchandise is sold:</p>
+                    <table>
+                        <tr>
+                            <td>Cash (or Accounts Receivable)</td>
+                            <td>XXX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20px;">Sales Revenue</td>
+                            <td></td>
+                            <td>XXX</td>
+                        </tr>
+                        <tr><td colspan="3"><em>(To record the sale)</em></td></tr>
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        <tr>
+                            <td>Cost of Goods Sold</td>
+                            <td>XXX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20px;">Inventory</td>
+                            <td></td>
+                            <td>XXX</td>
+                        </tr>
+                        <tr><td colspan="3"><em>(To record the cost of merchandise sold)</em></td></tr>
+                    </table>
+                </div>
+                
+                <h4>2. Periodic Inventory System</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> A system where detailed inventory records are not maintained, and the cost of goods sold is determined only at the end of an accounting period.</p>
+                    
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li>Inventory records updated <strong>periodically</strong> (monthly, quarterly, annually)</li>
+                        <li>Requires physical count to determine ending inventory</li>
+                        <li>Cost of Goods Sold calculated at period end</li>
+                        <li>Uses "Purchases" account instead of "Inventory" for acquisitions</li>
+                    </ul>
+                    
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>Simpler recordkeeping</li>
+                        <li>Lower cost to maintain</li>
+                        <li>Suitable for small businesses</li>
+                    </ul>
+                    
+                    <p><strong>Disadvantages:</strong></p>
+                    <ul>
+                        <li>No real-time inventory information</li>
+                        <li>Difficult to detect theft</li>
+                        <li>Cannot determine COGS until period end</li>
+                    </ul>
+                    
+                    <p><strong>When Used:</strong></p>
+                    <ul>
+                        <li>Small businesses with limited resources</li>
+                        <li>Companies selling low-value, high-volume items</li>
+                        <li>Businesses without computerized systems</li>
+                    </ul>
+                    
+                    <p><strong>COGS Calculation:</strong></p>
+                    <div class="formula-box">
+                        Beginning Inventory<br>
+                        + Purchases<br>
+                        = Cost of Goods Available for Sale<br>
+                        - Ending Inventory (from physical count)<br>
+                        = <strong>Cost of Goods Sold</strong>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Important Note:</strong> This chapter focuses primarily on the <strong>perpetual inventory system</strong>, which is the most commonly used system in modern businesses. The periodic system is covered in Appendix 5B.
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 2: Recording Purchases of Merchandise -->
+        <div id="purchases" class="content-section">
+            <div class="topic-card">
+                <h2>Learning Objective 2: Explain the Recording of Purchases Under a Perpetual Inventory System</h2>
+                
+                <h3>Overview of Purchase Transactions</h3>
+                <p>When a merchandising company purchases inventory, several related transactions may occur:</p>
+                <ul>
+                    <li>Purchase of merchandise on account or for cash</li>
+                    <li>Payment of freight costs</li>
+                    <li>Return of merchandise or receiving allowances</li>
+                    <li>Taking purchase discounts for early payment</li>
+                </ul>
+                
+                <h3>1. Purchases of Merchandise</h3>
+                
+                <h4>Purchase on Account (Credit)</h4>
+                <div class="example-box">
+                    <p><strong>Scenario:</strong> On October 1, Sauk Stereo purchases €3,800 of merchandise on account from PW Audio Supply, terms 2/10, n/30.</p>
+                    
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Inventory (Asset) increases by €3,800</li>
+                        <li>Accounts Payable (Liability) increases by €3,800</li>
+                    </ul>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Inventory<br><span style="padding-left: 20px;">Accounts Payable</span></td>
+                                <td>€3,800</td>
+                                <td><br>€3,800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Explanation:</strong> Under the perpetual system, purchases of merchandise are recorded directly in the Inventory account (not a separate Purchases account).</p>
+                </div>
+                
+                <h4>Understanding Credit Terms</h4>
+                <div class="highlight-box">
+                    <h4>Credit Terms: 2/10, n/30</h4>
+                    <p>This notation means:</p>
+                    <ul>
+                        <li><strong>2/10:</strong> 2% discount if paid within 10 days</li>
+                        <li><strong>n/30:</strong> Net amount (full amount) is due within 30 days</li>
+                    </ul>
+                    
+                    <p><strong>Other Common Terms:</strong></p>
+                    <ul>
+                        <li><strong>1/10, n/30:</strong> 1% discount if paid within 10 days, net due in 30 days</li>
+                        <li><strong>2/10, n/60:</strong> 2% discount if paid within 10 days, net due in 60 days</li>
+                        <li><strong>n/30:</strong> No discount, full payment due in 30 days</li>
+                        <li><strong>n/EOM:</strong> Net due at End of Month</li>
+                    </ul>
+                </div>
+                
+                <h3>2. Freight Costs</h3>
+                <p>Freight costs (shipping costs) are incurred when transporting goods from the seller to the buyer. The question is: <strong>Who pays?</strong></p>
+                
+                <h4>FOB Shipping Point</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> "Free On Board Shipping Point" means ownership of goods passes to the buyer when the public carrier accepts the goods from the seller.</p>
+                    
+                    <p><strong>Who Pays Freight:</strong> <strong>BUYER</strong> pays the freight costs</p>
+                    
+                    <p><strong>Accounting Treatment:</strong> Buyer adds freight costs to the Inventory account</p>
+                    
+                    <p><strong>Example:</strong> On October 1, Sauk Stereo pays Acme Freight Company €150 for freight charges on merchandise purchased from PW Audio Supply.</p>
+                    
+                    <p><strong>Journal Entry (Buyer):</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Inventory<br><span style="padding-left: 20px;">Cash</span></td>
+                                <td>€150</td>
+                                <td><br>€150</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Rationale:</strong> Freight costs are part of the cost of purchasing inventory, so they increase the Inventory account.</p>
+                </div>
+                
+                <h4>FOB Destination</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> "Free On Board Destination" means ownership of goods remains with the seller until the goods reach the buyer.</p>
+                    
+                    <p><strong>Who Pays Freight:</strong> <strong>SELLER</strong> pays the freight costs</p>
+                    
+                    <p><strong>Accounting Treatment:</strong> Seller records freight costs as a delivery expense (Freight-Out or Delivery Expense)</p>
+                    
+                    <p><strong>Example:</strong> If PW Audio Supply pays the €150 freight charges for delivery to Sauk Stereo.</p>
+                    
+                    <p><strong>Journal Entry (Seller):</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Freight-Out (or Delivery Expense)<br><span style="padding-left: 20px;">Cash</span></td>
+                                <td>€150</td>
+                                <td><br>€150</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Rationale:</strong> For the seller, freight costs are an operating expense, not part of inventory cost.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Memory Aid:</strong>
+                    <ul>
+                        <li><strong>FOB Shipping Point:</strong> Buyer pays freight → Add to Inventory</li>
+                        <li><strong>FOB Destination:</strong> Seller pays freight → Record as Expense</li>
+                    </ul>
+                </div>
+                
+                <h3>3. Purchase Returns and Allowances</h3>
+                <p>A buyer may be dissatisfied with merchandise and either return it or request a price reduction (allowance).</p>
+                
+                <h4>Purchase Return</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> A return occurs when the buyer returns goods to the seller.</p>
+                    
+                    <p><strong>Scenario:</strong> On October 4, Sauk Stereo returns €300 of merchandise to PW Audio Supply.</p>
+                    
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Inventory (Asset) decreases by €300</li>
+                        <li>Accounts Payable (Liability) decreases by €300</li>
+                    </ul>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 4</td>
+                                <td>Accounts Payable<br><span style="padding-left: 20px;">Inventory</span></td>
+                                <td>€300</td>
+                                <td><br>€300</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4>Purchase Allowance</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> An allowance occurs when the buyer keeps the merchandise but receives a reduction in the purchase price.</p>
+                    
+                    <p><strong>Scenario:</strong> Sauk Stereo discovers some merchandise is slightly damaged and negotiates a €200 allowance from PW Audio Supply.</p>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 4</td>
+                                <td>Accounts Payable<br><span style="padding-left: 20px;">Inventory</span></td>
+                                <td>€200</td>
+                                <td><br>€200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Note:</strong> The accounting treatment is the same for returns and allowances - both reduce Inventory and Accounts Payable.</p>
+                </div>
+                
+                <h3>4. Purchase Discounts</h3>
+                <p>A <strong>purchase discount</strong> is a cash discount claimed by a buyer for prompt payment of a balance due.</p>
+                
+                <h4>Taking the Discount</h4>
+                <div class="example-box">
+                    <p><strong>Scenario:</strong> On October 11, Sauk Stereo pays the balance due to PW Audio Supply, taking the 2% cash discount allowed for payment within 10 days.</p>
+                    
+                    <p><strong>Calculation:</strong></p>
+                    <ul>
+                        <li>Original purchase: €3,800</li>
+                        <li>Less: Purchase return: (€300)</li>
+                        <li>Balance due: €3,500</li>
+                        <li>Discount (2% × €3,500): (€70)</li>
+                        <li><strong>Cash paid: €3,430</strong></li>
+                    </ul>
+                    
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Accounts Payable decreases by €3,500 (full amount owed)</li>
+                        <li>Inventory decreases by €70 (discount reduces cost of inventory)</li>
+                        <li>Cash decreases by €3,430 (amount actually paid)</li>
+                    </ul>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 11</td>
+                                <td>Accounts Payable<br><span style="padding-left: 20px;">Inventory</span><br><span style="padding-left: 20px;">Cash</span></td>
+                                <td>€3,500</td>
+                                <td><br>€70<br>€3,430</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Explanation:</strong> The discount is credited to Inventory because it reduces the cost of the merchandise purchased.</p>
+                </div>
+                
+                <h4>Missing the Discount</h4>
+                <div class="example-box">
+                    <p><strong>Scenario:</strong> If Sauk Stereo does not pay within the discount period, it must pay the full amount of €3,500.</p>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 31</td>
+                                <td>Accounts Payable<br><span style="padding-left: 20px;">Cash</span></td>
+                                <td>€3,500</td>
+                                <td><br>€3,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Why Take Purchase Discounts?</h4>
+                    <p>Purchase discounts represent significant savings. Missing a 2/10, n/30 discount is equivalent to paying approximately <strong>36% annual interest</strong>!</p>
+                    
+                    <p><strong>Calculation:</strong></p>
+                    <ul>
+                        <li>Discount rate: 2%</li>
+                        <li>Time saved by paying early: 20 days (30 - 10)</li>
+                        <li>Number of 20-day periods in a year: 365 ÷ 20 = 18.25</li>
+                        <li>Annual interest rate: 2% × 18.25 = 36.5%</li>
+                    </ul>
+                    
+                    <p><strong>Conclusion:</strong> Companies should almost always take purchase discounts, even if they need to borrow money to do so!</p>
+                </div>
+                
+                <h3>Summary of Purchase Transactions</h3>
+                <div class="example-box">
+                    <h4>Complete Example: Sauk Stereo's October Purchases</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Transaction</th>
+                                <th>Effect on Inventory</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Purchased merchandise on account</td>
+                                <td>+€3,800</td>
+                            </tr>
+                            <tr>
+                                <td>Oct. 1</td>
+                                <td>Paid freight charges</td>
+                                <td>+€150</td>
+                            </tr>
+                            <tr>
+                                <td>Oct. 4</td>
+                                <td>Returned merchandise</td>
+                                <td>-€300</td>
+                            </tr>
+                            <tr>
+                                <td>Oct. 11</td>
+                                <td>Took purchase discount (2% × €3,500)</td>
+                                <td>-€70</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><strong>Net Cost of Inventory</strong></td>
+                                <td><strong>€3,580</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Final Inventory Balance:</strong> €3,580</p>
+                    <p>This represents the actual cost of the merchandise that Sauk Stereo has available for sale.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 3: Recording Sales of Merchandise -->
+        <div id="sales" class="content-section">
+            <div class="topic-card">
+                <h2>Learning Objective 3: Explain the Recording of Sales Under a Perpetual Inventory System</h2>
+                
+                <h3>Overview of Sales Transactions</h3>
+                <p>When a merchandising company sells inventory, several related transactions may occur:</p>
+                <ul>
+                    <li>Sale of merchandise on account or for cash</li>
+                    <li>Granting of sales returns or allowances</li>
+                    <li>Offering sales discounts for early payment</li>
+                </ul>
+                
+                <h3>1. Sales of Merchandise</h3>
+                <p>Under the perpetual inventory system, <strong>two journal entries are required</strong> for each sale:</p>
+                <ol>
+                    <li>Record the sale (revenue recognition)</li>
+                    <li>Record the cost of goods sold (expense recognition)</li>
+                </ol>
+                
+                <h4>Sale on Account (Credit)</h4>
+                <div class="example-box">
+                    <p><strong>Scenario:</strong> On October 5, PW Audio Supply sells €3,800 of merchandise on account to Sauk Stereo, terms 2/10, n/30. The merchandise cost PW Audio Supply €2,400.</p>
+                    
+                    <p><strong>Entry 1: Record the Sale</strong></p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Accounts Receivable (Asset) increases by €3,800</li>
+                        <li>Sales Revenue increases by €3,800</li>
+                    </ul>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 5</td>
+                                <td>Accounts Receivable<br><span style="padding-left: 20px;">Sales Revenue</span></td>
+                                <td>€3,800</td>
+                                <td><br>€3,800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Entry 2: Record the Cost</strong></p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Cost of Goods Sold (Expense) increases by €2,400</li>
+                        <li>Inventory (Asset) decreases by €2,400</li>
+                    </ul>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 5</td>
+                                <td>Cost of Goods Sold<br><span style="padding-left: 20px;">Inventory</span></td>
+                                <td>€2,400</td>
+                                <td><br>€2,400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Result:</strong></p>
+                    <ul>
+                        <li>Sales Revenue: €3,800</li>
+                        <li>Cost of Goods Sold: €2,400</li>
+                        <li><strong>Gross Profit: €1,400</strong></li>
+                    </ul>
+                </div>
+                
+                <h4>Cash Sale</h4>
+                <div class="example-box">
+                    <p><strong>Scenario:</strong> On October 7, PW Audio Supply sells €2,200 of merchandise for cash. The merchandise cost PW Audio Supply €1,400.</p>
+                    
+                    <p><strong>Entry 1: Record the Sale</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 7</td>
+                                <td>Cash<br><span style="padding-left: 20px;">Sales Revenue</span></td>
+                                <td>€2,200</td>
+                                <td><br>€2,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Entry 2: Record the Cost</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 7</td>
+                                <td>Cost of Goods Sold<br><span style="padding-left: 20px;">Inventory</span></td>
+                                <td>€1,400</td>
+                                <td><br>€1,400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Key Point:</strong> Under the perpetual inventory system, Cost of Goods Sold is recorded at the time of each sale, not at the end of the period. This provides continuous information about profitability.
+                </div>
+                
+                <h3>2. Sales Returns and Allowances</h3>
+                <p>Sales returns and allowances are contra revenue accounts that reduce sales revenue.</p>
+                
+                <h4>Sales Return</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> A sales return occurs when a customer returns merchandise to the seller.</p>
+                    
+                    <p><strong>Scenario:</strong> On October 8, Sauk Stereo returns €300 of merchandise to PW Audio Supply. The merchandise originally cost PW Audio Supply €140.</p>
+                    
+                    <p><strong>Entry 1: Record the Return (Reverse the Sale)</strong></p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Sales Returns and Allowances (Contra Revenue) increases by €300</li>
+                        <li>Accounts Receivable (Asset) decreases by €300</li>
+                    </ul>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 8</td>
+                                <td>Sales Returns and Allowances<br><span style="padding-left: 20px;">Accounts Receivable</span></td>
+                                <td>€300</td>
+                                <td><br>€300</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Entry 2: Record the Cost (Reverse the COGS)</strong></p>
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Inventory (Asset) increases by €140 (merchandise back in stock)</li>
+                        <li>Cost of Goods Sold (Expense) decreases by €140</li>
+                    </ul>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 8</td>
+                                <td>Inventory<br><span style="padding-left: 20px;">Cost of Goods Sold</span></td>
+                                <td>€140</td>
+                                <td><br>€140</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4>Sales Allowance</h4>
+                <div class="example-box">
+                    <p><strong>Definition:</strong> A sales allowance occurs when the seller reduces the selling price but the customer keeps the merchandise.</p>
+                    
+                    <p><strong>Scenario:</strong> PW Audio Supply grants a €200 allowance to a customer for slightly damaged merchandise.</p>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 10</td>
+                                <td>Sales Returns and Allowances<br><span style="padding-left: 20px;">Accounts Receivable</span></td>
+                                <td>€200</td>
+                                <td><br>€200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Note:</strong> For allowances, no second entry is needed because the merchandise stays with the customer (no change to inventory or COGS).</p>
+                </div>
+                
+                <h4>Why Use a Separate Account?</h4>
+                <div class="highlight-box">
+                    <p><strong>Question:</strong> Why not just debit Sales Revenue directly?</p>
+                    
+                    <p><strong>Answer:</strong> Using a separate "Sales Returns and Allowances" account provides important information:</p>
+                    <ul>
+                        <li>Shows the extent of returns and allowances</li>
+                        <li>Helps management monitor product quality issues</li>
+                        <li>Indicates customer satisfaction levels</li>
+                        <li>Allows comparison across periods</li>
+                    </ul>
+                    
+                    <p><strong>High returns may indicate:</strong></p>
+                    <ul>
+                        <li>Quality control problems</li>
+                        <li>Shipping/handling issues</li>
+                        <li>Inaccurate product descriptions</li>
+                        <li>Need for better customer service</li>
+                    </ul>
+                </div>
+                
+                <h3>3. Sales Discounts</h3>
+                <p>A <strong>sales discount</strong> is a reduction given by a seller for prompt payment of a credit sale.</p>
+                
+                <h4>Customer Takes the Discount</h4>
+                <div class="example-box">
+                    <p><strong>Scenario:</strong> On October 15, PW Audio Supply receives payment from Sauk Stereo for the October 5 sale, less the October 8 return. Sauk Stereo takes the 2% discount.</p>
+                    
+                    <p><strong>Calculation:</strong></p>
+                    <ul>
+                        <li>Original sale: €3,800</li>
+                        <li>Less: Sales return: (€300)</li>
+                        <li>Balance due: €3,500</li>
+                        <li>Discount (2% × €3,500): (€70)</li>
+                        <li><strong>Cash received: €3,430</strong></li>
+                    </ul>
+                    
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Cash increases by €3,430</li>
+                        <li>Sales Discounts (Contra Revenue) increases by €70</li>
+                        <li>Accounts Receivable decreases by €3,500</li>
+                    </ul>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 15</td>
+                                <td>Cash<br>Sales Discounts<br><span style="padding-left: 20px;">Accounts Receivable</span></td>
+                                <td>€3,430<br>€70</td>
+                                <td><br><br>€3,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4>Customer Misses the Discount</h4>
+                <div class="example-box">
+                    <p><strong>Scenario:</strong> If Sauk Stereo pays after the discount period, PW Audio Supply receives the full €3,500.</p>
+                    
+                    <p><strong>Journal Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 31</td>
+                                <td>Cash<br><span style="padding-left: 20px;">Accounts Receivable</span></td>
+                                <td>€3,500</td>
+                                <td><br>€3,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Sales Discounts vs. Purchase Discounts</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Purchase Discount (Buyer)</th>
+                                <th>Sales Discount (Seller)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Account Type</strong></td>
+                                <td>Reduces Inventory (Asset)</td>
+                                <td>Contra Revenue</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normal Balance</strong></td>
+                                <td>Credit (reduces debit balance)</td>
+                                <td>Debit (reduces credit balance)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Effect</strong></td>
+                                <td>Reduces cost of inventory</td>
+                                <td>Reduces sales revenue</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Financial Statement</strong></td>
+                                <td>Balance Sheet (Inventory)</td>
+                                <td>Income Statement (Net Sales)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Net Sales Calculation</h3>
+                <div class="formula-box">
+                    <strong>Net Sales Formula:</strong><br><br>
+                    <strong>Sales Revenue</strong><br>
+                    - Sales Returns and Allowances<br>
+                    - Sales Discounts<br>
+                    = <strong>Net Sales</strong>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Example: Calculating Net Sales</h4>
+                    <p>PW Audio Supply's October sales data:</p>
+                    <ul>
+                        <li>Sales Revenue: €480,000</li>
+                        <li>Sales Returns and Allowances: €12,000</li>
+                        <li>Sales Discounts: €8,000</li>
+                    </ul>
+                    
+                    <p><strong>Calculation:</strong></p>
+                    <table>
+                        <tr>
+                            <td>Sales Revenue</td>
+                            <td>€480,000</td>
+                        </tr>
+                        <tr>
+                            <td>Less: Sales Returns and Allowances</td>
+                            <td>(€12,000)</td>
+                        </tr>
+                        <tr>
+                            <td>Less: Sales Discounts</td>
+                            <td>(€8,000)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Sales</strong></td>
+                            <td><strong>€460,000</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 4: Completing the Accounting Cycle -->
+        <div id="cycle" class="content-section">
+            <div class="topic-card">
+                <h2>Learning Objective 4: Explain the Steps in the Accounting Cycle for a Merchandising Company</h2>
+                
+                <h3>Overview</h3>
+                <p>The accounting cycle for a merchandising company is similar to that of a service company, with some key differences related to inventory and cost of goods sold.</p>
+                
+                <h3>The Accounting Cycle Steps</h3>
+                <ol>
+                    <li>Analyze business transactions</li>
+                    <li>Journalize the transactions</li>
+                    <li>Post to ledger accounts</li>
+                    <li>Prepare a trial balance</li>
+                    <li>Journalize and post adjusting entries</li>
+                    <li>Prepare an adjusted trial balance</li>
+                    <li>Prepare financial statements</li>
+                    <li>Journalize and post closing entries</li>
+                    <li>Prepare a post-closing trial balance</li>
+                </ol>
+                
+                <h3>Adjusting Entries for Merchandising Companies</h3>
+                <p>Merchandising companies use the same types of adjusting entries as service companies, plus some specific to inventory operations.</p>
+                
+                <h4>1. Adjusting Inventory for Shrinkage</h4>
+                <div class="example-box">
+                    <p><strong>Inventory Shrinkage:</strong> The loss of inventory due to theft, damage, or errors.</p>
+                    
+                    <p><strong>Scenario:</strong> PW Audio Supply's perpetual inventory records show €40,500 of inventory on hand. A physical count reveals only €40,000 of inventory actually exists. The difference of €500 represents shrinkage.</p>
+                    
+                    <p><strong>Analysis:</strong></p>
+                    <ul>
+                        <li>Cost of Goods Sold increases by €500 (shrinkage is treated as an expense)</li>
+                        <li>Inventory decreases by €500</li>
+                    </ul>
+                    
+                    <p><strong>Adjusting Entry:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct. 31</td>
+                                <td>Cost of Goods Sold<br><span style="padding-left: 20px;">Inventory</span><br><em>(To adjust for inventory shrinkage)</em></td>
+                                <td>€500</td>
+                                <td><br>€500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Explanation:</strong> This entry adjusts the inventory account to match the physical count and recognizes the loss as part of cost of goods sold.</p>
+                </div>
+                
+                <h4>2. Other Common Adjusting Entries</h4>
+                <div class="example-box">
+                    <p>Merchandising companies also make standard adjusting entries:</p>
+                    
+                    <p><strong>a) Prepaid Insurance</strong></p>
+                    <table>
+                        <tr>
+                            <td>Insurance Expense</td>
+                            <td>XXX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20px;">Prepaid Insurance</td>
+                            <td></td>
+                            <td>XXX</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>b) Depreciation</strong></p>
+                    <table>
+                        <tr>
+                            <td>Depreciation Expense</td>
+                            <td>XXX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20px;">Accumulated Depreciation</td>
+                            <td></td>
+                            <td>XXX</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>c) Accrued Salaries</strong></p>
+                    <table>
+                        <tr>
+                            <td>Salaries and Wages Expense</td>
+                            <td>XXX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20px;">Salaries and Wages Payable</td>
+                            <td></td>
+                            <td>XXX</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>d) Unearned Revenue</strong></p>
+                    <table>
+                        <tr>
+                            <td>Unearned Sales Revenue</td>
+                            <td>XXX</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 20px;">Sales Revenue</td>
+                            <td></td>
+                            <td>XXX</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Closing Entries for Merchandising Companies</h3>
+                <p>Closing entries transfer temporary account balances to Retained Earnings. Merchandising companies close additional accounts related to sales and cost of goods sold.</p>
+                
+                <h4>The Four Closing Entries</h4>
+                
+                <div class="example-box">
+                    <p><strong>Entry 1: Close Revenue Accounts</strong></p>
+                    <p>Close all revenue accounts (including Sales Revenue) to Income Summary.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sales Revenue<br><span style="padding-left: 20px;">Income Summary</span></td>
+                                <td>€480,000</td>
+                                <td><br>€480,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-box">
+                    <p><strong>Entry 2: Close Expense and Contra Revenue Accounts</strong></p>
+                    <p>Close all expense accounts, Sales Returns and Allowances, Sales Discounts, and Cost of Goods Sold to Income Summary.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Income Summary</td>
+                                <td>€450,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Sales Returns and Allowances</td>
+                                <td></td>
+                                <td>€12,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Sales Discounts</td>
+                                <td></td>
+                                <td>€8,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Cost of Goods Sold</td>
+                                <td></td>
+                                <td>€316,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Salaries and Wages Expense</td>
+                                <td></td>
+                                <td>€64,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Rent Expense</td>
+                                <td></td>
+                                <td>€24,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Other Expenses</td>
+                                <td></td>
+                                <td>€26,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-box">
+                    <p><strong>Entry 3: Close Income Summary to Retained Earnings</strong></p>
+                    <p>Transfer the net income (or net loss) from Income Summary to Retained Earnings.</p>
+                    
+                    <p><strong>Calculation:</strong></p>
+                    <ul>
+                        <li>Income Summary credit balance (revenues): €480,000</li>
+                        <li>Income Summary debit balance (expenses): €450,000</li>
+                        <li><strong>Net Income: €30,000</strong></li>
+                    </ul>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Income Summary<br><span style="padding-left: 20px;">Retained Earnings</span></td>
+                                <td>€30,000</td>
+                                <td><br>€30,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="example-box">
+                    <p><strong>Entry 4: Close Dividends to Retained Earnings</strong></p>
+                    <p>Transfer dividends declared during the period to Retained Earnings.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account Titles</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Retained Earnings<br><span style="padding-left: 20px;">Dividends</span></td>
+                                <td>€15,000</td>
+                                <td><br>€15,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Summary of Closing Entries</h4>
+                    <p><strong>Accounts that are CLOSED (temporary accounts):</strong></p>
+                    <ul>
+                        <li>Sales Revenue</li>
+                        <li>Sales Returns and Allowances</li>
+                        <li>Sales Discounts</li>
+                        <li>Cost of Goods Sold</li>
+                        <li>All Operating Expenses</li>
+                        <li>Dividends</li>
+                    </ul>
+                    
+                    <p><strong>Accounts that are NOT CLOSED (permanent accounts):</strong></p>
+                    <ul>
+                        <li>Assets (including Inventory)</li>
+                        <li>Liabilities</li>
+                        <li>Share Capital</li>
+                        <li>Retained Earnings</li>
+                    </ul>
+                </div>
+                
+                <h3>Post-Closing Trial Balance</h3>
+                <div class="example-box">
+                    <p>After closing entries are posted, prepare a post-closing trial balance to verify that:</p>
+                    <ul>
+                        <li>Debits equal credits</li>
+                        <li>All temporary accounts have zero balances</li>
+                        <li>Only permanent accounts (balance sheet accounts) remain</li>
+                    </ul>
+                    
+                    <p><strong>Example: PW Audio Supply Post-Closing Trial Balance</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cash</td>
+                                <td>€9,500</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Accounts Receivable</td>
+                                <td>€16,100</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Inventory</td>
+                                <td>€40,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Prepaid Insurance</td>
+                                <td>€1,800</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Equipment</td>
+                                <td>€80,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Accumulated Depreciation—Equipment</td>
+                                <td></td>
+                                <td>€24,000</td>
+                            </tr>
+                            <tr>
+                                <td>Accounts Payable</td>
+                                <td></td>
+                                <td>€20,400</td>
+                            </tr>
+                            <tr>
+                                <td>Salaries and Wages Payable</td>
+                                <td></td>
+                                <td>€2,000</td>
+                            </tr>
+                            <tr>
+                                <td>Share Capital—Ordinary</td>
+                                <td></td>
+                                <td>€50,000</td>
+                            </tr>
+                            <tr>
+                                <td>Retained Earnings</td>
+                                <td></td>
+                                <td>€51,000</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Totals</strong></td>
+                                <td><strong>€147,400</strong></td>
+                                <td><strong>€147,400</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Note:</strong> Notice that no revenue, expense, or dividend accounts appear. All temporary accounts have been closed.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Section 5: Financial Statements -->
+        <div id="statements" class="content-section">
+            <div class="topic-card">
+                <h2>Learning Objective 5: Distinguish Between a Multiple-Step and a Single-Step Income Statement</h2>
+                
+                <h3>Overview</h3>
+                <p>Companies can present their income statements in two formats:</p>
+                <ul>
+                    <li><strong>Multiple-Step Income Statement:</strong> Shows several steps in determining net income</li>
+                    <li><strong>Single-Step Income Statement:</strong> Shows only one step (total revenues minus total expenses)</li>
+                </ul>
+                
+                <h3>Multiple-Step Income Statement</h3>
+                <p>The multiple-step income statement is more detailed and provides more useful information for analysis. It separates operating activities from non-operating activities.</p>
+                
+                <h4>Structure of Multiple-Step Income Statement</h4>
+                <div class="example-box">
+                    <h4>PW Audio Supply<br>Income Statement<br>For the Year Ended October 31, 2025</h4>
+                    
+                    <table>
+                        <tbody>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td colspan="2"><strong>Sales Revenues</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Sales Revenue</td>
+                                <td>€480,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Less: Sales Returns and Allowances</td>
+                                <td>€12,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Sales Discounts</td>
+                                <td>€8,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 60px;">Total Sales Returns and Discounts</td>
+                                <td>€20,000</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.2);">
+                                <td><strong>Net Sales</strong></td>
+                                <td><strong>€460,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td colspan="2"><strong>Cost of Goods Sold</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Cost of Goods Sold</td>
+                                <td>€316,000</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.2);">
+                                <td><strong>Gross Profit</strong></td>
+                                <td><strong>€144,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td colspan="2"><strong>Operating Expenses</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Selling Expenses</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Sales Salaries and Wages Expense</td>
+                                <td>€45,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Freight-Out</td>
+                                <td>€7,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Advertising Expense</td>
+                                <td>€16,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Depreciation Expense—Store Equipment</td>
+                                <td>€8,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 60px;">Total Selling Expenses</td>
+                                <td>€76,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Administrative Expenses</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Office Salaries and Wages Expense</td>
+                                <td>€19,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Rent Expense</td>
+                                <td>€24,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Insurance Expense</td>
+                                <td>€4,500</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Utilities Expense</td>
+                                <td>€17,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Depreciation Expense—Office Equipment</td>
+                                <td>€7,500</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 60px;">Total Administrative Expenses</td>
+                                <td>€72,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 80px;">Total Operating Expenses</td>
+                                <td>€148,000</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(244, 67, 54, 0.2);">
+                                <td><strong>Loss from Operations</strong></td>
+                                <td><strong>(€4,000)</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td colspan="2"><strong>Other Revenues and Gains</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Interest Revenue</td>
+                                <td>€3,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Gain on Disposal of Equipment</td>
+                                <td>€600</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Total Other Revenues and Gains</td>
+                                <td>€3,600</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td colspan="2"><strong>Other Expenses and Losses</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Interest Expense</td>
+                                <td>€1,800</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Loss from Casualty (Theft)</td>
+                                <td>€200</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Total Other Expenses and Losses</td>
+                                <td>€2,000</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.3);">
+                                <td><strong>Profit (Net Income)</strong></td>
+                                <td><strong>(€2,400)</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4>Key Sections Explained</h4>
+                
+                <div class="highlight-box">
+                    <h4>1. Net Sales</h4>
+                    <p><strong>Formula:</strong> Sales Revenue - Sales Returns and Allowances - Sales Discounts</p>
+                    <p>This represents the actual revenue earned from selling merchandise after deducting returns and discounts.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>2. Gross Profit</h4>
+                    <p><strong>Formula:</strong> Net Sales - Cost of Goods Sold</p>
+                    <p>This shows the profit before deducting operating expenses. It indicates how much the company marks up its merchandise.</p>
+                    
+                    <p><strong>Gross Profit Rate:</strong></p>
+                    <div class="formula-box">
+                        Gross Profit Rate = (Gross Profit ÷ Net Sales) × 100%<br>
+                        = (€144,000 ÷ €460,000) × 100% = <strong>31.3%</strong>
+                    </div>
+                    <p>This means for every €1 of sales, the company earns €0.313 in gross profit.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>3. Operating Expenses</h4>
+                    <p>Expenses incurred in the normal course of business operations, divided into:</p>
+                    
+                    <p><strong>a) Selling Expenses:</strong> Related to making sales and delivering merchandise</p>
+                    <ul>
+                        <li>Sales salaries and commissions</li>
+                        <li>Advertising</li>
+                        <li>Freight-out (delivery costs)</li>
+                        <li>Store rent and utilities</li>
+                        <li>Depreciation of store equipment</li>
+                    </ul>
+                    
+                    <p><strong>b) Administrative Expenses:</strong> Related to general management and administration</p>
+                    <ul>
+                        <li>Office salaries</li>
+                        <li>Office rent and utilities</li>
+                        <li>Insurance</li>
+                        <li>Depreciation of office equipment</li>
+                        <li>Legal and accounting fees</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>4. Income from Operations</h4>
+                    <p><strong>Formula:</strong> Gross Profit - Operating Expenses</p>
+                    <p>This shows the profit (or loss) from the company's primary business activities, excluding non-operating items.</p>
+                    <p><strong>Also called:</strong> Operating Income or Operating Profit</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>5. Other Revenues and Gains</h4>
+                    <p>Revenues and gains from activities <strong>outside</strong> the company's main operations:</p>
+                    <ul>
+                        <li><strong>Interest Revenue:</strong> Income from investments or bank deposits</li>
+                        <li><strong>Dividend Revenue:</strong> Income from owning shares in other companies</li>
+                        <li><strong>Rent Revenue:</strong> Income from renting out property</li>
+                        <li><strong>Gain on Disposal of Assets:</strong> Profit from selling equipment or other assets</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>6. Other Expenses and Losses</h4>
+                    <p>Expenses and losses from activities <strong>outside</strong> the company's main operations:</p>
+                    <ul>
+                        <li><strong>Interest Expense:</strong> Cost of borrowing money</li>
+                        <li><strong>Loss on Disposal of Assets:</strong> Loss from selling equipment or other assets</li>
+                        <li><strong>Casualty Losses:</strong> Losses from theft, fire, or natural disasters</li>
+                    </ul>
+                </div>
+                
+                <h3>Single-Step Income Statement</h3>
+                <p>The single-step income statement is simpler and lists all revenues together and all expenses together, with one calculation to arrive at net income.</p>
+                
+                <div class="example-box">
+                    <h4>PW Audio Supply<br>Income Statement<br>For the Year Ended October 31, 2025</h4>
+                    
+                    <table>
+                        <tbody>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td colspan="2"><strong>Revenues</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Net Sales</td>
+                                <td>€460,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Interest Revenue</td>
+                                <td>€3,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Gain on Disposal of Equipment</td>
+                                <td>€600</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.2);">
+                                <td style="padding-left: 40px;"><strong>Total Revenues</strong></td>
+                                <td><strong>€463,600</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td colspan="2"><strong>Expenses</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Cost of Goods Sold</td>
+                                <td>€316,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Selling Expenses</td>
+                                <td>€76,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Administrative Expenses</td>
+                                <td>€72,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Interest Expense</td>
+                                <td>€1,800</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Loss from Casualty</td>
+                                <td>€200</td>
+                            </tr>
+                            <tr style="background: rgba(244, 67, 54, 0.2);">
+                                <td style="padding-left: 40px;"><strong>Total Expenses</strong></td>
+                                <td><strong>€466,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.3);">
+                                <td><strong>Loss (Net Loss)</strong></td>
+                                <td><strong>(€2,400)</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Comparison: Multiple-Step vs. Single-Step</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Multiple-Step</th>
+                            <th>Single-Step</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Complexity</strong></td>
+                            <td>More detailed and complex</td>
+                            <td>Simpler and easier to prepare</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subtotals</strong></td>
+                            <td>Shows gross profit, operating income, etc.</td>
+                            <td>No intermediate subtotals</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Operating vs. Non-Operating</strong></td>
+                            <td>Clearly separates operating from non-operating</td>
+                            <td>Does not distinguish</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analysis</strong></td>
+                            <td>Provides more information for analysis</td>
+                            <td>Limited analytical information</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Usage</strong></td>
+                            <td>Preferred by most companies</td>
+                            <td>Used by some service companies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Income</strong></td>
+                            <td>Same final result</td>
+                            <td>Same final result</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <strong>Important Note:</strong> Both formats arrive at the same net income figure. The difference is in the level of detail and the intermediate calculations shown. Most merchandising companies prefer the multiple-step format because it provides more useful information for decision-making and analysis.
+                </div>
+                
+                <h3>Statement of Comprehensive Income</h3>
+                <p>Under IFRS, companies may also report <strong>other comprehensive income</strong> items that are not included in net income but affect equity.</p>
+                
+                <div class="example-box">
+                    <p><strong>Examples of Other Comprehensive Income:</strong></p>
+                    <ul>
+                        <li>Unrealized gains/losses on certain investments</li>
+                        <li>Foreign currency translation adjustments</li>
+                        <li>Certain pension adjustments</li>
+                    </ul>
+                    
+                    <p><strong>Format:</strong></p>
+                    <table>
+                        <tr>
+                            <td>Profit (Net Income)</td>
+                            <td>€XXX</td>
+                        </tr>
+                        <tr>
+                            <td>Other Comprehensive Income (net of tax)</td>
+                            <td>€XXX</td>
+                        </tr>
+                        <tr style="background: rgba(76, 175, 80, 0.2);">
+                            <td><strong>Total Comprehensive Income</strong></td>
+                            <td><strong>€XXX</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="content-section">
+            <div class="quiz-container">
+                <h2>📝 Interactive Quiz - 25 Questions</h2>
+                <p>Test your knowledge of Accounting for Merchandising Operations. Select your answer for each question, then click "Submit Quiz" to see your score.</p>
+                
+                <!-- Question 1 -->
+                <div class="question" data-question="1">
+                    <div class="question-text"><strong>Question 1:</strong> Which of the following is NOT a characteristic of a merchandising company?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Maintains inventory of goods for resale</div>
+                        <div class="option" data-correct="false">B) Earns revenue by selling merchandise</div>
+                        <div class="option" data-correct="true">C) Provides intangible services to customers</div>
+                        <div class="option" data-correct="false">D) Has cost of goods sold as a major expense</div>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="question" data-question="2">
+                    <div class="question-text"><strong>Question 2:</strong> Under the perpetual inventory system, when merchandise is purchased for cash, which account is debited?</div>
+                    <div class="options">
+                        <div class="option" data-correct="true">A) Inventory</div>
+                        <div class="option" data-correct="false">B) Purchases</div>
+                        <div class="option" data-correct="false">C) Cost of Goods Sold</div>
+                        <div class="option" data-correct="false">D) Merchandise Expense</div>
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="question" data-question="3">
+                    <div class="question-text"><strong>Question 3:</strong> The credit term "2/10, n/30" means:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) 10% discount if paid within 2 days, net due in 30 days</div>
+                        <div class="option" data-correct="true">B) 2% discount if paid within 10 days, net due in 30 days</div>
+                        <div class="option" data-correct="false">C) 2% discount if paid within 30 days, net due in 10 days</div>
+                        <div class="option" data-correct="false">D) 10% discount if paid within 30 days, net due in 2 days</div>
+                    </div>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="question" data-question="4">
+                    <div class="question-text"><strong>Question 4:</strong> When goods are shipped FOB shipping point, who pays the freight costs?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) The seller always pays the freight costs</div>
+                        <div class="option" data-correct="true">B) The buyer pays the freight costs</div>
+                        <div class="option" data-correct="false">C) The shipping company absorbs the costs</div>
+                        <div class="option" data-correct="false">D) Freight costs are split equally between parties</div>
+                    </div>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="question" data-question="5">
+                    <div class="question-text"><strong>Question 5:</strong> A company purchased merchandise for €5,000 with terms 2/10, n/30 and paid within the discount period. The journal entry to record the payment includes:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) A debit to Accounts Payable for €4,900</div>
+                        <div class="option" data-correct="false">B) A credit to Purchase Discounts for €100</div>
+                        <div class="option" data-correct="true">C) A credit to Inventory for €100</div>
+                        <div class="option" data-correct="false">D) A debit to Discount Expense for €100</div>
+                    </div>
+                </div>
+                
+                <!-- Question 6 -->
+                <div class="question" data-question="6">
+                    <div class="question-text"><strong>Question 6:</strong> Gross profit is calculated as:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Sales Revenue minus Operating Expenses</div>
+                        <div class="option" data-correct="true">B) Net Sales minus Cost of Goods Sold</div>
+                        <div class="option" data-correct="false">C) Sales Revenue minus all expenses</div>
+                        <div class="option" data-correct="false">D) Net Sales minus Operating Expenses</div>
+                    </div>
+                </div>
+                
+                <!-- Question 7 -->
+                <div class="question" data-question="7">
+                    <div class="question-text"><strong>Question 7:</strong> Under the perpetual inventory system, how many journal entries are required when merchandise is sold on account?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) One entry to record the sale</div>
+                        <div class="option" data-correct="true">B) Two entries: one for the sale and one for the cost</div>
+                        <div class="option" data-correct="false">C) Three entries including the inventory adjustment</div>
+                        <div class="option" data-correct="false">D) No entry until cash is collected</div>
+                    </div>
+                </div>
+                
+                <!-- Question 8 -->
+                <div class="question" data-question="8">
+                    <div class="question-text"><strong>Question 8:</strong> Sales Returns and Allowances is classified as a:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Revenue account with a credit balance</div>
+                        <div class="option" data-correct="true">B) Contra revenue account with a debit balance</div>
+                        <div class="option" data-correct="false">C) Expense account with a debit balance</div>
+                        <div class="option" data-correct="false">D) Liability account with a credit balance</div>
+                    </div>
+                </div>
+                
+                <!-- Question 9 -->
+                <div class="question" data-question="9">
+                    <div class="question-text"><strong>Question 9:</strong> Which of the following is considered a selling expense?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Office salaries expense</div>
+                        <div class="option" data-correct="false">B) Insurance expense on office building</div>
+                        <div class="option" data-correct="true">C) Freight-out (delivery expense)</div>
+                        <div class="option" data-correct="false">D) Depreciation on office equipment</div>
+                    </div>
+                </div>
+                
+                <!-- Question 10 -->
+                <div class="question" data-question="10">
+                    <div class="question-text"><strong>Question 10:</strong> When a customer returns merchandise, the seller records a credit to:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Sales Revenue</div>
+                        <div class="option" data-correct="false">B) Inventory</div>
+                        <div class="option" data-correct="true">C) Accounts Receivable</div>
+                        <div class="option" data-correct="false">D) Cost of Goods Sold</div>
+                    </div>
+                </div>
+                
+                <!-- Question 11 -->
+                <div class="question" data-question="11">
+                    <div class="question-text"><strong>Question 11:</strong> Net sales is calculated as:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Sales Revenue minus Cost of Goods Sold</div>
+                        <div class="option" data-correct="true">B) Sales Revenue minus Sales Returns and Allowances minus Sales Discounts</div>
+                        <div class="option" data-correct="false">C) Sales Revenue minus Operating Expenses</div>
+                        <div class="option" data-correct="false">D) Gross Sales minus Purchase Discounts</div>
+                    </div>
+                </div>
+                
+                <!-- Question 12 -->
+                <div class="question" data-question="12">
+                    <div class="question-text"><strong>Question 12:</strong> Inventory shrinkage is recorded by:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Debiting Inventory and crediting Cost of Goods Sold</div>
+                        <div class="option" data-correct="true">B) Debiting Cost of Goods Sold and crediting Inventory</div>
+                        <div class="option" data-correct="false">C) Debiting Shrinkage Expense and crediting Inventory</div>
+                        <div class="option" data-correct="false">D) Debiting Loss on Inventory and crediting Cash</div>
+                    </div>
+                </div>
+                
+                <!-- Question 13 -->
+                <div class="question" data-question="13">
+                    <div class="question-text"><strong>Question 13:</strong> Which account is NOT closed at the end of the accounting period?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Sales Revenue</div>
+                        <div class="option" data-correct="false">B) Cost of Goods Sold</div>
+                        <div class="option" data-correct="true">C) Inventory</div>
+                        <div class="option" data-correct="false">D) Sales Discounts</div>
+                    </div>
+                </div>
+                
+                <!-- Question 14 -->
+                <div class="question" data-question="14">
+                    <div class="question-text"><strong>Question 14:</strong> A multiple-step income statement shows:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Only one calculation: total revenues minus total expenses</div>
+                        <div class="option" data-correct="true">B) Several subtotals including gross profit and operating income</div>
+                        <div class="option" data-correct="false">C) Only operating revenues and operating expenses</div>
+                        <div class="option" data-correct="false">D) The same information as a balance sheet</div>
+                    </div>
+                </div>
+                
+                <!-- Question 15 -->
+                <div class="question" data-question="15">
+                    <div class="question-text"><strong>Question 15:</strong> Interest expense would be classified as:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) A selling expense</div>
+                        <div class="option" data-correct="false">B) An administrative expense</div>
+                        <div class="option" data-correct="true">C) Other expenses and losses</div>
+                        <div class="option" data-correct="false">D) Part of cost of goods sold</div>
+                    </div>
+                </div>
+                
+                <!-- Question 16 -->
+                <div class="question" data-question="16">
+                    <div class="question-text"><strong>Question 16:</strong> A company has sales of €100,000, sales returns of €5,000, and cost of goods sold of €60,000. What is the gross profit?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) €40,000</div>
+                        <div class="option" data-correct="true">B) €35,000</div>
+                        <div class="option" data-correct="false">C) €45,000</div>
+                        <div class="option" data-correct="false">D) €55,000</div>
+                    </div>
+                </div>
+                
+                <!-- Question 17 -->
+                <div class="question" data-question="17">
+                    <div class="question-text"><strong>Question 17:</strong> When freight costs are paid by the buyer under FOB shipping point terms, the buyer debits:</div>
+                    <div class="options">
+                        <div class="option" data-correct="true">A) Inventory</div>
+                        <div class="option" data-correct="false">B) Freight-Out</div>
+                        <div class="option" data-correct="false">C) Delivery Expense</div>
+                        <div class="option" data-correct="false">D) Transportation Expense</div>
+                    </div>
+                </div>
+                
+                <!-- Question 18 -->
+                <div class="question" data-question="18">
+                    <div class="question-text"><strong>Question 18:</strong> The operating cycle of a merchandising company is typically:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Shorter than a service company's cycle</div>
+                        <div class="option" data-correct="true">B) Longer than a service company's cycle</div>
+                        <div class="option" data-correct="false">C) The same length as a service company's cycle</div>
+                        <div class="option" data-correct="false">D) Not applicable to merchandising companies</div>
+                    </div>
+                </div>
+                
+                <!-- Question 19 -->
+                <div class="question" data-question="19">
+                    <div class="question-text"><strong>Question 19:</strong> Which of the following would appear on a post-closing trial balance?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Sales Revenue</div>
+                        <div class="option" data-correct="false">B) Cost of Goods Sold</div>
+                        <div class="option" data-correct="true">C) Accounts Receivable</div>
+                        <div class="option" data-correct="false">D) Rent Expense</div>
+                    </div>
+                </div>
+                
+                <!-- Question 20 -->
+                <div class="question" data-question="20">
+                    <div class="question-text"><strong>Question 20:</strong> A purchase discount taken by the buyer:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Increases the cost of inventory purchased</div>
+                        <div class="option" data-correct="true">B) Decreases the cost of inventory purchased</div>
+                        <div class="option" data-correct="false">C) Is recorded as revenue by the buyer</div>
+                        <div class="option" data-correct="false">D) Has no effect on inventory cost</div>
+                    </div>
+                </div>
+                
+                <!-- Question 21 -->
+                <div class="question" data-question="21">
+                    <div class="question-text"><strong>Question 21:</strong> Income from operations is calculated as:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Net Sales minus Cost of Goods Sold</div>
+                        <div class="option" data-correct="true">B) Gross Profit minus Operating Expenses</div>
+                        <div class="option" data-correct="false">C) Total Revenues minus Total Expenses</div>
+                        <div class="option" data-correct="false">D) Net Sales minus all expenses</div>
+                    </div>
+                </div>
+                
+                <!-- Question 22 -->
+                <div class="question" data-question="22">
+                    <div class="question-text"><strong>Question 22:</strong> When a sales discount is taken by a customer, the seller records:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) A debit to Sales Revenue</div>
+                        <div class="option" data-correct="true">B) A debit to Sales Discounts</div>
+                        <div class="option" data-correct="false">C) A credit to Accounts Receivable for the full amount</div>
+                        <div class="option" data-correct="false">D) A debit to Discount Expense</div>
+                    </div>
+                </div>
+                
+                <!-- Question 23 -->
+                <div class="question" data-question="23">
+                    <div class="question-text"><strong>Question 23:</strong> Which inventory system provides continuous information about inventory levels?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) Periodic inventory system</div>
+                        <div class="option" data-correct="true">B) Perpetual inventory system</div>
+                        <div class="option" data-correct="false">C) Physical inventory system</div>
+                        <div class="option" data-correct="false">D) Manual inventory system</div>
+                    </div>
+                </div>
+                
+                <!-- Question 24 -->
+                <div class="question" data-question="24">
+                    <div class="question-text"><strong>Question 24:</strong> A company purchased inventory for €8,000, returned €500 of defective goods, and paid freight of €200. What is the net cost of inventory?</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) €8,000</div>
+                        <div class="option" data-correct="false">B) €7,500</div>
+                        <div class="option" data-correct="true">C) €7,700</div>
+                        <div class="option" data-correct="false">D) €8,200</div>
+                    </div>
+                </div>
+                
+                <!-- Question 25 -->
+                <div class="question" data-question="25">
+                    <div class="question-text"><strong>Question 25:</strong> The gross profit rate is calculated as:</div>
+                    <div class="options">
+                        <div class="option" data-correct="false">A) (Net Sales ÷ Gross Profit) × 100%</div>
+                        <div class="option" data-correct="true">B) (Gross Profit ÷ Net Sales) × 100%</div>
+                        <div class="option" data-correct="false">C) (Cost of Goods Sold ÷ Net Sales) × 100%</div>
+                        <div class="option" data-correct="false">D) (Operating Income ÷ Net Sales) × 100%</div>
+                    </div>
+                </div>
+                
+                <button class="submit-quiz-btn" onclick="submitQuiz()">Submit Quiz</button>
+                <div class="score-display" id="score-display"></div>
+            </div>
+        </div>
+
+
+        <!-- Case Studies Section -->
+        <div id="case-studies" class="content-section">
+            <div class="quiz-container">
+                <h2>📋 Case Study Questions (5 Questions)</h2>
+                <p>Analyze these real-world scenarios and click "Show Answer" to reveal the solution.</p>
+                
+                <!-- Case Study 1 -->
+                <div class="case-study">
+                    <h3>Case Study 1: TechMart Electronics</h3>
+                    <p><strong>Scenario:</strong> TechMart Electronics purchased 100 laptops from a supplier for €50,000 on October 1 with terms 2/10, n/30, FOB shipping point. TechMart paid €1,500 in freight charges. On October 5, TechMart discovered 10 laptops were defective and returned them. On October 9, TechMart paid the balance due.</p>
+                    
+                    <p><strong>Question:</strong> Prepare all journal entries for TechMart Electronics from October 1 through October 9.</p>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswer('case1')">Show Answer</button>
+                    <div class="answer-explanation" id="case1">
+                        <h4>Solution:</h4>
+                        
+                        <p><strong>October 1 - Purchase of Inventory:</strong></p>
+                        <table>
+                            <tr><td>Inventory</td><td>€50,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Accounts Payable</td><td></td><td>€50,000</td></tr>
+                        </table>
+                        
+                        <p><strong>October 1 - Payment of Freight:</strong></p>
+                        <table>
+                            <tr><td>Inventory</td><td>€1,500</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Cash</td><td></td><td>€1,500</td></tr>
+                        </table>
+                        <p><em>Note: Under FOB shipping point, buyer pays freight and adds it to inventory cost.</em></p>
+                        
+                        <p><strong>October 5 - Return of Defective Merchandise:</strong></p>
+                        <p>Cost of 10 laptops = €50,000 ÷ 100 = €500 each × 10 = €5,000</p>
+                        <table>
+                            <tr><td>Accounts Payable</td><td>€5,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Inventory</td><td></td><td>€5,000</td></tr>
+                        </table>
+                        
+                        <p><strong>October 9 - Payment Within Discount Period:</strong></p>
+                        <p>Balance due: €50,000 - €5,000 = €45,000</p>
+                        <p>Discount: €45,000 × 2% = €900</p>
+                        <p>Cash paid: €45,000 - €900 = €44,100</p>
+                        <table>
+                            <tr><td>Accounts Payable</td><td>€45,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Inventory</td><td></td><td>€900</td></tr>
+                            <tr><td style="padding-left: 20px;">Cash</td><td></td><td>€44,100</td></tr>
+                        </table>
+                        
+                        <p><strong>Final Inventory Cost:</strong> €50,000 + €1,500 - €5,000 - €900 = <strong>€45,600</strong></p>
+                    </div>
+                </div>
+
+                
+                <!-- Case Study 2 -->
+                <div class="case-study">
+                    <h3>Case Study 2: Fashion Boutique Sales</h3>
+                    <p><strong>Scenario:</strong> Fashion Boutique sold merchandise on account to a customer for €8,000 on November 10 with terms 2/10, n/30. The merchandise cost Fashion Boutique €5,200. On November 12, the customer returned €1,000 of merchandise (cost €650). On November 19, the customer paid the balance due.</p>
+                    
+                    <p><strong>Question:</strong> Prepare all journal entries for Fashion Boutique from November 10 through November 19.</p>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswer('case2')">Show Answer</button>
+                    <div class="answer-explanation" id="case2">
+                        <h4>Solution:</h4>
+                        
+                        <p><strong>November 10 - Sale on Account:</strong></p>
+                        <p><em>Entry 1: Record the sale</em></p>
+                        <table>
+                            <tr><td>Accounts Receivable</td><td>€8,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Sales Revenue</td><td></td><td>€8,000</td></tr>
+                        </table>
+                        
+                        <p><em>Entry 2: Record the cost</em></p>
+                        <table>
+                            <tr><td>Cost of Goods Sold</td><td>€5,200</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Inventory</td><td></td><td>€5,200</td></tr>
+                        </table>
+                        
+                        <p><strong>November 12 - Sales Return:</strong></p>
+                        <p><em>Entry 1: Record the return</em></p>
+                        <table>
+                            <tr><td>Sales Returns and Allowances</td><td>€1,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Accounts Receivable</td><td></td><td>€1,000</td></tr>
+                        </table>
+                        
+                        <p><em>Entry 2: Record the cost reversal</em></p>
+                        <table>
+                            <tr><td>Inventory</td><td>€650</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Cost of Goods Sold</td><td></td><td>€650</td></tr>
+                        </table>
+                        
+                        <p><strong>November 19 - Payment Received:</strong></p>
+                        <p>Balance due: €8,000 - €1,000 = €7,000</p>
+                        <p>Discount: €7,000 × 2% = €140</p>
+                        <p>Cash received: €7,000 - €140 = €6,860</p>
+                        <table>
+                            <tr><td>Cash</td><td>€6,860</td><td></td></tr>
+                            <tr><td>Sales Discounts</td><td>€140</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Accounts Receivable</td><td></td><td>€7,000</td></tr>
+                        </table>
+                        
+                        <p><strong>Net Sales:</strong> €8,000 - €1,000 - €140 = <strong>€6,860</strong></p>
+                        <p><strong>Net Cost of Goods Sold:</strong> €5,200 - €650 = <strong>€4,550</strong></p>
+                        <p><strong>Gross Profit:</strong> €6,860 - €4,550 = <strong>€2,310</strong></p>
+                    </div>
+                </div>
+
+                
+                <!-- Case Study 3 -->
+                <div class="case-study">
+                    <h3>Case Study 3: Global Traders Income Statement</h3>
+                    <p><strong>Scenario:</strong> Global Traders provides the following information for the year ended December 31, 2025:</p>
+                    <ul>
+                        <li>Sales Revenue: €850,000</li>
+                        <li>Sales Returns and Allowances: €25,000</li>
+                        <li>Sales Discounts: €15,000</li>
+                        <li>Cost of Goods Sold: €520,000</li>
+                        <li>Selling Expenses: €95,000</li>
+                        <li>Administrative Expenses: €78,000</li>
+                        <li>Interest Revenue: €5,000</li>
+                        <li>Interest Expense: €8,000</li>
+                    </ul>
+                    
+                    <p><strong>Question:</strong> Prepare a multiple-step income statement for Global Traders and calculate the gross profit rate.</p>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswer('case3')">Show Answer</button>
+                    <div class="answer-explanation" id="case3">
+                        <h4>Solution:</h4>
+                        
+                        <h4>Global Traders<br>Income Statement<br>For the Year Ended December 31, 2025</h4>
+                        
+                        <table>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td><strong>Sales Revenues</strong></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Sales Revenue</td>
+                                <td>€850,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Less: Sales Returns and Allowances</td>
+                                <td>€25,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Sales Discounts</td>
+                                <td>€15,000</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.2);">
+                                <td><strong>Net Sales</strong></td>
+                                <td><strong>€810,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Cost of Goods Sold</td>
+                                <td>€520,000</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.2);">
+                                <td><strong>Gross Profit</strong></td>
+                                <td><strong>€290,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td><strong>Operating Expenses</strong></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Selling Expenses</td>
+                                <td>€95,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Administrative Expenses</td>
+                                <td>€78,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 40px;">Total Operating Expenses</td>
+                                <td>€173,000</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.2);">
+                                <td><strong>Income from Operations</strong></td>
+                                <td><strong>€117,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td><strong>Other Revenues and Gains</strong></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Interest Revenue</td>
+                                <td>€5,000</td>
+                            </tr>
+                            <tr style="background: rgba(74, 144, 226, 0.2);">
+                                <td><strong>Other Expenses and Losses</strong></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 20px;">Interest Expense</td>
+                                <td>€8,000</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.3);">
+                                <td><strong>Profit (Net Income)</strong></td>
+                                <td><strong>€114,000</strong></td>
+                            </tr>
+                        </table>
+                        
+                        <p><strong>Gross Profit Rate Calculation:</strong></p>
+                        <p>Gross Profit Rate = (Gross Profit ÷ Net Sales) × 100%</p>
+                        <p>= (€290,000 ÷ €810,000) × 100%</p>
+                        <p>= <strong>35.8%</strong></p>
+                        
+                        <p><strong>Interpretation:</strong> For every €1 of net sales, Global Traders earns €0.358 in gross profit before operating expenses.</p>
+                    </div>
+                </div>
+
+                
+                <!-- Case Study 4 -->
+                <div class="case-study">
+                    <h3>Case Study 4: Inventory Shrinkage at SuperMart</h3>
+                    <p><strong>Scenario:</strong> SuperMart uses a perpetual inventory system. On December 31, 2025, the company's accounting records show inventory of €125,000. A physical count reveals actual inventory of €121,500. The company also needs to make the following year-end adjusting entries:</p>
+                    <ul>
+                        <li>Prepaid insurance of €6,000 has expired</li>
+                        <li>Depreciation on store equipment is €15,000</li>
+                        <li>Accrued salaries payable amount to €4,200</li>
+                    </ul>
+                    
+                    <p><strong>Question:</strong> Prepare all necessary adjusting entries for SuperMart on December 31, 2025, and explain the impact of inventory shrinkage.</p>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswer('case4')">Show Answer</button>
+                    <div class="answer-explanation" id="case4">
+                        <h4>Solution:</h4>
+                        
+                        <p><strong>1. Adjusting Entry for Inventory Shrinkage:</strong></p>
+                        <p>Shrinkage = €125,000 - €121,500 = €3,500</p>
+                        <table>
+                            <tr><td>Cost of Goods Sold</td><td>€3,500</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Inventory</td><td></td><td>€3,500</td></tr>
+                            <tr><td colspan="3"><em>(To adjust inventory for shrinkage)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>2. Adjusting Entry for Expired Insurance:</strong></p>
+                        <table>
+                            <tr><td>Insurance Expense</td><td>€6,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Prepaid Insurance</td><td></td><td>€6,000</td></tr>
+                            <tr><td colspan="3"><em>(To record expired insurance)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>3. Adjusting Entry for Depreciation:</strong></p>
+                        <table>
+                            <tr><td>Depreciation Expense—Store Equipment</td><td>€15,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Accumulated Depreciation—Store Equipment</td><td></td><td>€15,000</td></tr>
+                            <tr><td colspan="3"><em>(To record depreciation on store equipment)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>4. Adjusting Entry for Accrued Salaries:</strong></p>
+                        <table>
+                            <tr><td>Salaries and Wages Expense</td><td>€4,200</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Salaries and Wages Payable</td><td></td><td>€4,200</td></tr>
+                            <tr><td colspan="3"><em>(To record accrued salaries)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>Impact of Inventory Shrinkage:</strong></p>
+                        <ul>
+                            <li><strong>Causes:</strong> Theft, damage, spoilage, or recording errors</li>
+                            <li><strong>Financial Impact:</strong> Increases Cost of Goods Sold by €3,500, reducing net income</li>
+                            <li><strong>Balance Sheet:</strong> Reduces Inventory from €125,000 to €121,500</li>
+                            <li><strong>Management Action:</strong> High shrinkage may indicate need for better security, inventory controls, or employee training</li>
+                        </ul>
+                        
+                        <p><strong>Shrinkage Rate:</strong> (€3,500 ÷ €125,000) × 100% = <strong>2.8%</strong></p>
+                        <p>This means 2.8% of inventory was lost due to shrinkage, which management should investigate.</p>
+                    </div>
+                </div>
+
+                
+                <!-- Case Study 5 -->
+                <div class="case-study">
+                    <h3>Case Study 5: Closing Entries for MegaStore</h3>
+                    <p><strong>Scenario:</strong> MegaStore's adjusted trial balance on December 31, 2025, includes the following accounts:</p>
+                    <ul>
+                        <li>Sales Revenue: €950,000</li>
+                        <li>Sales Returns and Allowances: €18,000</li>
+                        <li>Sales Discounts: €12,000</li>
+                        <li>Cost of Goods Sold: €580,000</li>
+                        <li>Selling Expenses: €125,000</li>
+                        <li>Administrative Expenses: €95,000</li>
+                        <li>Interest Revenue: €4,000</li>
+                        <li>Interest Expense: €6,000</li>
+                        <li>Dividends: €30,000</li>
+                        <li>Retained Earnings (beginning): €200,000</li>
+                    </ul>
+                    
+                    <p><strong>Question:</strong> Prepare all four closing entries for MegaStore and calculate the ending Retained Earnings balance.</p>
+                    
+                    <button class="show-answer-btn" onclick="toggleAnswer('case5')">Show Answer</button>
+                    <div class="answer-explanation" id="case5">
+                        <h4>Solution:</h4>
+                        
+                        <p><strong>Closing Entry 1: Close Revenue Accounts</strong></p>
+                        <table>
+                            <tr><td>Sales Revenue</td><td>€950,000</td><td></td></tr>
+                            <tr><td>Interest Revenue</td><td>€4,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Income Summary</td><td></td><td>€954,000</td></tr>
+                            <tr><td colspan="3"><em>(To close revenue accounts)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>Closing Entry 2: Close Expense and Contra Revenue Accounts</strong></p>
+                        <table>
+                            <tr><td>Income Summary</td><td>€836,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Sales Returns and Allowances</td><td></td><td>€18,000</td></tr>
+                            <tr><td style="padding-left: 20px;">Sales Discounts</td><td></td><td>€12,000</td></tr>
+                            <tr><td style="padding-left: 20px;">Cost of Goods Sold</td><td></td><td>€580,000</td></tr>
+                            <tr><td style="padding-left: 20px;">Selling Expenses</td><td></td><td>€125,000</td></tr>
+                            <tr><td style="padding-left: 20px;">Administrative Expenses</td><td></td><td>€95,000</td></tr>
+                            <tr><td style="padding-left: 20px;">Interest Expense</td><td></td><td>€6,000</td></tr>
+                            <tr><td colspan="3"><em>(To close expense and contra revenue accounts)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>Closing Entry 3: Close Income Summary to Retained Earnings</strong></p>
+                        <p>Net Income = €954,000 - €836,000 = €118,000</p>
+                        <table>
+                            <tr><td>Income Summary</td><td>€118,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Retained Earnings</td><td></td><td>€118,000</td></tr>
+                            <tr><td colspan="3"><em>(To close Income Summary to Retained Earnings)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>Closing Entry 4: Close Dividends to Retained Earnings</strong></p>
+                        <table>
+                            <tr><td>Retained Earnings</td><td>€30,000</td><td></td></tr>
+                            <tr><td style="padding-left: 20px;">Dividends</td><td></td><td>€30,000</td></tr>
+                            <tr><td colspan="3"><em>(To close Dividends to Retained Earnings)</em></td></tr>
+                        </table>
+                        
+                        <p><strong>Calculation of Ending Retained Earnings:</strong></p>
+                        <table>
+                            <tr>
+                                <td>Retained Earnings, Beginning</td>
+                                <td>€200,000</td>
+                            </tr>
+                            <tr>
+                                <td>Add: Net Income</td>
+                                <td>€118,000</td>
+                            </tr>
+                            <tr>
+                                <td>Less: Dividends</td>
+                                <td>(€30,000)</td>
+                            </tr>
+                            <tr style="background: rgba(76, 175, 80, 0.2);">
+                                <td><strong>Retained Earnings, Ending</strong></td>
+                                <td><strong>€288,000</strong></td>
+                            </tr>
+                        </table>
+                        
+                        <p><strong>Verification:</strong></p>
+                        <p>After these closing entries:</p>
+                        <ul>
+                            <li>All temporary accounts (revenues, expenses, dividends) have zero balances</li>
+                            <li>Retained Earnings reflects the cumulative effect of operations and dividends</li>
+                            <li>The company is ready to begin the next accounting period</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Essay Questions Section -->
+        <div id="essays" class="content-section">
+            <div class="quiz-container">
+                <h2>✍️ Essay Case Study Questions (5 Questions)</h2>
+                <p>Provide comprehensive written responses to these analytical questions. Consider all aspects of the scenario and support your answers with accounting principles.</p>
+                
+                <!-- Essay Question 1 -->
+                <div class="essay-question">
+                    <h3>Essay Question 1: Perpetual vs. Periodic Inventory Systems</h3>
+                    <p><strong>Scenario:</strong> You are a consultant advising two different companies: Company A is a small family-owned grocery store with limited technology, and Company B is a large electronics retailer with advanced computer systems.</p>
+                    
+                    <p><strong>Question:</strong> Compare and contrast the perpetual and periodic inventory systems. Which system would you recommend for each company and why? Discuss the advantages, disadvantages, and practical considerations for each recommendation. Include in your answer how each system affects the recording of purchases, sales, and the determination of cost of goods sold.</p>
+                    
+                    <textarea class="essay-textarea" placeholder="Type your essay response here..."></textarea>
+                </div>
+                
+                <!-- Essay Question 2 -->
+                <div class="essay-question">
+                    <h3>Essay Question 2: Purchase Discounts and Financial Decision-Making</h3>
+                    <p><strong>Scenario:</strong> RetailCo has received an invoice for €100,000 of merchandise with terms 2/10, n/30. The company currently has €80,000 in cash and would need to borrow €20,000 from the bank at an annual interest rate of 12% to take advantage of the discount. The company's CFO is unsure whether to borrow the money to pay early or to wait and pay the full amount in 30 days.</p>
+                    
+                    <p><strong>Question:</strong> Analyze this situation from a financial management perspective. Calculate the effective annual interest rate of the purchase discount. Should RetailCo borrow the money to take the discount? Explain your reasoning with calculations and discuss the broader implications of purchase discount policies on a company's cash management strategy.</p>
+                    
+                    <textarea class="essay-textarea" placeholder="Type your essay response here..."></textarea>
+                </div>
+                
+                <!-- Essay Question 3 -->
+                <div class="essay-question">
+                    <h3>Essay Question 3: Multiple-Step Income Statement Analysis</h3>
+                    <p><strong>Scenario:</strong> You are analyzing two competing merchandising companies in the same industry. Company X has a gross profit rate of 45% but an operating income margin of only 5%. Company Y has a gross profit rate of 30% but an operating income margin of 12%.</p>
+                    
+                    <p><strong>Question:</strong> Explain what these ratios reveal about each company's business model and operational efficiency. What factors might account for these differences? Which company would you consider to be in a stronger competitive position and why? Discuss how the multiple-step income statement format helps investors and managers make these types of comparisons. What additional information would you want to see to make a more informed assessment?</p>
+                    
+                    <textarea class="essay-textarea" placeholder="Type your essay response here..."></textarea>
+                </div>
+
+                
+                <!-- Essay Question 4 -->
+                <div class="essay-question">
+                    <h3>Essay Question 4: FOB Terms and Business Implications</h3>
+                    <p><strong>Scenario:</strong> GlobalTrade Inc. is negotiating a large purchase contract with an overseas supplier. The supplier has offered two options: (1) FOB shipping point with a unit price of €50, or (2) FOB destination with a unit price of €52. The estimated freight cost is €3 per unit. GlobalTrade is also concerned about the risk of damage or loss during shipment, which historically occurs in about 2% of shipments.</p>
+                    
+                    <p><strong>Question:</strong> Analyze both options from multiple perspectives: cost, risk, accounting treatment, and cash flow timing. Which option would you recommend and why? Explain how FOB terms affect not only the accounting records but also business operations, insurance considerations, and working capital management. Discuss how the choice of FOB terms might vary depending on the company's financial position, risk tolerance, and relationship with the supplier.</p>
+                    
+                    <textarea class="essay-textarea" placeholder="Type your essay response here..."></textarea>
+                </div>
+                
+                <!-- Essay Question 5 -->
+                <div class="essay-question">
+                    <h3>Essay Question 5: Inventory Shrinkage and Internal Controls</h3>
+                    <p><strong>Scenario:</strong> MegaMart, a large retail chain, has experienced inventory shrinkage of 4.5% over the past year, significantly higher than the industry average of 1.5%. The CFO has asked you to investigate the causes and recommend solutions. The company uses a perpetual inventory system with point-of-sale technology, but physical counts reveal consistent discrepancies.</p>
+                    
+                    <p><strong>Question:</strong> Discuss the potential causes of inventory shrinkage in a retail environment. What internal control procedures would you recommend to reduce shrinkage? Explain how the perpetual inventory system helps detect shrinkage and why physical counts are still necessary. Analyze the financial impact of high shrinkage rates on profitability, and discuss how management should communicate this issue to stakeholders. What role does employee training and corporate culture play in preventing inventory shrinkage?</p>
+                    
+                    <textarea class="essay-textarea" placeholder="Type your essay response here..."></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        // Quiz functionality
+        const questions = document.querySelectorAll('.question');
+        
+        questions.forEach(question => {
+            const options = question.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options in this question
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+        });
+        
+        function submitQuiz() {
+            let correct = 0;
+            let total = questions.length;
+            
+            questions.forEach(question => {
+                const selectedOption = question.querySelector('.option.selected');
+                const options = question.querySelectorAll('.option');
+                
+                if (selectedOption) {
+                    const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
+                    
+                    if (isCorrect) {
+                        selectedOption.classList.add('correct');
+                        correct++;
+                    } else {
+                        selectedOption.classList.add('incorrect');
+                        // Show the correct answer
+                        options.forEach(option => {
+                            if (option.getAttribute('data-correct') === 'true') {
+                                option.classList.add('correct');
+                            }
+                        });
+                    }
+                }
+            });
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDisplay = document.getElementById('score-display');
+            scoreDisplay.style.display = 'block';
+            scoreDisplay.innerHTML = `
+                <h3>Quiz Results</h3>
+                <p>You scored <strong>${correct}</strong> out of <strong>${total}</strong></p>
+                <p>Percentage: <strong>${percentage}%</strong></p>
+                <p>${percentage >= 80 ? '🎉 Excellent work!' : percentage >= 70 ? '👍 Good job!' : percentage >= 60 ? '📚 Keep studying!' : '💪 Review the material and try again!'}</p>
+            `;
+            
+            // Scroll to score display
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // Case study answer toggle
+        function toggleAnswer(caseId) {
+            const answer = document.getElementById(caseId);
+            answer.classList.toggle('show');
+            
+            // Change button text
+            const button = event.target;
+            if (answer.classList.contains('show')) {
+                button.textContent = 'Hide Answer';
+            } else {
+                button.textContent = 'Show Answer';
+            }
+        }
+    </script>
+</body>
+</html>
